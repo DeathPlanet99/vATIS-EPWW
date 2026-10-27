@@ -16,18 +16,18 @@ jobs:
       - name: Pobierz repozytorium
         uses: actions/checkout@v4
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
       - name: Konfiguracja Pythona
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
 
       - name: Instalacja bibliotek
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install requests beautifulsoup4
 
       - name: Uruchom scraper
         run: python scraper.py
@@ -36,12 +36,14 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          mkdir -p data
           git add data/
           
           if git diff --staged --quiet; then
-            echo "Brak zmian w danych ATIS."
+            echo "Brak nowych plików ATIS do zatwierdzenia."
           else
-            git commit -m "Aktualizacja ATIS [skip ci]"
+            git commit -m "Nowy ATIS $(date -u +'%Y-%m-%d %H:%M UTC') [skip ci]"
             git pull --rebase origin main || git pull --rebase origin master || true
-            git push
+            git push origin HEAD
           fi
