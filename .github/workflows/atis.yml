@@ -2,7 +2,8 @@ name: Monitor ATIS
 
 on:
   schedule:
-    - cron: '15,45 * * * *'
+    # Skrypt startuje w 10. i 40. minucie każdej godziny
+    - cron: '10,40 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -35,10 +36,13 @@ jobs:
       - name: Uruchom scraper
         run: python scraper.py
 
-      - name: Commit i push zmian (standard MapBuilder)
+      - name: Zapisz datę do nazwy commita
+        run: echo "COMMIT_DATE=$(date -u +'%d.%m.%Y %H:%M UTC')" >> $GITHUB_ENV
+
+      - name: Commit i push zmian
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Aktualizacja ATIS [skip ci]"
+          commit_message: "Aktualizacja ATIS: ${{ env.COMMIT_DATE }}"
           file_pattern: "data/**"
           commit_user_name: "github-actions[bot]"
           commit_user_email: "github-actions[bot]@users.noreply.github.com"
