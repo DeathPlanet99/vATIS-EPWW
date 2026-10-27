@@ -13,40 +13,62 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
 }
 
-def extract_atis_blocks(html: str) -> list[str]:
-    """Wyciąga pojedyncze bloki tekstowe ATIS ze strony."""
+def extract_atis_blocks(html: str, icao: str) -> list[str]:
+    """Wyciąga czyste bloki tekstu ATIS, filtrując menu boczne i elementy nawigacji."""
     soup = BeautifulSoup(html, "html.parser")
     full_text = soup.get_text(separator="\n")
+    lines = [line.strip() for line in full_text.splitlines() if line.strip()]
 
-    pattern = re.compile(
-        r'([A-Z]{4}\s+(?:ARR\s+|DEP\s+)?ATIS(?:\s+INFO)?\s+[A-Z]\b[\s\S]+?)(?=(?:[A-Z]{4}\s+(?:ARR\s+|DEP\s+)?ATIS(?:\s+INFO)?\s+[A-Z]\b|METAR\b|TAF\b|\Z))',
-        re.IGNORECASE
-    )
-
-    matches = pattern.findall(full_text)
     blocks = []
-    if matches:
-        for m in matches:
-            cleaned = "\n".join([line.strip() for line in m.strip().splitlines() if line.strip()])
+    current_block = []
+    in_block = False
+
+    # Wzorce początku i końca pojedynczego bloku ATIS
+    start_pattern = re.compile(rf'^{icao}\s+(?:ARR\s+|DEP\s+)?ATIS', re.IGNORECASE)
+    end_triggers = re.compile(r'^(?:END OF\b|REPORT\s+[A-Z]\b|ACK\b)', re.IGNORECASE)
+    stop_triggers = re.compile(r'^(?:METAR\b|TAF\b|Arrival ATIS\b|Departure ATIS\b|Formatting\b)', re.IGNORECASE)
+
+    for line in lines:
+        if start_pattern.search(line):
+            if in_block and current_block:
+                blocks.append("\n".join(current_block))
+                current_block = []
+            in_block = True
+            current_block.append(line)
+            continue
+
+        if in_block:
+            if end_triggers.search(line):
+                current_block.append(line)
+                blocks.append("\n".join(current_block))
+                current_block = []
+                in_block = False
+            elif stop_triggers.search(line):
+                if current_block:
+                    blocks.append("\n".join(current_block))
+                    current_block = []
+                in_block = False
+            else:
+                current_block.append(line)
+
+    if in_block and current_block:
+        blocks.append("\n".join(current_block))
+
+    # Rezerwowe wyszukiwanie w razie zmian formatu strony
+    if not blocks:
+        fallback_pattern = re.compile(
+            rf'({icao}\s+(?:ARR\s+|DEP\s+)?ATIS[^\n]*[\s\S]+?)(?=(?:{icao}\s+(?:ARR\s+|DEP\s+)?ATIS|METAR\b|TAF\b|\Z))',
+            re.IGNORECASE
+        )
+        for m in fallback_pattern.findall(full_text):
+            cleaned = "\n".join([l.strip() for l in m.splitlines() if l.strip()])
             if len(cleaned) > 25:
                 blocks.append(cleaned)
-    else:
-        for tag in soup.find_all(["pre", "code", "p", "div"]):
-            txt = tag.get_text(strip=True)
-            if "ATIS" in txt and ("QNH" in txt or "INFO" in txt):
-                cleaned = tag.get_text(separator="\n", strip=True)
-                if len(cleaned) > 25 and cleaned not in blocks:
-                    blocks.append(cleaned)
 
-    unique_blocks = []
-    for b in blocks:
-        if not any(b in existing for existing in unique_blocks):
-            unique_blocks.append(b)
-
-    return unique_blocks
+    return blocks
 
 def parse_atis_text(raw_text: str) -> dict:
-    """Parsuje poszczególne parametry z surowego tekstu ATIS."""
+    """Parsuje parametry lotnicze z surowego tekstu depeszy."""
     parsed = {
         "type": "COMBINED",
         "info_letter": None,
@@ -158,15 +180,15 @@ def run():
             response = requests.get(url, headers=HEADERS, timeout=20)
             response.raise_for_status()
 
-            blocks = extract_atis_blocks(response.text)
+            blocks = extract_atis_blocks(response.text, icao)
             if not blocks:
-                print(f"[{icao}] Brak aktywnych depesz.")
+                print(f"[{icao}] Brak aktywnych depesz na stronie.")
                 continue
 
             parsed_reports = [parse_atis_text(b) for b in blocks]
             current_raw = [r["raw_text"] for r in parsed_reports]
 
-            # Sprawdzenie ostatniego zapisanego pliku JSON w katalogu tego lotniska
+            # Sprawdzenie ostatniego zapisanego pliku JSON dla tego portu
             existing_files = sorted([f for f in os.listdir(airport_dir) if f.endswith(".json")])
             if existing_files:
                 last_file_path = os.path.join(airport_dir, existing_files[-1])
@@ -175,7 +197,7 @@ def run():
                         last_data = json.load(f)
                         last_raw = [r["raw_text"] for r in last_data.get("reports", [])]
                         if current_raw == last_raw:
-                            print(f"[{icao}] ATIS nie zmienił się od pliku {existing_files[-1]}. Pomijam.")
+                            print(f"[{icao}] ATIS bez zmian od ostatniego pliku ({existing_files[-1]}).")
                             continue
                 except Exception:
                     pass
@@ -195,7 +217,7 @@ def run():
                 json.dump(payload, f, ensure_ascii=False, indent=2)
 
             letters = ", ".join([f"{r['type']}: {r['info_letter']}" for r in parsed_reports if r['info_letter']])
-            print(f"[{icao}] Utworzono nowy plik: {filepath} ({letters})")
+            print(f"[{icao}] Nowy plik zapisany: {filepath} ({letters})")
 
         except Exception as err:
             print(f"[{icao}] Błąd: {err}")
