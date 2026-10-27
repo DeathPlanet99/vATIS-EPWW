@@ -14,43 +14,47 @@ HEADERS = {
 }
 
 def extract_blocks(html: str, icao: str) -> list[dict]:
-    """Wyszukuje bloki zaczynające się od nazwy lotniska w nowej linii."""
+    """Wyszukuje bloki depesz niezależnie od specyficznego formatowania HTML/CSS strony."""
     soup = BeautifulSoup(html, "html.parser")
-    # Kasujemy niewidoczne elementy UI oraz stopki z atis.guru
+    
+    # Usunięcie elementów UI, które mogłyby zaburzyć surowy tekst depeszy
     for tag in soup(["script", "style", "noscript", "svg", "nav", "header", "footer"]):
         tag.decompose()
 
-    text = soup.get_text(separator="\n")
+    full_text = soup.get_text(separator="\n")
     
-    # Redukcja pustych linii dla poprawnego parsowania
-    lines = [re.sub(r'\s+', ' ', line.strip()) for line in text.splitlines() if line.strip()]
+    # Normalizacja wielokrotnych spacji do jednej, ale zachowanie przejrzystych podziałów linii
+    lines = [re.sub(r'[ \t]+', ' ', l.strip()) for l in full_text.splitlines() if l.strip()]
     clean_text = "\n".join(lines)
 
-    # Wzorzec na twardy początek linii (np. "EPWA ARR ATIS I", "EPKK ATIS INFO D")
-    pattern = re.compile(rf'^{icao}\s+(?:ARR\s+|DEP\s+)?(?:ATIS\s+)?(?:INFO\s+)?[A-Z]\b', re.MULTILINE | re.IGNORECASE)
-    matches = list(pattern.finditer(clean_text))
+    # Wzorzec dopasowujący faktyczny główny nagłówek (np. EPWA ARR ATIS L, EPKK ATIS INFO B)
+    pattern = re.compile(rf'\b{icao}\s+(?:ARR\s+|DEP\s+)?ATIS(?:\s+INFO)?\s+[A-Z]\b', re.IGNORECASE)
+    all_matches = list(pattern.finditer(clean_text))
     
+    valid_matches = []
+    for m in all_matches:
+        # Sprawdzamy 15 znaków przed dopasowaniem. Jeśli nagłówek jest poprzedzony 
+        # czasem np. "1431Z ", to jest to środek depeszy, a nie jej początek.
+        prefix = clean_text[max(0, m.start()-15):m.start()]
+        if re.search(r'\d{4}Z\s*$', prefix, re.IGNORECASE):
+            continue
+        valid_matches.append(m)
+        
     blocks = []
-    for i, match in enumerate(matches):
-        start = match.start()
-        end_search_text = clean_text[start+1:]
+    for i, m in enumerate(valid_matches):
+        start_idx = m.start()
+        end_idx = valid_matches[i+1].start() if i + 1 < len(valid_matches) else len(clean_text)
         
-        # Szukamy początku następnej depeszy lub początku sekcji z METARem
-        next_header = pattern.search(end_search_text)
-        metar_taf = re.search(r'^(?:METAR|TAF|Arrival ATIS|Departure ATIS)\b', end_search_text, re.MULTILINE | re.IGNORECASE)
+        raw_segment = clean_text[start_idx:end_idx]
+        seg_lines = raw_segment.splitlines()
         
-        cut_offsets = []
-        if next_header: cut_offsets.append(next_header.start())
-        if metar_taf: cut_offsets.append(metar_taf.start())
-        
-        end = (start + 1 + min(cut_offsets)) if cut_offsets else len(clean_text)
-        raw_block = clean_text[start:end].strip()
-        
-        # Ucinamy bloki zaraz po informacjach typu "END OF", żeby odciąć puste stopki
-        block_lines = raw_block.splitlines()
         final_lines = []
-        for l in block_lines:
+        for l in seg_lines:
+            # Słowa kluczowe z interfejsu atis.guru lub nagłówki pogody oznaczają definitywny koniec bloku
+            if re.search(r'^(?:METAR|TAF|Arrival ATIS|Departure ATIS|Formatting|History)\b', l, re.IGNORECASE):
+                break
             final_lines.append(l)
+            # Oficjalne znaczniki końca lotniczej depeszy
             if re.search(r'^(?:END OF\b|REPORT\s+[A-Z]\b|ACK(?:NOWLEDGE)?\b)', l, re.IGNORECASE):
                 break
                 
@@ -59,15 +63,15 @@ def extract_blocks(html: str, icao: str) -> list[dict]:
         if len(final_text) > 15:
             header_line = final_lines[0]
             
-            # Odczytywanie z nagłówka
+            # Weryfikacja typu depeszy na podstawie nagłówka
             atis_type = "COMBINED"
             if "ARR" in header_line.upper():
                 atis_type = "ARRIVAL"
             elif "DEP" in header_line.upper():
                 atis_type = "DEPARTURE"
                 
-            letter_match = re.search(r'\b([A-Z])$', header_line)
-            info_letter = letter_match.group(1).upper() if letter_match else "?"
+            let_m = re.search(r'\b([A-Z])$', header_line.upper())
+            info_letter = let_m.group(1) if let_m else "?"
             
             blocks.append({
                 "type": atis_type,
@@ -78,6 +82,7 @@ def extract_blocks(html: str, icao: str) -> list[dict]:
     return blocks
 
 def parse_atis_simple(raw_text: str, atis_type: str, info_letter: str) -> dict:
+    """Konwertuje tekst na wybrane proste kategorie."""
     item = {
         "type": atis_type,
         "info_letter": info_letter,
@@ -172,14 +177,15 @@ def run():
             response.raise_for_status()
 
             raw_sections = extract_blocks(response.text, icao)
-            print(f"[{icao}] Odczytano {len(raw_sections)} bloków ze strony.")
+            print(f"[{icao}] Odczytano {len(raw_sections)} bloków ATIS ze strony.")
+            
             if not raw_sections:
                 continue
 
             parsed_reports = [parse_atis_simple(s["raw_text"], s["type"], s["info_letter"]) for s in raw_sections]
             current_raws = [r["raw_text"] for r in parsed_reports]
 
-            # JEDYNY WARUNEK POMINIĘCIA: tekst depeszy jest w 100% taki sam jak w poprzednim pliku
+            # Skrypt pominie generowanie pliku TYLKO WTEDY, gdy cały tekst jest znak-w-znak identyczny z ostatnim odczytem.
             existing_files = sorted([f for f in os.listdir(airport_dir) if f.endswith(".json")])
             if existing_files:
                 last_file_path = os.path.join(airport_dir, existing_files[-1])
@@ -190,10 +196,10 @@ def run():
                         last_raws = [r.get("raw_text") for r in last_reports if isinstance(r, dict)]
                         
                         if current_raws == last_raws:
-                            print(f"[{icao}] Tekst depeszy nie zmienił się od {existing_files[-1]}. Skrypt pomija duplikat.")
+                            print(f"[{icao}] Brak zmian w tekście depeszy (identyczny z {existing_files[-1]}). Pomijam zapis.")
                             continue
                 except Exception as err:
-                    print(f"[{icao}] Problem z plikiem {existing_files[-1]}: {err}")
+                    print(f"[{icao}] Zignorowano błąd czytania poprzedniego pliku: {err}")
 
             filename = f"{icao}_{date_str}_{time_str}z.json"
             filepath = os.path.join(airport_dir, filename)
