@@ -1,0 +1,44 @@
+name: Monitor ATIS
+
+on:
+  schedule:
+    # Uruchamianie co 30 minut
+    - cron: '*/30 * * * *'
+  # Umożliwia ręczne uruchomienie z panelu GitHub (Actions -> Run workflow)
+  workflow_dispatch:
+
+jobs:
+  scrape-and-commit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Wymagane uprawnienie do robienia push do repozytorium
+
+    steps:
+      - name: Pobierz repozytorium
+        uses: actions/checkout@v4
+
+      - name: Konfiguracja Pythona
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Instalacja bibliotek
+        run: pip install -r requirements.txt
+
+      - name: Uruchom scraper
+        run: python scraper.py
+
+      - name: Commit i push zmian
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          
+          # Commituj tylko, jeśli pojawiły się nowe pliki lub modyfikacje
+          if git diff --staged --quiet; then
+            echo "Brak zmian w danych ATIS."
+          else
+            git commit -m "Aktualizacja ATIS [skip ci]"
+            git push
+          fi
