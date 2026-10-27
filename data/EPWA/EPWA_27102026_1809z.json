@@ -1,0 +1,42 @@
+{
+  "airport": "EPWA",
+  "fetch_time_utc": "2026-10-27 18:09:17 UTC",
+  "reports": [
+    {
+      "type": "ARRIVAL",
+      "info_letter": "L",
+      "time": "1101Z",
+      "runway": "33",
+      "approach": "EXP U ARR ILS Z APCH FOR RWY 33",
+      "transition_level": "80",
+      "wind": "290 DEG, 7 KT, VRB BTN 220 AND 310",
+      "visibility": "TDZ 10 KM OR MORE",
+      "clouds": null,
+      "weather": null,
+      "temperature": "9",
+      "dewpoint": "6",
+      "altimeter": "QNH 1015",
+      "trend": "NOSIG",
+      "remarks": null,
+      "raw_text": "EPWA ARR ATIS L\n1101Z EPWA ARR L.\nTIME 1100.\nEXP U ARR ILS Z APCH FOR RWY 33.\nRWY 33 RCC 5, 5, 5.\n1ST PART, WET.\n2ND PART, WET.\n3RD PART, WET. RWY REPORT END.\nTRANSITION LEVEL 80.\nWIND 290 DEG, 7 KT, VRB BTN 220 AND 310\nDEG.\nVIS TDZ 10 KM OR MORE.\nCLD BKN 1600 FT.\nT 9.\nDP 6.\nQNH 1015.\nNOSIG.\nCAUTION. BIRD ACT.\nEND OF EPWA ARR L"
+    },
+    {
+      "type": "DEPARTURE",
+      "info_letter": "N",
+      "time": "1457Z",
+      "runway": "15, 11",
+      "approach": "EXP N ARR ILS Z",
+      "transition_level": "80",
+      "wind": "150 DEG, 3 KT",
+      "visibility": "CAVOK",
+      "clouds": "CAVOK",
+      "weather": "UP",
+      "temperature": "10",
+      "dewpoint": "4",
+      "altimeter": "QNH 1025",
+      "trend": "NOSIG",
+      "remarks": null,
+      "raw_text": "EPWA DEP ATIS N\n1457Z EPWA DEP N.\nTIME 1455.\nDEP RWY 15.\nARR RWY 11, EXP N ARR ILS Z.\nTRANSITION LEVEL 80.\nWIND 150 DEG, 3 KT.\nCAVOK.\nT 10.\nDP 4.\nQNH 1025.\nNOSIG.\nCAUTION. BIRD ACT.\nREPORT READY FOR START UP ON DELIVERY 1. 2. 1 DECIMAL 6. 0. 5.\nEND OF EPWA DEP N"
+    }
+  ]
+}
