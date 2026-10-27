@@ -1,0 +1,42 @@
+{
+  "airport": "EPGD",
+  "fetch_time_utc": "2026-10-27 22:06:38 UTC",
+  "reports": [
+    {
+      "type": "ARRIVAL",
+      "info_letter": "Z",
+      "time": "0855Z",
+      "runway": "29",
+      "approach": "EXP T ARR ILS APCH FOR",
+      "transition_level": null,
+      "wind": null,
+      "visibility": null,
+      "clouds": null,
+      "weather": null,
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": null,
+      "trend": null,
+      "remarks": null,
+      "raw_text": "EPGD ARR ATIS Z\n0855Z EPGD ATIS Z.\nTIME 0855.\nEXP T ARR ILS APCH FOR\nRWY 29.\nRWY 29 RCC 6, 6, 6. RWY\nREPORT END."
+    },
+    {
+      "type": "DEPARTURE",
+      "info_letter": "K",
+      "time": "0726Z",
+      "runway": "11",
+      "approach": "EXP R ARR VOR APCH FOR",
+      "transition_level": null,
+      "wind": null,
+      "visibility": null,
+      "clouds": null,
+      "weather": null,
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": null,
+      "trend": null,
+      "remarks": null,
+      "raw_text": "EPGD DEP ATIS K\n0726Z EPGD ATIS K.\nTIME 0726.\nEXP R ARR VOR APCH FOR\nRWY 11.\nRWY 11 RCC 5, 5, 5.\n1ST PART, WET.\n2ND PART, WET.\n3RD PART, WET. RWY\nREPORT END."
+    }
+  ]
+}
