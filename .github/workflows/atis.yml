@@ -41,9 +41,10 @@ jobs:
           git add data/
           
           if git diff --staged --quiet; then
-            echo "Brak nowych plików ATIS do zatwierdzenia."
+            echo "Brak nowych danych do zatwierdzenia."
           else
             git commit -m "Nowy ATIS $(date -u +'%Y-%m-%d %H:%M UTC') [skip ci]"
-            git pull --rebase origin main || git pull --rebase origin master || true
-            git push origin HEAD
+            # Pobieramy ewentualne nowsze commity z GitHuba i rebasujemy przed wysłaniem
+            git pull --rebase origin main
+            git push origin main
           fi

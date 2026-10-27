@@ -18,7 +18,6 @@ def extract_atis_blocks(html: str) -> list[str]:
     soup = BeautifulSoup(html, "html.parser")
     full_text = soup.get_text(separator="\n")
 
-    # Wyodrębnienie bloków zaczynających się od 'EPWA ARR ATIS I' lub 'EPKK ATIS B'
     pattern = re.compile(
         r'([A-Z]{4}\s+(?:ARR\s+|DEP\s+)?ATIS(?:\s+INFO)?\s+[A-Z]\b[\s\S]+?)(?=(?:[A-Z]{4}\s+(?:ARR\s+|DEP\s+)?ATIS(?:\s+INFO)?\s+[A-Z]\b|METAR\b|TAF\b|\Z))',
         re.IGNORECASE
@@ -27,20 +26,18 @@ def extract_atis_blocks(html: str) -> list[str]:
     matches = pattern.findall(full_text)
     blocks = []
     if matches:
-        for match in matches:
-            cleaned = "\n".join([line.strip() for line in match.strip().splitlines() if line.strip()])
-            if len(cleaned) > 20:
+        for m in matches:
+            cleaned = "\n".join([line.strip() for line in m.strip().splitlines() if line.strip()])
+            if len(cleaned) > 25:
                 blocks.append(cleaned)
     else:
-        # Awaryjne wyszukiwanie bloków tekstowych
         for tag in soup.find_all(["pre", "code", "p", "div"]):
             txt = tag.get_text(strip=True)
             if "ATIS" in txt and ("QNH" in txt or "INFO" in txt):
                 cleaned = tag.get_text(separator="\n", strip=True)
-                if len(cleaned) > 20 and cleaned not in blocks:
+                if len(cleaned) > 25 and cleaned not in blocks:
                     blocks.append(cleaned)
 
-    # Odrzucenie duplikatów
     unique_blocks = []
     for b in blocks:
         if not any(b in existing for existing in unique_blocks):
@@ -49,7 +46,7 @@ def extract_atis_blocks(html: str) -> list[str]:
     return unique_blocks
 
 def parse_atis_text(raw_text: str) -> dict:
-    """Parsuje poszczególne parametry z depeszy."""
+    """Parsuje poszczególne parametry z surowego tekstu ATIS."""
     parsed = {
         "type": "COMBINED",
         "info_letter": None,
@@ -163,13 +160,13 @@ def run():
 
             blocks = extract_atis_blocks(response.text)
             if not blocks:
-                print(f"[{icao}] Brak aktywnych depesz na stronie.")
+                print(f"[{icao}] Brak aktywnych depesz.")
                 continue
 
             parsed_reports = [parse_atis_text(b) for b in blocks]
             current_raw = [r["raw_text"] for r in parsed_reports]
 
-            # Sprawdzenie ostatniego zapisanego pliku dla tego lotniska
+            # Sprawdzenie ostatniego zapisanego pliku JSON w katalogu tego lotniska
             existing_files = sorted([f for f in os.listdir(airport_dir) if f.endswith(".json")])
             if existing_files:
                 last_file_path = os.path.join(airport_dir, existing_files[-1])
@@ -178,12 +175,11 @@ def run():
                         last_data = json.load(f)
                         last_raw = [r["raw_text"] for r in last_data.get("reports", [])]
                         if current_raw == last_raw:
-                            print(f"[{icao}] Brak zmian w ATIS od ostatniego pliku ({existing_files[-1]}).")
+                            print(f"[{icao}] ATIS nie zmienił się od pliku {existing_files[-1]}. Pomijam.")
                             continue
                 except Exception:
                     pass
 
-            # Nazwa pliku np. EPWA_27102026_1730z.json
             filename = f"{icao}_{date_str}_{time_str}z.json"
             filepath = os.path.join(airport_dir, filename)
 
@@ -199,10 +195,10 @@ def run():
                 json.dump(payload, f, ensure_ascii=False, indent=2)
 
             letters = ", ".join([f"{r['type']}: {r['info_letter']}" for r in parsed_reports if r['info_letter']])
-            print(f"[{icao}] Nowy plik: {filepath} ({letters})")
+            print(f"[{icao}] Utworzono nowy plik: {filepath} ({letters})")
 
         except Exception as err:
-            print(f"[{icao}] Błąd podczas przetwarzania {url}: {err}")
+            print(f"[{icao}] Błąd: {err}")
 
 if __name__ == "__main__":
     run()
