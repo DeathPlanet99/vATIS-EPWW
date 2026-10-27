@@ -180,4 +180,79 @@ def parse_atis_simple(raw_text: str, atis_type: str, info_letter: str) -> dict:
     if q:
         item["altimeter"] = q.group(1).upper()
 
-    tr = re.search(
+    tr = re.search(r'\b(NOSIG|TEMPO[^\.\n]*|BECMG[^\.\n]*)', raw_text)
+    if tr:
+        item["trend"] = tr.group(1).strip().rstrip('.')
+
+    rmk = re.findall(r'\b(CAUTION[^\.\n]+)', raw_text, re.IGNORECASE)
+    if rmk:
+        item["remarks"] = "; ".join([r.strip().rstrip('.') for r in rmk])
+
+    return item
+
+def run():
+    now_utc = datetime.now(timezone.utc)
+    date_str = now_utc.strftime("%d%m%Y")
+    time_str = now_utc.strftime("%H%M")
+
+    for icao in AIRPORTS:
+        airport_dir = os.path.join(DATA_DIR, icao)
+        os.makedirs(airport_dir, exist_ok=True)
+
+        url = BASE_URL.format(icao=icao)
+        try:
+            response = requests.get(url, headers=HEADERS, timeout=20)
+            response.raise_for_status()
+
+            raw_sections = extract_atis_sections(response.text, icao)
+            print(f"[{icao}] Znalazłem {len(raw_sections)} poprawnych bloków ATIS.")
+            
+            if not raw_sections:
+                continue
+
+            parsed_reports = [
+                parse_atis_simple(s["raw_text"], s["type"], s["info_letter"])
+                for s in raw_sections
+            ]
+
+            # Sprawdzamy surowy tekst, by wyłapać faktyczne zmiany w samej treści
+            current_raws = [r["raw_text"] for r in parsed_reports]
+
+            existing_files = sorted([f for f in os.listdir(airport_dir) if f.endswith(".json")])
+            if existing_files:
+                last_file_path = os.path.join(airport_dir, existing_files[-1])
+                try:
+                    with open(last_file_path, "r", encoding="utf-8") as f:
+                        last_data = json.load(f)
+                        last_reports = last_data.get("reports", [])
+                        last_raws = [r.get("raw_text") for r in last_reports if isinstance(r, dict)]
+                        
+                        # Wymuś aktualizację, jeśli poprzednio zapisał się błędny COMBINED
+                        had_wrong_combined = any(r.get("type") == "COMBINED" for r in last_reports) and any(r["type"] != "COMBINED" for r in parsed_reports)
+
+                        if current_raws == last_raws and not had_wrong_combined:
+                            print(f"[{icao}] ATIS bez zmian od {existing_files[-1]}. Pomijam tworzenie duplikatu.")
+                            continue
+                except Exception as err:
+                    print(f"[{icao}] Błąd czytania poprzedniego pliku: {err}")
+
+            filename = f"{icao}_{date_str}_{time_str}z.json"
+            filepath = os.path.join(airport_dir, filename)
+
+            payload = {
+                "airport": icao,
+                "fetch_time_utc": now_utc.strftime("%Y-%m-%d %H:%M:%S UTC"),
+                "reports": parsed_reports
+            }
+
+            with open(filepath, "w", encoding="utf-8") as f:
+                json.dump(payload, f, ensure_ascii=False, indent=2)
+
+            summary = ", ".join([f"{r['type']}: {r['info_letter']}" for r in parsed_reports])
+            print(f"[{icao}] ---> UTWORZONO PLIK: {filepath} ({summary})")
+
+        except Exception as err:
+            print(f"[{icao}] Błąd podczas pobierania {url}: {err}")
+
+if __name__ == "__main__":
+    run()
