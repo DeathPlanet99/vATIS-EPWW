@@ -1,6 +1,6 @@
 {
   "airport": "EPKK",
-  "fetch_time_utc": "2026-10-27 18:24:23 UTC",
+  "fetch_time_utc": "2026-10-27 18:31:32 UTC",
   "reports": [
     {
       "type": "ARRIVAL",
@@ -8,35 +8,17 @@
       "time": "1225Z",
       "runway": "07",
       "approach": "EXP H ARR FOR RNP APCH",
-      "transition_level": "80",
-      "wind": "070 DEG, 7 KT, VRB",
-      "visibility": "TDZ 10 KM OR MORE",
+      "transition_level": null,
+      "wind": null,
+      "visibility": null,
       "clouds": null,
       "weather": null,
-      "temperature": "11",
-      "dewpoint": "3",
-      "altimeter": "QNH 1024",
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": null,
       "trend": null,
       "remarks": null,
-      "raw_text": "EPKK ARR ATIS D\n1226Z EPKK ATIS D.\nTIME 1225.\nEXP H ARR FOR RNP APCH\nFOR RWY 07.\nRWY 07 RCC 6, 6, 5.\n3RD PART 50 %, WET. RWY\nREPORT END.\nTRANSITION LEVEL 80.\nWIND 070 DEG, 7 KT, VRB\nBTN 050 AND 110 DEG.\nVIS TDZ 10 KM OR MORE.\nCLD FEW 2500 FT.\nT 11, DP 3.\nQNH 1024.\nAFTER DEP CONTACT APCH\n121 DECIMAL 075.\nFOR CLR CONTACT\nDELIVERY.\nCAUTION. BIRDS ACT.\nEND OF ATIS D\nDeparture ATIS\n2026-10-08 19:28 UTC"
-    },
-    {
-      "type": "DEPARTURE",
-      "info_letter": "Z",
-      "time": "1857Z",
-      "runway": "07",
-      "approach": "EXP H ARR FOR RNP APCH FOR RWY 07",
-      "transition_level": "80",
-      "wind": "030 DEG, 3 KT",
-      "visibility": "TDZ 9 KM",
-      "clouds": null,
-      "weather": "RA",
-      "temperature": "15",
-      "dewpoint": "15",
-      "altimeter": "QNH 1007",
-      "trend": null,
-      "remarks": null,
-      "raw_text": "EPKK DEP ATIS Z\n1858Z EPKK ATIS Z.\nTIME 1857.\nEXP H ARR FOR RNP APCH FOR RWY 07.\nRWY 07 RCC 5, 5, 3.\nRWY WET. RWY REPORT END.\nTRANSITION LEVEL 80.\nATC CLR AVAILABLE VIA DATALINK OR\nCONTACT DELIVERY.\nWIND 030 DEG, 3 KT.\nVIS TDZ 9 KM.\nWX FBL RA.\nCLD BKN 4700 FT.\nT 15, DP 15.\nQNH 1007.\nAFTER DEP CONTACT APCH 121 DECIMAL 075.\nCAUTION. BIRDS ACT.\nEND OF ATIS Z"
+      "raw_text": "EPKK ARR ATIS D\n1226Z EPKK ATIS D.\nTIME 1225.\nEXP H ARR FOR RNP APCH\nFOR RWY 07.\nRWY 07 RCC 6, 6, 5.\n3RD PART 50 %, WET. RWY\nREPORT END."
     }
   ]
 }
