@@ -1,8 +1,0 @@
-
-==================================================
-LOTNISKO: EPGD | DATA: 2026-10-27 16:15:27 UTC
---- TREŚĆ ---
-00:00:00 UTC
-D-ATIS for EPGD
-Live digital ATIS for EPGD
-No ATIS available...
