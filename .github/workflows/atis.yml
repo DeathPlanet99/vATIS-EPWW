@@ -8,6 +8,11 @@ on:
 permissions:
   contents: write
 
+# Blokada zapobiegająca jednoczesnemu uruchomieniu dwóch zadań kolidujących ze sobą
+concurrency:
+  group: atis-scraper-lock
+  cancel-in-progress: false
+
 jobs:
   scrape-and-commit:
     runs-on: ubuntu-latest
@@ -34,17 +39,46 @@ jobs:
 
       - name: Commit i push zmian
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
           mkdir -p data
+
+          # Sprawdzenie czy scraper wygenerował nowe pliki
+          if [ -z "$(git status --porcelain data)" ]; then
+            echo "Brak nowych depesz do zatwierdzenia."
+            exit 0
+          fi
+
+          # 1. Chowanie nowych plików do schowka, aby zsynchronizować branch
+          git stash --include-untracked
+
+          # 2. Upewnienie się, że jesteśmy na gałęzi main i pobranie najnowszych commitów
+          git checkout main
+          git pull origin main --rebase
+
+          # 3. Przywrócenie wygenerowanych plików JSON
+          git stash pop
+
+          # 4. Dodanie plików i commit
           git add data/
-          
-          if git diff --staged --quiet; then
-            echo "Brak nowych danych do zatwierdzenia."
-          else
-            git commit -m "Nowy ATIS $(date -u +'%Y-%m-%d %H:%M UTC') [skip ci]"
+          git commit -m "Aktualizacja ATIS $(date -u +'%Y-%m-%d %H:%M UTC') [skip ci]"
+
+          # 5. Pętla wysyłająca z automatycznym rebase w razie spóźnionych commitów
+          PUSHED=false
+          for i in 1 2 3 4 5; do
+            if git push origin main; then
+              echo "Pomyślnie wysłano dane."
+              PUSHED=true
+              break
+            fi
+            echo "Próba $i nieudana. Ponawiam rebase..."
             git fetch origin main
-            git rebase origin/main || (git rebase --abort && git pull --rebase -X theirs origin main)
-            git push origin HEAD:main
+            git rebase origin/main || (git rebase --abort && git merge origin/main -X theirs -m "Merge remote [skip ci]")
+            sleep 2
+          done
+
+          if [ "$PUSHED" = false ]; then
+            echo "Błąd: nie udało się wysłać zmian do repozytorium."
+            exit 1
           fi
