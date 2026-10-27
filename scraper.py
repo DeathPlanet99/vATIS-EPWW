@@ -13,99 +13,87 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
 }
 
-def clean_block_text(text: str) -> str:
-    """Czyści linie bloku ATIS i ucina ewentualne stopki/kolejne sekcje."""
+def clean_block_lines(text: str) -> str:
+    """Czyści surowy blok tekstu z menu i stopki strony."""
     lines = [l.strip() for l in text.splitlines() if l.strip()]
-    trimmed = []
+    cleaned = []
     
     for l in lines:
-        # Odcinamy nagłówki kolejnych sekcji strony
-        if trimmed and re.search(r'^(?:Arrival ATIS|Departure ATIS|METAR|TAF|Formatting|History)\b', l, re.IGNORECASE):
+        # Odcinamy nagłówki kolejnych kart i sekcji serwisu
+        if cleaned and re.search(r'^(?:METAR\b|TAF\b|Arrival ATIS|Departure ATIS|Formatting\b|History\b)', l, re.IGNORECASE):
             break
-        trimmed.append(l)
-        # Znaczniki jednoznacznego końca danej depeszy
+        cleaned.append(l)
+        # Znaczniki końca konkretnej depeszy ATIS
         if re.search(r'^(?:END OF\b|REPORT\s+[A-Z]\b|ACK(?:NOWLEDGE)?\b)', l, re.IGNORECASE):
             break
 
-    return "\n".join(trimmed).strip()
+    return "\n".join(cleaned).strip()
 
 def extract_atis_sections(html: str, icao: str) -> list[dict]:
-    """
-    Wyszukuje sekcje ARRIVAL, DEPARTURE lub COMBINED na podstawie 
-    dokładnych składni nagłówków poszczególnych lotnisk.
-    """
+    """Wyszukuje wszystkie depesze ATIS dla danego lotniska bez ryzyka ucięcia przez navbar."""
     soup = BeautifulSoup(html, "html.parser")
     for tag in soup(["script", "style", "noscript", "svg"]):
         tag.decompose()
 
     full_text = soup.get_text(separator="\n")
-    
-    # 1. Szukamy pozycji nagłówka ARRIVAL: np. "EPKK ARR ATIS D" lub "EPWA ARR ATIS L"
-    arr_match = re.search(rf'\b{icao}\s+ARR\s+ATIS(?:\s+INFO)?\s+([A-Z])\b', full_text, re.IGNORECASE)
-    
-    # 2. Szukamy pozycji nagłówka DEPARTURE: np. "EPKK DEP ATIS Z" lub "EPWA DEP ATIS Z"
-    dep_match = re.search(rf'\b{icao}\s+DEP\s+ATIS(?:\s+INFO)?\s+([A-Z])\b', full_text, re.IGNORECASE)
+
+    # Wzorzec dopasowujący każdy nagłówek ATIS: np. EPWA ARR ATIS I, EPKK ATIS INFO B, EPGD ATIS C
+    header_pattern = re.compile(
+        rf'\b{icao}\s+(?:(ARR|DEP)\s+)?ATIS(?:\s+INFO)?\s+([A-Z])\b',
+        re.IGNORECASE
+    )
+
+    matches = list(header_pattern.finditer(full_text))
+    if not matches:
+        # Fallback dla składni bez słowa ATIS (np. EPWA ARR I)
+        header_pattern = re.compile(rf'\b{icao}\s+(ARR|DEP)\s+([A-Z])\b', re.IGNORECASE)
+        matches = list(header_pattern.finditer(full_text))
+
+    if not matches:
+        return []
 
     sections = []
-
-    # Szukamy początku sekcji METAR lub TAF, aby wiedzieć gdzie kończy się ostatnia depesza
-    metar_match = re.search(r'\b(?:METAR|TAF)\b', full_text)
-    end_of_all = metar_match.start() if metar_match else len(full_text)
-
-    # Scenariusz A: Lotnisko ma równolegle ARRIVAL i DEPARTURE (np. EPWA, EPKK, EPGD, EPPO)
-    if arr_match and dep_match:
-        if arr_match.start() < dep_match.start():
-            arr_raw = full_text[arr_match.start():dep_match.start()]
-            dep_raw = full_text[dep_match.start():end_of_all]
+    for i, match in enumerate(matches):
+        start_pos = match.start()
+        
+        # Koniec bloku to początek kolejnej depeszy lub sekcja METAR/TAF poniżej
+        if i + 1 < len(matches):
+            end_pos = matches[i + 1].start()
         else:
-            dep_raw = full_text[dep_match.start():arr_match.start()]
-            arr_raw = full_text[arr_match.start():end_of_all]
+            post_text = full_text[start_pos:]
+            # Szukamy słowa METAR lub TAF WYŁĄCZNIE po bieżącej depeszy (nie w navbarze)
+            stop_match = re.search(r'\b(?:METAR\b|TAF\b|Arrival ATIS|Departure ATIS)', post_text[30:], re.IGNORECASE)
+            end_pos = (start_pos + 30 + stop_match.start()) if stop_match else len(full_text)
+
+        raw_segment = full_text[start_pos:end_pos]
+        cleaned_text = clean_block_lines(raw_segment)
+
+        if len(cleaned_text) < 25:
+            continue
+
+        raw_type = match.group(1)
+        letter = match.group(2).upper()
+
+        if raw_type:
+            atis_type = "ARRIVAL" if raw_type.upper() == "ARR" else "DEPARTURE"
+        else:
+            if "ARR ATIS" in cleaned_text or f"{icao} ARR" in cleaned_text:
+                atis_type = "ARRIVAL"
+            elif "DEP ATIS" in cleaned_text or f"{icao} DEP" in cleaned_text:
+                atis_type = "DEPARTURE"
+            else:
+                atis_type = "COMBINED"
 
         sections.append({
-            "type": "ARRIVAL",
-            "info_letter": arr_match.group(1).upper(),
-            "raw_text": clean_block_text(arr_raw)
+            "type": atis_type,
+            "info_letter": letter,
+            "raw_text": cleaned_text
         })
-        sections.append({
-            "type": "DEPARTURE",
-            "info_letter": dep_match.group(1).upper(),
-            "raw_text": clean_block_text(dep_raw)
-        })
-
-    # Scenariusz B: Tylko ARRIVAL
-    elif arr_match:
-        arr_raw = full_text[arr_match.start():end_of_all]
-        sections.append({
-            "type": "ARRIVAL",
-            "info_letter": arr_match.group(1).upper(),
-            "raw_text": clean_block_text(arr_raw)
-        })
-
-    # Scenariusz C: Tylko DEPARTURE
-    elif dep_match:
-        dep_raw = full_text[dep_match.start():end_of_all]
-        sections.append({
-            "type": "DEPARTURE",
-            "info_letter": dep_match.group(1).upper(),
-            "raw_text": clean_block_text(dep_raw)
-        })
-
-    # Scenariusz D: Pojedynczy ATIS COMBINED (np. EPKK ATIS B lub EPGD ATIS C)
-    else:
-        # Szukamy nagłówka niebędącego drugą linią czasu (nie poprzedzonego czasem Zulu)
-        comb_match = re.search(rf'(?<!\d{{4}}Z\s)(?<!\d{{4}}Z\n)\b{icao}\s+ATIS(?:\s+INFO)?\s+([A-Z])\b', full_text, re.IGNORECASE)
-        if comb_match:
-            comb_raw = full_text[comb_match.start():end_of_all]
-            sections.append({
-                "type": "COMBINED",
-                "info_letter": comb_match.group(1).upper(),
-                "raw_text": clean_block_text(comb_raw)
-            })
 
     return sections
 
 def parse_atis_simple(raw_text: str, atis_type: str, info_letter: str) -> dict:
-    """Parsuje kategorie ATIS do płaskich pól tekstowych."""
+    """Parsuje kategorie z depeszy do płaskiego formatu tekstowego."""
     item = {
         "type": atis_type,
         "info_letter": info_letter,
@@ -125,7 +113,7 @@ def parse_atis_simple(raw_text: str, atis_type: str, info_letter: str) -> dict:
         "raw_text": raw_text
     }
 
-    # 1. Czas Zulu lub TIME
+    # 1. Czas
     m_z = re.search(r'\b(\d{4}Z)\b', raw_text)
     m_obs = re.search(r'\bTIME\s+(\d{4})\b', raw_text)
     if m_z:
@@ -134,9 +122,9 @@ def parse_atis_simple(raw_text: str, atis_type: str, info_letter: str) -> dict:
         item["time"] = m_obs.group(1) + "Z"
 
     # 2. Pasy w użyciu
-    rwy = re.findall(r'\b(?:DEP\s+RWY|ARR\s+RWY|RWY|RUNWAY)\s+([^\.\n]+)', raw_text, re.IGNORECASE)
+    rwy = re.findall(r'\b(?:DEP\s+RWY|ARR\s+RWY|RWY|RUNWAY)\s+([0-9]{2}[LCR]?)', raw_text, re.IGNORECASE)
     if rwy:
-        item["runway"] = ", ".join([r.strip().rstrip('.') for r in rwy])
+        item["runway"] = ", ".join(dict.fromkeys(rwy))
 
     # 3. Podejście (Approach)
     apch = re.search(r'\b(EXP[^\.\n]+(?:APCH|ILS)[^\.\n]*)', raw_text, re.IGNORECASE)
@@ -169,7 +157,7 @@ def parse_atis_simple(raw_text: str, atis_type: str, info_letter: str) -> dict:
     # 7. Zjawiska pogody
     wx = re.findall(r'\b([+-]?(?:VC)?(?:DZ|RA|SN|SG|IC|PL|GR|GS|UP|BR|FG|FU|VA|DU|SA|HZ|PY|PO|SQ|FC|SS|DS|TSRA|TS|SHRA|SHSN))\b', raw_text)
     if wx:
-        item["weather"] = " ".join(list(dict.fromkeys(wx)))
+        item["weather"] = " ".join(dict.fromkeys(wx))
 
     # 8. Temperatura i punkt rosy
     t = re.search(r'\bT\s*(-?\d+|M\d+)\b', raw_text)
@@ -191,7 +179,7 @@ def parse_atis_simple(raw_text: str, atis_type: str, info_letter: str) -> dict:
         item["trend"] = tr.group(1).strip().rstrip('.')
 
     # 11. Uwagi
-    rmk = re.findall(r'\b(CAUTION[^\.\n]+|REPORT\s+[A-Z]\b)', raw_text, re.IGNORECASE)
+    rmk = re.findall(r'\b(CAUTION[^\.\n]+)', raw_text, re.IGNORECASE)
     if rmk:
         item["remarks"] = "; ".join([r.strip().rstrip('.') for r in rmk])
 
@@ -213,7 +201,7 @@ def run():
 
             raw_sections = extract_atis_sections(response.text, icao)
             if not raw_sections:
-                print(f"[{icao}] Brak aktywnych depesz ATIS.")
+                print(f"[{icao}] Brak aktywnych depesz na stronie atis.guru.")
                 continue
 
             parsed_reports = [
@@ -221,13 +209,12 @@ def run():
                 for s in raw_sections
             ]
 
-            # Sygnatura uwzględnia typ (ARR/DEP), literę, czas i treść
             current_sig = [
                 (r["type"], r["info_letter"], r["time"], r["raw_text"])
                 for r in parsed_reports
             ]
 
-            # Sprawdzenie poprzedniego pliku
+            # Porównanie z ostatnim plikiem w folderze
             existing_files = sorted([f for f in os.listdir(airport_dir) if f.endswith(".json")])
             if existing_files:
                 last_file_path = os.path.join(airport_dir, existing_files[-1])
@@ -239,7 +226,10 @@ def run():
                             (r.get("type"), r.get("info_letter"), r.get("time"), r.get("raw_text"))
                             for r in last_reports if isinstance(r, dict)
                         ]
-                        if current_sig == last_sig:
+                        # Jeśli stary plik miał błędny typ COMBINED, a teraz mamy ARR/DEP, wymuś aktualizację
+                        had_wrong_combined = any(r.get("type") == "COMBINED" for r in last_reports) and any(r["type"] != "COMBINED" for r in parsed_reports)
+
+                        if current_sig == last_sig and not had_wrong_combined:
                             print(f"[{icao}] ATIS bez zmian od pliku {existing_files[-1]}. Pomijam.")
                             continue
                 except Exception as err:
@@ -258,7 +248,7 @@ def run():
                 json.dump(payload, f, ensure_ascii=False, indent=2)
 
             summary = ", ".join([f"{r['type']}: {r['info_letter']}" for r in parsed_reports])
-            print(f"[{icao}] Utworzono plik: {filepath} ({summary})")
+            print(f"[{icao}] Zapisano nowy plik: {filepath} ({summary})")
 
         except Exception as err:
             print(f"[{icao}] Błąd podczas pobierania {url}: {err}")
