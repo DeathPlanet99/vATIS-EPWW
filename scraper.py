@@ -14,7 +14,7 @@ HEADERS = {
 }
 
 def extract_atis_blocks(html: str, icao: str) -> list[str]:
-    """Wyciąga bloki tekstu ATIS ze strony, odrzucając menu boczne."""
+    """Wyciąga pojedyncze bloki depesz ATIS ze strony."""
     soup = BeautifulSoup(html, "html.parser")
     for tag in soup(["script", "style", "noscript"]):
         tag.decompose()
@@ -53,7 +53,7 @@ def extract_atis_blocks(html: str, icao: str) -> list[str]:
     if recording and current_block:
         blocks.append("\n".join(current_block))
 
-    # Rezerwowe dopasowanie Regex
+    # Fallback regex
     if not blocks:
         regex_fallback = re.compile(
             rf'({icao}\s+(?:ARR\s+|DEP\s+)?ATIS\s+[A-Z][\s\S]+?)(?=(?:{icao}\s+(?:ARR\s+|DEP\s+)?ATIS\s+[A-Z]|METAR\b|TAF\b|\Z))',
@@ -66,214 +66,110 @@ def extract_atis_blocks(html: str, icao: str) -> list[str]:
 
     return blocks
 
-def parse_vatis_formatting(raw_text: str, icao: str) -> dict:
-    """Parsuje parametry zgodnie ze specyfikacją vATIS Formatting."""
-    data = {
-        "observation": {
-            "facility": icao,
-            "atis_type": "COMBINED",
-            "info_letter": None,
-            "is_auto": False
-        },
-        "time": {
-            "time_zulu": None,
-            "time_observation": None
-        },
-        "runways_and_approaches": {
-            "departure_runways": [],
-            "arrival_runways": [],
-            "all_runways": [],
-            "approach": None
-        },
+def parse_atis_simple(raw_text: str, icao: str) -> dict:
+    """Parsuje czysty tekst z depeszy do płaskich kategorii tekstowych."""
+    item = {
+        "type": "COMBINED",
+        "info_letter": None,
+        "time": None,
+        "runway": None,
+        "approach": None,
         "transition_level": None,
-        "wind": {
-            "raw": None,
-            "direction_deg": None,
-            "speed_kt": None,
-            "gust_kt": None,
-            "variable_deg": None
-        },
-        "remark_wind": None,
-        "visibility": {
-            "raw": None,
-            "is_cavok": False,
-            "distance_meters": None
-        },
-        "runway_visual_range": {
-            "raw": None,
-            "details": []
-        },
-        "weather": [],
-        "clouds": {
-            "raw": None,
-            "layers": []
-        },
-        "temperature_c": None,
-        "dewpoint_c": None,
-        "altimeter": {
-            "qnh_hpa": None,
-            "altimeter_inhg": None
-        },
-        "wind_shear": None,
-        "runway_condition": None,
-        "trend_forecast": None,
-        "remarks": [],
+        "wind": None,
+        "visibility": None,
+        "clouds": None,
+        "weather": None,
+        "temperature": None,
+        "dewpoint": None,
+        "altimeter": None,
+        "trend": None,
+        "remarks": None,
         "raw_text": raw_text
     }
 
-    # 1. Observation
+    # 1. Typ depeszy (Arrival / Departure / Combined)
     if "ARR ATIS" in raw_text or f"{icao} ARR" in raw_text:
-        data["observation"]["atis_type"] = "ARRIVAL"
+        item["type"] = "ARRIVAL"
     elif "DEP ATIS" in raw_text or f"{icao} DEP" in raw_text:
-        data["observation"]["atis_type"] = "DEPARTURE"
+        item["type"] = "DEPARTURE"
 
-    info_match = re.search(rf'\b{icao}\s+(?:ARR\s+|DEP\s+)?ATIS\s+([A-Z])\b', raw_text, re.IGNORECASE) or \
-                 re.search(r'\b(?:ATIS|INFO(?:RMATION)?)\s+([A-Z])\b', raw_text, re.IGNORECASE)
-    if info_match:
-        data["observation"]["info_letter"] = info_match.group(1).upper()
+    # 2. Litera informacji (np. "I", "P")
+    match_letter = re.search(rf'\b{icao}\s+(?:ARR\s+|DEP\s+)?ATIS\s+([A-Z])\b', raw_text, re.IGNORECASE) or \
+                   re.search(r'\b(?:ATIS|INFO(?:RMATION)?)\s+([A-Z])\b', raw_text, re.IGNORECASE)
+    if match_letter:
+        item["info_letter"] = match_letter.group(1).upper()
 
-    data["observation"]["is_auto"] = bool(re.search(r'\bAUTO\b', raw_text))
+    # 3. Czas (np. "1431Z" lub "TIME 1430")
+    match_zulu = re.search(r'\b(\d{4}Z)\b', raw_text)
+    match_obs = re.search(r'\bTIME\s+(\d{4})\b', raw_text)
+    if match_zulu:
+        item["time"] = match_zulu.group(1)
+    elif match_obs:
+        item["time"] = match_obs.group(1)
 
-    # 2. Time
-    zulu_match = re.search(r'\b(\d{4})Z\b', raw_text)
-    if zulu_match:
-        data["time"]["time_zulu"] = zulu_match.group(1) + "Z"
+    # 4. Pasy w użyciu
+    rwy_matches = re.findall(r'\b(?:DEP\s+RWY|ARR\s+RWY|RWY|RUNWAY)\s+([^\.\n]+)', raw_text, re.IGNORECASE)
+    if rwy_matches:
+        item["runway"] = ", ".join([r.strip() for r in rwy_matches])
 
-    obs_match = re.search(r'\bTIME\s+(\d{4})\b', raw_text)
-    if obs_match:
-        data["time"]["time_observation"] = obs_match.group(1)
+    # 5. Podejście (Approach)
+    match_apch = re.search(r'\b(EXP[^\.\n]+APCH[^\.\n]*|EXP[^\.\n]+ILS[^\.\n]*)', raw_text, re.IGNORECASE)
+    if match_apch:
+        item["approach"] = match_apch.group(1).strip()
 
-    # 3. Runways & Approach
-    dep_rwy = re.findall(r'\bDEP(?:ARTURE)?\s+RWY\s+(\d{2}[LCR]?)', raw_text, re.IGNORECASE)
-    arr_rwy = re.findall(r'\bARR(?:IVAL)?\s+RWY\s+(\d{2}[LCR]?)', raw_text, re.IGNORECASE)
-    all_rwy = re.findall(r'\b(?:RWY|RUNWAY)\s+(\d{2}[LCR]?)', raw_text, re.IGNORECASE)
-    
-    data["runways_and_approaches"]["departure_runways"] = list(dict.fromkeys(dep_rwy))
-    data["runways_and_approaches"]["arrival_runways"] = list(dict.fromkeys(arr_rwy))
-    data["runways_and_approaches"]["all_runways"] = list(dict.fromkeys(all_rwy))
+    # 6. Poziom przejściowy (Transition Level)
+    match_tl = re.search(r'\bTRANSITION\s+LEVEL\s+(\d+)\b', raw_text, re.IGNORECASE)
+    if match_tl:
+        item["transition_level"] = match_tl.group(1)
 
-    apch_match = re.search(r'\b(EXP[^\.\n]+APCH[^\.\n]*)', raw_text, re.IGNORECASE)
-    if apch_match:
-        data["runways_and_approaches"]["approach"] = apch_match.group(1).strip()
+    # 7. Wiatr
+    match_wind = re.search(r'\bWIND\s+([^\.\n]+)', raw_text, re.IGNORECASE)
+    if match_wind:
+        item["wind"] = match_wind.group(1).strip().rstrip(".")
 
-    # 4. Transition Level
-    tl_match = re.search(r'\bTRANSITION\s+LEVEL\s+(\d+)\b', raw_text, re.IGNORECASE)
-    if tl_match:
-        data["transition_level"] = int(tl_match.group(1))
-
-    # 5. Wind
-    wind_match = re.search(r'\bWIND\s+([^\.\n]+)', raw_text, re.IGNORECASE)
-    if wind_match:
-        w_raw = wind_match.group(1).strip()
-        data["wind"]["raw"] = w_raw
-
-        deg_spd = re.search(r'(\d{3}|VRB)\s*(?:DEG|,)?\s*(\d+)\s*(?:G(\d+))?\s*KT', w_raw, re.IGNORECASE)
-        if deg_spd:
-            data["wind"]["direction_deg"] = "VRB" if deg_spd.group(1).upper() == "VRB" else int(deg_spd.group(1))
-            data["wind"]["speed_kt"] = int(deg_spd.group(2))
-            if deg_spd.group(3):
-                data["wind"]["gust_kt"] = int(deg_spd.group(3))
-
-        var_match = re.search(r'(\d{3})\s*V\s*(\d{3})', w_raw)
-        if var_match:
-            data["wind"]["variable_deg"] = {
-                "from": int(var_match.group(1)),
-                "to": int(var_match.group(2))
-            }
-
-    # 6. Remark Wind
-    rmk_wind = re.search(r'\b(?:RMK\s+WIND|REMARK\s+WIND|WIND\s+RWY\s+\d+)\s+([^\.\n]+)', raw_text, re.IGNORECASE)
-    if rmk_wind:
-        data["remark_wind"] = rmk_wind.group(0).strip()
-
-    # 7. Visibility
+    # 8. Widzialność i chmury
     if "CAVOK" in raw_text:
-        data["visibility"]["raw"] = "CAVOK"
-        data["visibility"]["is_cavok"] = True
-        data["clouds"]["raw"] = "CAVOK"
+        item["visibility"] = "CAVOK"
+        item["clouds"] = "CAVOK"
     else:
-        vis_match = re.search(r'\bVIS(?:IBILITY)?\s+([^\.\n]+)', raw_text, re.IGNORECASE)
-        if vis_match:
-            v_str = vis_match.group(1).strip()
-            data["visibility"]["raw"] = v_str
-            dist = re.search(r'(\d+)\s*(?:M|KM)?', v_str)
-            if dist:
-                val = int(dist.group(1))
-                data["visibility"]["distance_meters"] = val * 1000 if "KM" in v_str else val
+        match_vis = re.search(r'\bVIS(?:IBILITY)?\s+([^\.\n]+)', raw_text, re.IGNORECASE)
+        if match_vis:
+            item["visibility"] = match_vis.group(1).strip().rstrip(".")
 
-    # 8. Runway Visual Range (RVR)
-    rvr_matches = re.findall(r'\b(RVR\s+[^\.\n]+|R\d{2}[LCR]?/[^\.\n]+)', raw_text, re.IGNORECASE)
-    if rvr_matches:
-        data["runway_visual_range"]["raw"] = "; ".join([r.strip() for r in rvr_matches])
-        for r_item in rvr_matches:
-            parsed_rvr = re.search(r'RWY\s*(\d{2}[LCR]?)\s*(\d+M?)', r_item, re.IGNORECASE)
-            if parsed_rvr:
-                data["runway_visual_range"]["details"].append({
-                    "runway": parsed_rvr.group(1),
-                    "rvr": parsed_rvr.group(2)
-                })
+        cloud_matches = re.findall(r'\b((?:FEW|SCT|BKN|OVC|VV)\d{3}[A-Z]*|NSC|SKC|NCD)\b', raw_text)
+        if cloud_matches:
+            item["clouds"] = " ".join(cloud_matches)
 
-    # 9. Present Weather
-    wx_codes = re.findall(r'\b([+-]?(?:VC)?(?:DZ|RA|SN|SG|IC|PL|GR|GS|UP|BR|FG|FU|VA|DU|SA|HZ|PY|PO|SQ|FC|SS|DS|TSRA|TS|SHRA|SHSN))\b', raw_text)
-    if wx_codes:
-        data["weather"] = list(dict.fromkeys(wx_codes))
+    # 9. Zjawiska pogody
+    wx = re.findall(r'\b([+-]?(?:VC)?(?:DZ|RA|SN|SG|IC|PL|GR|GS|UP|BR|FG|FU|VA|DU|SA|HZ|PY|PO|SQ|FC|SS|DS|TSRA|TS|SHRA|SHSN))\b', raw_text)
+    if wx:
+        item["weather"] = " ".join(list(dict.fromkeys(wx)))
 
-    # 10. Clouds
-    if not data["visibility"]["is_cavok"]:
-        cloud_layers = re.findall(r'\b(FEW|SCT|BKN|OVC|VV)(\d{3})(?:CB|TCU)?\b', raw_text)
-        if cloud_layers:
-            data["clouds"]["raw"] = " ".join([f"{c[0]}{c[1]}" for c in cloud_layers])
-            for cl in cloud_layers:
-                data["clouds"]["layers"].append({
-                    "coverage": cl[0],
-                    "altitude_ft": int(cl[1]) * 100
-                })
-        elif re.search(r'\b(NSC|SKC|NCD)\b', raw_text):
-            data["clouds"]["raw"] = re.search(r'\b(NSC|SKC|NCD)\b', raw_text).group(1)
+    # 10. Temperatura i punkt rosy (np. T 12, DP 4)
+    match_temp = re.search(r'\bT\s*(-?\d+|M\d+)\b', raw_text)
+    if match_temp:
+        item["temperature"] = match_temp.group(1).replace("M", "-")
 
-    # 11. Temperature & Dewpoint
-    t_match = re.search(r'\bT\s*(-?\d+|M\d+)\b', raw_text)
-    if t_match:
-        val = t_match.group(1).replace("M", "-")
-        data["temperature_c"] = int(val)
+    match_dp = re.search(r'\bDP\s*(-?\d+|M\d+)\b', raw_text)
+    if match_dp:
+        item["dewpoint"] = match_dp.group(1).replace("M", "-")
 
-    dp_match = re.search(r'\bDP\s*(-?\d+|M\d+)\b', raw_text)
-    if dp_match:
-        val = dp_match.group(1).replace("M", "-")
-        data["dewpoint_c"] = int(val)
+    # 11. Ciśnienie (QNH)
+    match_qnh = re.search(r'\b(QNH\s*\d{4}|Q\d{4}|A\d{4})\b', raw_text, re.IGNORECASE)
+    if match_qnh:
+        item["altimeter"] = match_qnh.group(1).upper()
 
-    # 12. Altimeter (QNH / inHg)
-    qnh_match = re.search(r'\bQ(?:NH)?\s*(\d{4})\b', raw_text, re.IGNORECASE)
-    if qnh_match:
-        qnh_val = int(qnh_match.group(1))
-        data["altimeter"]["qnh_hpa"] = qnh_val
-        data["altimeter"]["altimeter_inhg"] = round(qnh_val * 0.02953, 2)
+    # 12. Trend (NOSIG, TEMPO, BECMG)
+    match_trend = re.search(r'\b(NOSIG|TEMPO[^\.\n]*|BECMG[^\.\n]*)', raw_text)
+    if match_trend:
+        item["trend"] = match_trend.group(1).strip().rstrip(".")
 
-    inhg_match = re.search(r'\bA(\d{4})\b', raw_text)
-    if inhg_match:
-        data["altimeter"]["altimeter_inhg"] = float(inhg_match.group(1)[:2] + "." + inhg_match.group(1)[2:])
-
-    # 13. Wind Shear
-    ws_match = re.search(r'\b(WS\s+[^\.\n]+|WIND\s+SHEAR[^\.\n]*)', raw_text, re.IGNORECASE)
-    if ws_match:
-        data["wind_shear"] = ws_match.group(1).strip()
-
-    # 14. Runway Condition
-    rc_match = re.search(r'\b(RUNWAY\s+CONDITION[^\.\n]*|RWY\s+CONDITION[^\.\n]*|SNOWTAM[^\.\n]*)', raw_text, re.IGNORECASE)
-    if rc_match:
-        data["runway_condition"] = rc_match.group(1).strip()
-
-    # 15. Trend Forecast
-    trend_match = re.search(r'\b(NOSIG|TEMPO[^\.\n]*|BECMG[^\.\n]*)', raw_text)
-    if trend_match:
-        data["trend_forecast"] = trend_match.group(1).strip()
-
-    # 16. Remarks / Cautions
-    cautions = re.findall(r'\b(CAUTION[^\.\n]+|REPORT\s+[A-Z]\b|ACK(?:NOWLEDGE)?\s+[^\.\n]+)', raw_text, re.IGNORECASE)
+    # 13. Uwagi (Remarks / Caution)
+    cautions = re.findall(r'\b(CAUTION[^\.\n]+|REPORT\s+[A-Z]\b)', raw_text, re.IGNORECASE)
     if cautions:
-        data["remarks"] = [c.strip() for c in cautions]
+        item["remarks"] = "; ".join([c.strip().rstrip(".") for c in cautions])
 
-    return data
+    return item
 
 def run():
     now_utc = datetime.now(timezone.utc)
@@ -291,13 +187,13 @@ def run():
 
             blocks = extract_atis_blocks(response.text, icao)
             if not blocks:
-                print(f"[{icao}] Brak aktywnych depesz ATIS.")
+                print(f"[{icao}] Brak aktywnych depesz.")
                 continue
 
-            parsed_reports = [parse_vatis_formatting(b, icao) for b in blocks]
+            parsed_reports = [parse_atis_simple(b, icao) for b in blocks]
             current_raw = [r["raw_text"] for r in parsed_reports]
 
-            # Sprawdzenie ostatniego zapisanego pliku JSON dla danego portu
+            # Sprawdzenie ostatniego zapisanego pliku JSON dla danego lotniska
             existing_files = sorted([f for f in os.listdir(airport_dir) if f.endswith(".json")])
             if existing_files:
                 last_file_path = os.path.join(airport_dir, existing_files[-1])
@@ -306,7 +202,7 @@ def run():
                         last_data = json.load(f)
                         last_raw = [r.get("raw_text") for r in last_data.get("reports", [])]
                         if current_raw == last_raw:
-                            print(f"[{icao}] ATIS bez zmian od ostatniego pliku ({existing_files[-1]}).")
+                            print(f"[{icao}] ATIS bez zmian od pliku {existing_files[-1]}. Pomijam.")
                             continue
                 except Exception:
                     pass
@@ -317,19 +213,14 @@ def run():
             payload = {
                 "airport": icao,
                 "fetch_time_utc": now_utc.strftime("%Y-%m-%d %H:%M:%S UTC"),
-                "iso_timestamp": now_utc.isoformat(),
-                "reports_count": len(parsed_reports),
                 "reports": parsed_reports
             }
 
             with open(filepath, "w", encoding="utf-8") as f:
                 json.dump(payload, f, ensure_ascii=False, indent=2)
 
-            info_letters = ", ".join([
-                f"{r['observation']['atis_type']}: {r['observation']['info_letter']}" 
-                for r in parsed_reports if r['observation']['info_letter']
-            ])
-            print(f"[{icao}] Zapisano nowy stan: {filepath} ({info_letters})")
+            info_letters = ", ".join([f"{r['type']}: {r['info_letter']}" for r in parsed_reports if r['info_letter']])
+            print(f"[{icao}] Utworzono plik: {filepath} ({info_letters})")
 
         except Exception as err:
             print(f"[{icao}] Błąd: {err}")
