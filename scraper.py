@@ -14,7 +14,7 @@ HEADERS = {
 }
 
 def extract_atis_blocks(html: str, icao: str) -> list[str]:
-    """Wyciąga pojedyncze bloki tekstowe ATIS ze strony, odrzucając menu i inne sekcje."""
+    """Wyciąga bloki tekstu ATIS ze strony, odrzucając menu boczne."""
     soup = BeautifulSoup(html, "html.parser")
     for tag in soup(["script", "style", "noscript"]):
         tag.decompose()
@@ -53,7 +53,7 @@ def extract_atis_blocks(html: str, icao: str) -> list[str]:
     if recording and current_block:
         blocks.append("\n".join(current_block))
 
-    # Rezerwowe dopasowanie wyrażeniem regularnym w razie odmiennego układu strony
+    # Rezerwowe dopasowanie Regex
     if not blocks:
         regex_fallback = re.compile(
             rf'({icao}\s+(?:ARR\s+|DEP\s+)?ATIS\s+[A-Z][\s\S]+?)(?=(?:{icao}\s+(?:ARR\s+|DEP\s+)?ATIS\s+[A-Z]|METAR\b|TAF\b|\Z))',
@@ -67,10 +67,7 @@ def extract_atis_blocks(html: str, icao: str) -> list[str]:
     return blocks
 
 def parse_vatis_formatting(raw_text: str, icao: str) -> dict:
-    """
-    Parsuje parametry lotnicze zgodnie ze specyfikacją vATIS Formatting:
-    https://vatis.app/docs/client/atis-configuration/formatting
-    """
+    """Parsuje parametry zgodnie ze specyfikacją vATIS Formatting."""
     data = {
         "observation": {
             "facility": icao,
@@ -124,7 +121,7 @@ def parse_vatis_formatting(raw_text: str, icao: str) -> dict:
         "raw_text": raw_text
     }
 
-    # 1. Observation & Type
+    # 1. Observation
     if "ARR ATIS" in raw_text or f"{icao} ARR" in raw_text:
         data["observation"]["atis_type"] = "ARRIVAL"
     elif "DEP ATIS" in raw_text or f"{icao} DEP" in raw_text:
@@ -245,7 +242,7 @@ def parse_vatis_formatting(raw_text: str, icao: str) -> dict:
         val = dp_match.group(1).replace("M", "-")
         data["dewpoint_c"] = int(val)
 
-    # 12. Altimeter (QNH)
+    # 12. Altimeter (QNH / inHg)
     qnh_match = re.search(r'\bQ(?:NH)?\s*(\d{4})\b', raw_text, re.IGNORECASE)
     if qnh_match:
         qnh_val = int(qnh_match.group(1))
