@@ -44,7 +44,21 @@ jobs:
             echo "Brak nowych danych do zatwierdzenia."
           else
             git commit -m "Nowy ATIS $(date -u +'%Y-%m-%d %H:%M UTC') [skip ci]"
-            # Pobieramy ewentualne nowsze commity z GitHuba i rebasujemy przed wysłaniem
-            git pull --rebase origin main
-            git push origin main
+            # Pobieramy ewentualne nowsze commity z GitHuba i rebasujemy przed wysłaniem.
+            # Powtarzamy próbę, jeśli między pull a push pojawi się nowy commit na main.
+            for attempt in 1 2 3; do
+              git pull --rebase origin main
+              if git push origin main; then
+                echo "Zmiany wypchnięte do origin/main."
+                break
+              fi
+
+              if [ "$attempt" -eq 3 ]; then
+                echo "Nie udało się wypchnąć zmian po 3 próbach."
+                exit 1
+              fi
+
+              echo "Push odrzucony (non-fast-forward). Ponawiam: próba ${attempt}/3..."
+              sleep 2
+            done
           fi
