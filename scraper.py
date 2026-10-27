@@ -10,75 +10,81 @@ BASE_URL = "https://atis.guru/atis/{icao}"
 DATA_DIR = "data"
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 }
 
-def extract_blocks(html: str, icao: str) -> list[dict]:
-    """Wyszukuje bloki bez usuwania jakichkolwiek linii ze środka depeszy."""
+def extract_blocks(html: str, icao: str) -> list[str]:
+    """
+    Najprostszy i najbardziej niezawodny ekstraktor od zera.
+    Czyta linijka po linijce, nie wycina niczego w środku depeszy.
+    """
     soup = BeautifulSoup(html, "html.parser")
-    
-    # Usuwamy tylko zewnętrzne znaczniki HTML (menu, stopki)
-    for tag in soup(["script", "style", "nav", "header", "footer"]):
+    for tag in soup(["script", "style", "noscript", "svg"]):
         tag.decompose()
 
     text = soup.get_text(separator="\n")
-    # Zamiana wielokrotnych spacji w jednej linii na pojedyncze, by ułatwić szukanie regexem
-    lines = [re.sub(r'[ \t]+', ' ', l).strip() for l in text.splitlines()]
-    clean_text = "\n".join([l for l in lines if l])
-
-    # Wzorzec szukający nagłówka ATIS gdziekolwiek w tekście (brak sztywnego ^)
-    pattern = re.compile(rf'\b({icao}\s+(?:ARR\s+|DEP\s+)?ATIS(?:\s+INFO(?:RMATION)?)?\s+[A-Z])\b', re.IGNORECASE)
-    matches = list(pattern.finditer(clean_text))
-    
-    # Awaryjnie, gdyby na stronie brakowało słowa ATIS (np. EPWA ARR L)
-    if not matches:
-        pattern = re.compile(rf'\b({icao}\s+(?:ARR|DEP)\s+[A-Z])\b', re.IGNORECASE)
-        matches = list(pattern.finditer(clean_text))
-
-    valid_matches = []
-    for m in matches:
-        # Jeśli przed nagłówkiem znajduje się czas (np. "1226Z "), to znaczy, 
-        # że jest to tylko powtórka w środku depeszy - ignorujemy.
-        prefix = clean_text[max(0, m.start()-15):m.start()]
-        if re.search(r'\d{4}Z\s*$', prefix, re.IGNORECASE):
-            continue
-        valid_matches.append(m)
+    lines = [line.strip() for line in text.splitlines() if line.strip()]
 
     blocks = []
-    for i, m in enumerate(valid_matches):
-        start_idx = m.start()
+    current_block = []
+    in_block = False
+
+    # Jakie słowa po kodzie ICAO oznaczają główny nagłówek ATIS
+    valid_starts = ["ARR", "DEP", "ATIS", "INFO", "INFORMATION"]
+
+    for line in lines:
+        parts = line.split()
         
-        # Koniec tego bloku to początek następnego, albo (jeśli to ostatni) początek sekcji METAR/TAF
-        if i + 1 < len(valid_matches):
-            end_idx = valid_matches[i+1].start()
-        else:
-            post_text = clean_text[start_idx:]
-            stop_match = re.search(r'\n(?:METAR|TAF)\b', post_text, re.IGNORECASE)
-            end_idx = start_idx + stop_match.start() if stop_match else len(clean_text)
+        # 1. Wykrywanie twardego początku depeszy
+        if len(parts) >= 2 and parts[0].upper() == icao.upper() and parts[1].upper() in valid_starts:
+            if in_block:
+                blocks.append("\n".join(current_block))
+            in_block = True
+            current_block = [line]
+            continue
+
+        if in_block:
+            upper_line = line.upper()
             
-        # Zapisujemy PEŁNY tekst bez odrzucania jakichkolwiek linijek
-        raw_text = clean_text[start_idx:end_idx].strip()
-        
-        header_str = m.group(1).upper()
-        if "ARR" in header_str:
-            atis_type = "ARRIVAL"
-        elif "DEP" in header_str:
-            atis_type = "DEPARTURE"
-        else:
-            atis_type = "COMBINED"
-            
-        letter = header_str.split()[-1]
-        
-        blocks.append({
-            "type": atis_type,
-            "info_letter": letter,
-            "raw_text": raw_text
-        })
-        
+            # 2. Wykrycie znaczników z innej bajki (np. nagłówki strony), które zamykają czytanie ATIS-u
+            if upper_line in ["METAR", "TAF", "FORMATTING", "HISTORY"] or upper_line.startswith("METAR ") or upper_line.startswith("TAF "):
+                blocks.append("\n".join(current_block))
+                in_block = False
+                current_block = []
+                continue
+                
+            # Zbieramy KAŻDĄ LINIJKĘ tekstu
+            current_block.append(line)
+
+            # 3. Wykrycie końca lotniczej transmisji
+            if upper_line.startswith("END OF") or upper_line.startswith("REPORT ") or upper_line.startswith("ACKNOWLEDGE "):
+                blocks.append("\n".join(current_block))
+                in_block = False
+                current_block = []
+                continue
+
+    if in_block and current_block:
+        blocks.append("\n".join(current_block))
+
     return blocks
 
-def parse_atis_simple(raw_text: str, atis_type: str, info_letter: str) -> dict:
-    """Parsuje kategorie, szukając parametrów w całym surowym tekście."""
+def parse_atis_simple(raw_text: str) -> dict:
+    """Parsowanie parametrów bezpośrednio z wyłapanego całego bloku tekstu."""
+    lines = raw_text.splitlines()
+    first_line = lines[0].upper()
+    
+    # Ustalanie typu
+    if "ARR" in first_line:
+        atis_type = "ARRIVAL"
+    elif "DEP" in first_line:
+        atis_type = "DEPARTURE"
+    else:
+        atis_type = "COMBINED"
+
+    # Ustalanie litery
+    m_let = re.search(r'\b([A-Z])$', first_line)
+    info_letter = m_let.group(1) if m_let else "?"
+
     item = {
         "type": atis_type,
         "info_letter": info_letter,
@@ -98,13 +104,12 @@ def parse_atis_simple(raw_text: str, atis_type: str, info_letter: str) -> dict:
         "raw_text": raw_text
     }
 
-    # Wyciąganie czasu - najważniejszy parametr do sprawdzania nowych depesz
     m_obs = re.search(r'\bTIME\s+(\d{4})\b', raw_text, re.IGNORECASE)
     m_z = re.search(r'\b(\d{4})Z\b', raw_text, re.IGNORECASE)
     if m_obs:
         item["time"] = m_obs.group(1) + "Z"
     elif m_z:
-        item["time"] = m_z.group(1) + "Z"
+        item["time"] = m_z.group(1).upper()
 
     rwy = re.findall(r'\b(?:DEP\s+RWY|ARR\s+RWY|RWY|RUNWAY)\s+([0-9]{2}[LCR]?)', raw_text, re.IGNORECASE)
     if rwy:
@@ -122,34 +127,34 @@ def parse_atis_simple(raw_text: str, atis_type: str, info_letter: str) -> dict:
     if w:
         item["wind"] = w.group(1).strip().rstrip('.')
 
-    if "CAVOK" in raw_text:
+    if "CAVOK" in raw_text.upper():
         item["visibility"] = "CAVOK"
         item["clouds"] = "CAVOK"
     else:
         vis = re.search(r'\bVIS(?:IBILITY)?\s+([^\.\n]+)', raw_text, re.IGNORECASE)
         if vis:
             item["visibility"] = vis.group(1).strip().rstrip('.')
-        cld = re.findall(r'\b((?:FEW|SCT|BKN|OVC|VV)\d{3}[A-Z]*|NSC|SKC|NCD)\b', raw_text)
+        cld = re.findall(r'\b((?:FEW|SCT|BKN|OVC|VV)\d{3}[A-Z]*|NSC|SKC|NCD)\b', raw_text, re.IGNORECASE)
         if cld:
-            item["clouds"] = " ".join(cld)
+            item["clouds"] = " ".join(cld).upper()
 
-    wx = re.findall(r'\b([+-]?(?:VC)?(?:DZ|RA|SN|SG|IC|PL|GR|GS|UP|BR|FG|FU|VA|DU|SA|HZ|PY|PO|SQ|FC|SS|DS|TSRA|TS|SHRA|SHSN))\b', raw_text)
+    wx = re.findall(r'\b([+-]?(?:VC)?(?:DZ|RA|SN|SG|IC|PL|GR|GS|UP|BR|FG|FU|VA|DU|SA|HZ|PY|PO|SQ|FC|SS|DS|TSRA|TS|SHRA|SHSN))\b', raw_text, re.IGNORECASE)
     if wx:
-        item["weather"] = " ".join(dict.fromkeys(wx))
+        item["weather"] = " ".join(dict.fromkeys(wx)).upper()
 
-    t = re.search(r'\bT\s*(-?\d+|M\d+)\b', raw_text)
+    t = re.search(r'\bT\s*(-?\d+|M\d+)\b', raw_text, re.IGNORECASE)
     if t:
-        item["temperature"] = t.group(1).replace("M", "-")
+        item["temperature"] = t.group(1).upper().replace("M", "-")
 
-    dp = re.search(r'\bDP\s*(-?\d+|M\d+)\b', raw_text)
+    dp = re.search(r'\bDP\s*(-?\d+|M\d+)\b', raw_text, re.IGNORECASE)
     if dp:
-        item["dewpoint"] = dp.group(1).replace("M", "-")
+        item["dewpoint"] = dp.group(1).upper().replace("M", "-")
 
     q = re.search(r'\b(QNH\s*\d{4}|Q\d{4}|A\d{4})\b', raw_text, re.IGNORECASE)
     if q:
         item["altimeter"] = q.group(1).upper()
 
-    tr = re.search(r'\b(NOSIG|TEMPO[^\.\n]*|BECMG[^\.\n]*)', raw_text)
+    tr = re.search(r'\b(NOSIG|TEMPO[^\.\n]*|BECMG[^\.\n]*)', raw_text, re.IGNORECASE)
     if tr:
         item["trend"] = tr.group(1).strip().rstrip('.')
 
@@ -171,42 +176,40 @@ def run():
 
         url = BASE_URL.format(icao=icao)
         try:
-            response = requests.get(url, headers=HEADERS, timeout=20)
+            response = requests.get(url, headers=HEADERS, timeout=15)
             response.raise_for_status()
 
             raw_blocks = extract_blocks(response.text, icao)
             print(f"[{icao}] Odczytano {len(raw_blocks)} bloków ze strony.")
+            
             if not raw_blocks:
                 continue
 
-            parsed_reports = [parse_atis_simple(b["raw_text"], b["type"], b["info_letter"]) for b in raw_blocks]
-            
-            # Weryfikacja JEDYNIE na podstawie czasu TIME, litery i typu
-            current_signature = [(r["type"], r["info_letter"], r["time"]) for r in parsed_reports]
+            parsed_reports = [parse_atis_simple(b) for b in raw_blocks]
+            current_texts = [r["raw_text"] for r in parsed_reports]
 
+            # Sprawdzenie duplikatów: jeśli surowy tekst co do linijki jest TEN SAM, to nie zapisujemy
             existing_files = [f for f in os.listdir(airport_dir) if f.endswith(".json")]
             if existing_files:
-                # Bierzemy chronologicznie ostatnio zmodyfikowany plik
+                # Bierzemy plik najpóźniej modyfikowany w systemie
                 existing_files.sort(key=lambda x: os.path.getmtime(os.path.join(airport_dir, x)))
                 last_file_path = os.path.join(airport_dir, existing_files[-1])
                 try:
                     with open(last_file_path, "r", encoding="utf-8") as f:
                         last_data = json.load(f)
-                        last_reports = last_data.get("reports", [])
-                        last_signature = [(r.get("type"), r.get("info_letter"), r.get("time")) for r in last_reports if isinstance(r, dict)]
+                        last_texts = [r.get("raw_text") for r in last_data.get("reports", []) if isinstance(r, dict)]
                         
-                        # Jeśli Typ, Litera i Czas się zgadzają -> jest to ta sama depesza
-                        if current_signature == last_signature:
-                            print(f"[{icao}] Czas (TIME) i litery nie uległy zmianie. Pomijam zapis.")
+                        if current_texts == last_texts:
+                            print(f"[{icao}] Brak zmian względem {existing_files[-1]}. Skrypt pomija zapis.")
                             continue
                 except Exception as err:
-                    print(f"[{icao}] Zignorowano błąd odczytu poprzedniego pliku: {err}")
+                    print(f"[{icao}] Uwaga: Nie udało się wczytać starego pliku: {err}")
 
-            # Tworzenie nazwy na podstawie zadeklarowanego czasu z depeszy (np. TIME 1100)
-            file_time_str = now_utc.strftime("%H%M") # Domyślnie obecna godzina, jeśli brak TIME
+            # Wyznaczanie nazwy pliku na podstawie zadeklarowanego TIME (np. 1100z)
+            file_time_str = now_utc.strftime("%H%M") # Godzina systemowa jako zabezpieczenie
             if parsed_reports and parsed_reports[0].get("time"):
                 t = parsed_reports[0]["time"]
-                digits = re.sub(r'\D', '', t) # Wyciągamy same cyfry (np z 1100Z -> 1100)
+                digits = re.sub(r'\D', '', t) # Wyciągnięcie samych 4 cyfr
                 if len(digits) == 4:
                     file_time_str = digits
 
@@ -222,7 +225,7 @@ def run():
             with open(filepath, "w", encoding="utf-8") as f:
                 json.dump(payload, f, ensure_ascii=False, indent=2)
 
-            summary = ", ".join([f"{r['type']}: {r['info_letter']} ({r['time']})" for r in parsed_reports])
+            summary = ", ".join([f"{r['type']} ({r['time']})" for r in parsed_reports])
             print(f"[{icao}] ---> ZAPISANO NOWY PLIK: {filepath} [{summary}]")
 
         except Exception as err:
