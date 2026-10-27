@@ -2,9 +2,8 @@ name: Monitor ATIS
 
 on:
   schedule:
-    # Uruchamianie co 30 minut
-    - cron: '*/30 * * * *'
-  # Umożliwia ręczne uruchomienie z panelu GitHub (Actions -> Run workflow)
+    # Uruchamianie o :10 i :40 każdej godziny
+    - cron: '10,40 * * * *'
   workflow_dispatch:
 
 jobs:

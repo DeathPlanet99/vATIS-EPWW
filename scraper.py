@@ -1,4 +1,5 @@
 import os
+import json
 from datetime import datetime, timezone
 import requests
 from bs4 import BeautifulSoup
@@ -13,13 +14,9 @@ HEADERS = {
 
 def clean_text(raw_html: str) -> str:
     soup = BeautifulSoup(raw_html, "html.parser")
-    
-    # Próba odnalezienia głównego kontenera z depeszą / tekstem ATIS
-    # Jeśli serwis zmieni strukturę, soup.get_text() zadziała jako bezpieczny fallback
     container = soup.find("main") or soup.find("div", class_="container") or soup.body
     if not container:
         return ""
-    
     lines = [line.strip() for line in container.get_text(separator="\n").splitlines() if line.strip()]
     return "\n".join(lines)
 
@@ -34,35 +31,43 @@ def run():
 
             current_text = clean_text(response.text)
             if not current_text:
-                print(f"[{icao}] Brak tekstu do zapisania.")
+                print(f"[{icao}] Brak tekstu do pobrania.")
                 continue
 
-            file_path = os.path.join(DATA_DIR, f"{icao}.txt")
-            last_entry = ""
+            json_path = os.path.join(DATA_DIR, f"{icao}.json")
+            history = []
 
-            # Sprawdzenie ostatniego zapisu, aby nie dublować wpisów
-            if os.path.exists(file_path):
-                with open(file_path, "r", encoding="utf-8") as f:
-                    content = f.read().strip()
-                    if "--- TREŚĆ ---" in content:
-                        last_entry = content.split("--- TREŚĆ ---")[-1].strip()
+            # Wczytanie dotychczasowej historii z pliku JSON
+            if os.path.exists(json_path):
+                try:
+                    with open(json_path, "r", encoding="utf-8") as f:
+                        history = json.load(f)
+                except json.JSONDecodeError:
+                    history = []
 
-            if current_text == last_entry:
-                print(f"[{icao}] Brak zmian od ostatniego pobrania.")
+            # Sprawdzenie, czy treść różni się od ostatniego wpisu
+            if history and history[-1].get("raw_text") == current_text:
+                print(f"[{icao}] Brak zmian w ATIS od ostatniego sprawdzenia.")
                 continue
 
-            timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
-            
-            with open(file_path, "a", encoding="utf-8") as f:
-                f.write(f"\n{'='*50}\n")
-                f.write(f"LOTNISKO: {icao} | DATA: {timestamp}\n")
-                f.write("--- TREŚĆ ---\n")
-                f.write(current_text + "\n")
+            now_utc = datetime.now(timezone.utc)
+            new_entry = {
+                "airport": icao,
+                "timestamp_utc": now_utc.strftime("%Y-%m-%d %H:%M:%S UTC"),
+                "iso_timestamp": now_utc.isoformat(),
+                "raw_text": current_text
+            }
 
-            print(f"[{icao}] Nowy stan zapisany ({timestamp}).")
+            history.append(new_entry)
+
+            # Zapis z wcięciami, aby diff w Git był czytelny
+            with open(json_path, "w", encoding="utf-8") as f:
+                json.dump(history, f, ensure_ascii=False, indent=2)
+
+            print(f"[{icao}] Dodano nowy wpis do {icao}.json.")
 
         except Exception as err:
-            print(f"[{icao}] Błąd podczas pobierania {url}: {err}")
+            print(f"[{icao}] Błąd podczas przetwarzania {url}: {err}")
 
 if __name__ == "__main__":
     run()
