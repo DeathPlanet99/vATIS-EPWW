@@ -1,0 +1,217 @@
+{
+  "airport": "EPGD",
+  "fetch_time_utc": "2026-10-28 14:31:45 UTC",
+  "reports": [
+    {
+      "icao": "EPGD",
+      "type": "ARRIVAL",
+      "info_letter": "Z",
+      "issue_time": "0855Z",
+      "time": "0855Z",
+      "runway": "29",
+      "approach": "EXP T ARR ILS APCH FOR RWY 29",
+      "transition_level": "80",
+      "wind": "190 DEG, 7 KT",
+      "visibility": "CAVOK",
+      "clouds": "CAVOK",
+      "weather": null,
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": "QNH 1022",
+      "trend": null,
+      "remarks": "CAUTION: POSSIBLE GPS JAMMING AND SPOOFING",
+      "complete": false,
+      "details": {
+        "observation_time": "0855Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 190 DEG, 7 KT",
+          "direction_deg": 190,
+          "variable_direction": false,
+          "speed_kt": 7
+        },
+        "cavok": true,
+        "qnh_hpa": 1022
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPGD ATIS Z"
+        },
+        {
+          "key": "time",
+          "text": "TIME 0855"
+        },
+        {
+          "key": "approach",
+          "text": "EXP T ARR ILS APCH FOR RWY 29"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 29 RCC 6, 6, 6"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION: POSSIBLE GPS JAMMING AND SPOOFING"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 190 DEG, 7 KT"
+        },
+        {
+          "key": "cavok",
+          "text": "CAVOK"
+        },
+        {
+          "key": "other",
+          "text": "T 10, DP 5"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1022"
+        },
+        {
+          "key": "other",
+          "text": "ATC CLR AVAILABLE VIA DATALINK GND IS NOT OPERATING CONTACT GDANSK TOWER"
+        },
+        {
+          "key": "other",
+          "text": "END OF ATIS Z Departure ATIS 2026-08-06 07:33 UTC"
+        }
+      ],
+      "raw_text": "EPGD ARR ATIS Z 0855Z EPGD ATIS Z. TIME 0855. EXP T ARR ILS APCH FOR RWY 29. RWY 29 RCC 6, 6, 6. RWY REPORT END. TRANSITION LEVEL 80. CAUTION: POSSIBLE GPS JAMMING AND SPOOFING. WIND 190 DEG, 7 KT. CAVOK. T 10, DP 5. QNH 1022. ATC CLR AVAILABLE VIA DATALINK GND IS NOT OPERATING CONTACT GDANSK TOWER. END OF ATIS Z Departure ATIS 2026-08-06 07:33 UTC"
+    },
+    {
+      "icao": "EPGD",
+      "type": "DEPARTURE",
+      "info_letter": "K",
+      "issue_time": "0726Z",
+      "time": "0726Z",
+      "runway": "11",
+      "approach": "EXP R ARR VOR APCH FOR RWY 11",
+      "transition_level": "80",
+      "wind": "060 DEG, 5 KT, VRB BTN 010 AND 080 DEG",
+      "visibility": "TDZ 10 KM OR MORE",
+      "clouds": "FEW 900 FT, CLD BKN 1900 FT",
+      "weather": null,
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": "QNH 1015",
+      "trend": null,
+      "remarks": "CAUTION: POSSIBLE GPS JAMMING AND SPOOFING CAUTION BIRDS ACT",
+      "complete": false,
+      "details": {
+        "observation_time": "0726Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 060 DEG, 5 KT, VRB BTN 010 AND 080 DEG",
+          "direction_deg": 60,
+          "variable_direction": false,
+          "speed_kt": 5
+        },
+        "visibility": {
+          "raw": "VIS TDZ 10 KM OR MORE",
+          "meters": 10000,
+          "or_more": true
+        },
+        "clouds": {
+          "raw": "CLD FEW 900 FT, CLD BKN 1900 FT",
+          "layers": [
+            {
+              "cover": "FEW",
+              "base_ft": 900
+            },
+            {
+              "cover": "BKN",
+              "base_ft": 1900
+            }
+          ]
+        },
+        "qnh_hpa": 1015
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPGD ATIS K"
+        },
+        {
+          "key": "time",
+          "text": "TIME 0726"
+        },
+        {
+          "key": "approach",
+          "text": "EXP R ARR VOR APCH FOR RWY 11"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 11 RCC 5, 5, 5"
+        },
+        {
+          "key": "other",
+          "text": "1ST PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "2ND PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "3RD PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION: POSSIBLE GPS JAMMING AND SPOOFING CAUTION BIRDS ACT"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 060 DEG, 5 KT, VRB BTN 010 AND 080 DEG"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS TDZ 10 KM OR MORE"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD FEW 900 FT, CLD BKN 1900 FT"
+        },
+        {
+          "key": "other",
+          "text": "T 22, DP 20"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1015"
+        },
+        {
+          "key": "other",
+          "text": "ATC CLR AVAILABLE VIA DATALINK"
+        },
+        {
+          "key": "other",
+          "text": "GND IS OPERATING ON FREQ 131 DECIMAL 330"
+        },
+        {
+          "key": "other",
+          "text": "END OF ATIS K METAR METAR EPGD 270900Z 18010KT CAVOK 10/05 Q1023 TAF TAF EPGD 270530Z 2706/2806 VRB02KT CAVOK BECMG 2706/2708 18010KT PROB40 TEMPO 2802/2806 3000 BR BKN003"
+        }
+      ],
+      "raw_text": "EPGD DEP ATIS K 0726Z EPGD ATIS K. TIME 0726. EXP R ARR VOR APCH FOR RWY 11. RWY 11 RCC 5, 5, 5. 1ST PART, WET. 2ND PART, WET. 3RD PART, WET. RWY REPORT END. TRANSITION LEVEL 80. CAUTION: POSSIBLE GPS JAMMING AND SPOOFING CAUTION BIRDS ACT. WIND 060 DEG, 5 KT, VRB BTN 010 AND 080 DEG. VIS TDZ 10 KM OR MORE. CLD FEW 900 FT, CLD BKN 1900 FT. T 22, DP 20. QNH 1015. ATC CLR AVAILABLE VIA DATALINK. GND IS OPERATING ON FREQ 131 DECIMAL 330. END OF ATIS K METAR METAR EPGD 270900Z 18010KT CAVOK 10/05 Q1023 TAF TAF EPGD 270530Z 2706/2806 VRB02KT CAVOK BECMG 2706/2708 18010KT PROB40 TEMPO 2802/2806 3000 BR BKN003"
+    }
+  ]
+}

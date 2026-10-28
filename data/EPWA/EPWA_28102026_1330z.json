@@ -1,0 +1,236 @@
+{
+  "airport": "EPWA",
+  "fetch_time_utc": "2026-10-28 14:31:45 UTC",
+  "reports": [
+    {
+      "icao": "EPWA",
+      "type": "ARRIVAL",
+      "info_letter": "K",
+      "issue_time": "1331Z",
+      "time": "1330Z",
+      "runway": "11",
+      "approach": "EXP N ARR ILS Z APCH FOR RWY 11",
+      "transition_level": "80",
+      "wind": "150 DEG, 5 KT",
+      "visibility": "TDZ 10 KM OR MORE",
+      "clouds": "OVC 1100 FT",
+      "weather": null,
+      "temperature": "10",
+      "dewpoint": "8",
+      "altimeter": "QNH 1023",
+      "trend": "NOSIG",
+      "remarks": "CAUTION; BIRD ACT",
+      "complete": true,
+      "details": {
+        "observation_time": "1330Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 150 DEG, 5 KT",
+          "direction_deg": 150,
+          "variable_direction": false,
+          "speed_kt": 5
+        },
+        "visibility": {
+          "raw": "VIS TDZ 10 KM OR MORE",
+          "meters": 10000,
+          "or_more": true
+        },
+        "clouds": {
+          "raw": "CLD OVC 1100 FT",
+          "layers": [
+            {
+              "cover": "OVC",
+              "base_ft": 1100
+            }
+          ]
+        },
+        "temperature_c": 10,
+        "dewpoint_c": 8,
+        "qnh_hpa": 1023,
+        "trend": "NOSIG"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA ARR K"
+        },
+        {
+          "key": "time",
+          "text": "TIME 1330"
+        },
+        {
+          "key": "approach",
+          "text": "EXP N ARR ILS Z APCH FOR RWY 11"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 150 DEG, 5 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS TDZ 10 KM OR MORE"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD OVC 1100 FT"
+        },
+        {
+          "key": "temperature",
+          "text": "T 10"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP 8"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1023"
+        },
+        {
+          "key": "trend",
+          "text": "NOSIG"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        }
+      ],
+      "raw_text": "EPWA ARR ATIS K 1331Z EPWA ARR K. TIME 1330. EXP N ARR ILS Z APCH FOR RWY 11. TRANSITION LEVEL 80. WIND 150 DEG, 5 KT. VIS TDZ 10 KM OR MORE. CLD OVC 1100 FT. T 10. DP 8. QNH 1023. NOSIG. CAUTION. BIRD ACT. END OF EPWA ARR K"
+    },
+    {
+      "icao": "EPWA",
+      "type": "DEPARTURE",
+      "info_letter": "O",
+      "issue_time": "1331Z",
+      "time": "1330Z",
+      "runway": "15, 11",
+      "approach": null,
+      "transition_level": "80",
+      "wind": "130 DEG, 6 KT, VRB BTN 120 AND 190 DEG",
+      "visibility": "MID 10 KM OR MORE",
+      "clouds": "OVC 1100 FT",
+      "weather": null,
+      "temperature": "10",
+      "dewpoint": "8",
+      "altimeter": "QNH 1023",
+      "trend": "NOSIG",
+      "remarks": "CAUTION; BIRD ACT; REPORT READY FOR START UP ON DELIVERY 1; 2; 1 DECIMAL 6; 0; 5",
+      "complete": true,
+      "details": {
+        "observation_time": "1330Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 130 DEG, 6 KT, VRB BTN 120 AND 190 DEG",
+          "direction_deg": 130,
+          "variable_direction": false,
+          "speed_kt": 6
+        },
+        "visibility": {
+          "raw": "VIS MID 10 KM OR MORE",
+          "meters": 10000,
+          "or_more": true
+        },
+        "clouds": {
+          "raw": "CLD OVC 1100 FT",
+          "layers": [
+            {
+              "cover": "OVC",
+              "base_ft": 1100
+            }
+          ]
+        },
+        "temperature_c": 10,
+        "dewpoint_c": 8,
+        "qnh_hpa": 1023,
+        "trend": "NOSIG"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA DEP O"
+        },
+        {
+          "key": "time",
+          "text": "TIME 1330"
+        },
+        {
+          "key": "runway",
+          "text": "DEP RWY 15"
+        },
+        {
+          "key": "runway",
+          "text": "ARR RWY 11, EXP N ARR ILS Z"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 130 DEG, 6 KT, VRB BTN 120 AND 190 DEG"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS MID 10 KM OR MORE"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD OVC 1100 FT"
+        },
+        {
+          "key": "temperature",
+          "text": "T 10"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP 8"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1023"
+        },
+        {
+          "key": "trend",
+          "text": "NOSIG"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        },
+        {
+          "key": "remark",
+          "text": "REPORT READY FOR START UP ON DELIVERY 1"
+        },
+        {
+          "key": "remark",
+          "text": "2"
+        },
+        {
+          "key": "remark",
+          "text": "1 DECIMAL 6"
+        },
+        {
+          "key": "remark",
+          "text": "0"
+        },
+        {
+          "key": "remark",
+          "text": "5"
+        }
+      ],
+      "raw_text": "EPWA DEP ATIS O 1331Z EPWA DEP O. TIME 1330. DEP RWY 15. ARR RWY 11, EXP N ARR ILS Z. TRANSITION LEVEL 80. WIND 130 DEG, 6 KT, VRB BTN 120 AND 190 DEG. VIS MID 10 KM OR MORE. CLD OVC 1100 FT. T 10. DP 8. QNH 1023. NOSIG. CAUTION. BIRD ACT. REPORT READY FOR START UP ON DELIVERY 1. 2. 1 DECIMAL 6. 0. 5. END OF EPWA DEP O"
+    }
+  ]
+}
