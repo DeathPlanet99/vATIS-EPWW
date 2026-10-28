@@ -16,6 +16,7 @@ concurrency:
 jobs:
   scrape-and-commit:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - name: Pobierz repozytorium
@@ -27,14 +28,28 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: 'pip'
 
       - name: Instalacja bibliotek
         run: |
           python -m pip install --upgrade pip
-          pip install requests beautifulsoup4
+          pip install -r requirements.txt
+
+      - name: Instalacja przeglądarki Chromium (Playwright)
+        run: python -m playwright install --with-deps chromium
 
       - name: Uruchom scraper
         run: python scraper.py
+
+      # Gdy lotnisko zwróci 0 bloków, w artefakcie jest to, co zobaczyła przeglądarka
+      - name: Zapisz pliki debugowe
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scraper-debug
+          path: debug/
+          if-no-files-found: ignore
+          retention-days: 3
 
       - name: Zapisz datę do nazwy commita
         run: echo "COMMIT_DATE=$(date -u +'%d.%m.%Y %H:%M UTC')" >> $GITHUB_ENV
