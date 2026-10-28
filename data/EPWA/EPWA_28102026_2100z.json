@@ -1,6 +1,6 @@
 {
   "airport": "EPWA",
-  "fetch_time_utc": "2026-10-28 20:02:08 UTC",
+  "fetch_time_utc": "2026-10-28 20:37:12 UTC",
   "reports": [
     {
       "icao": "EPWA",
@@ -109,30 +109,27 @@
     {
       "icao": "EPWA",
       "type": "DEPARTURE",
-      "info_letter": "N",
-      "issue_time": "1931Z",
-      "time": "1930Z",
+      "info_letter": "U",
+      "issue_time": "1631Z",
+      "time": "1630Z",
       "runway": "15, 11",
       "approach": null,
       "transition_level": "80",
-      "wind": "280 DEG, 1 KT",
+      "wind": "CALM",
       "visibility": "MID 10 KM OR MORE",
-      "clouds": "BKN 1600 FT",
+      "clouds": "BKN 1800 FT",
       "weather": null,
-      "temperature": "9",
+      "temperature": "10",
       "dewpoint": "8",
       "altimeter": "QNH 1024",
       "trend": "NOSIG",
       "remarks": "CAUTION; BIRD ACT; REPORT READY FOR START UP ON DELIVERY 1; 2; 1 DECIMAL 6; 0; 5",
       "complete": true,
       "details": {
-        "observation_time": "1930Z",
+        "observation_time": "1630Z",
         "transition_level": "80",
         "wind": {
-          "raw": "WIND 280 DEG, 1 KT",
-          "direction_deg": 280,
-          "variable_direction": false,
-          "speed_kt": 1
+          "raw": "WIND CALM"
         },
         "visibility": {
           "raw": "VIS MID 10 KM OR MORE",
@@ -140,15 +137,15 @@
           "or_more": true
         },
         "clouds": {
-          "raw": "CLD BKN 1600 FT",
+          "raw": "CLD BKN 1800 FT",
           "layers": [
             {
               "cover": "BKN",
-              "base_ft": 1600
+              "base_ft": 1800
             }
           ]
         },
-        "temperature_c": 9,
+        "temperature_c": 10,
         "dewpoint_c": 8,
         "qnh_hpa": 1024,
         "trend": "NOSIG"
@@ -156,11 +153,11 @@
       "elements": [
         {
           "key": "ident",
-          "text": "EPWA DEP N"
+          "text": "EPWA DEP U"
         },
         {
           "key": "time",
-          "text": "TIME 1930"
+          "text": "TIME 1630"
         },
         {
           "key": "runway",
@@ -176,7 +173,7 @@
         },
         {
           "key": "wind",
-          "text": "WIND 280 DEG, 1 KT"
+          "text": "WIND CALM"
         },
         {
           "key": "visibility",
@@ -184,11 +181,11 @@
         },
         {
           "key": "clouds",
-          "text": "CLD BKN 1600 FT"
+          "text": "CLD BKN 1800 FT"
         },
         {
           "key": "temperature",
-          "text": "T 9"
+          "text": "T 10"
         },
         {
           "key": "dewpoint",
@@ -231,7 +228,7 @@
           "text": "5"
         }
       ],
-      "raw_text": "EPWA DEP ATIS N 1931Z EPWA DEP N. TIME 1930. DEP RWY 15. ARR RWY 11, EXP N ARR ILS Z. TRANSITION LEVEL 80. WIND 280 DEG, 1 KT. VIS MID 10 KM OR MORE. CLD BKN 1600 FT. T 9. DP 8. QNH 1024. NOSIG. CAUTION. BIRD ACT. REPORT READY FOR START UP ON DELIVERY 1. 2. 1 DECIMAL 6. 0. 5. END OF EPWA DEP N"
+      "raw_text": "EPWA DEP ATIS U 1631Z EPWA DEP U. TIME 1630. DEP RWY 15. ARR RWY 11, EXP N ARR ILS Z. TRANSITION LEVEL 80. WIND CALM. VIS MID 10 KM OR MORE. CLD BKN 1800 FT. T 10. DP 8. QNH 1024. NOSIG. CAUTION. BIRD ACT. REPORT READY FOR START UP ON DELIVERY 1. 2. 1 DECIMAL 6. 0. 5. END OF EPWA DEP U"
     }
   ]
 }
