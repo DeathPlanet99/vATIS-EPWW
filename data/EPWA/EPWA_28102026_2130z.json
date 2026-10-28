@@ -1,0 +1,236 @@
+{
+  "airport": "EPWA",
+  "fetch_time_utc": "2026-10-28 22:43:07 UTC",
+  "reports": [
+    {
+      "icao": "EPWA",
+      "type": "ARRIVAL",
+      "info_letter": "A",
+      "issue_time": "2131Z",
+      "time": "2130Z",
+      "runway": "11",
+      "approach": "EXP N ARR ILS Z APCH FOR RWY 11",
+      "transition_level": "80",
+      "wind": "350 DEG, 2 KT",
+      "visibility": "TDZ 10 KM OR MORE",
+      "clouds": "BKN 2200 FT",
+      "weather": null,
+      "temperature": "10",
+      "dewpoint": "8",
+      "altimeter": "QNH 1024",
+      "trend": "TREND TEMPO CLD BKN 1400 FT",
+      "remarks": "CAUTION; BIRD ACT",
+      "complete": true,
+      "details": {
+        "observation_time": "2130Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 350 DEG, 2 KT",
+          "direction_deg": 350,
+          "variable_direction": false,
+          "speed_kt": 2
+        },
+        "visibility": {
+          "raw": "VIS TDZ 10 KM OR MORE",
+          "meters": 10000,
+          "or_more": true
+        },
+        "clouds": {
+          "raw": "CLD BKN 2200 FT",
+          "layers": [
+            {
+              "cover": "BKN",
+              "base_ft": 2200
+            }
+          ]
+        },
+        "temperature_c": 10,
+        "dewpoint_c": 8,
+        "qnh_hpa": 1024,
+        "trend": "TREND TEMPO CLD BKN 1400 FT"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA ARR A"
+        },
+        {
+          "key": "time",
+          "text": "TIME 2130"
+        },
+        {
+          "key": "approach",
+          "text": "EXP N ARR ILS Z APCH FOR RWY 11"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 350 DEG, 2 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS TDZ 10 KM OR MORE"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD BKN 2200 FT"
+        },
+        {
+          "key": "temperature",
+          "text": "T 10"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP 8"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1024"
+        },
+        {
+          "key": "trend",
+          "text": "TREND TEMPO CLD BKN 1400 FT"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        }
+      ],
+      "raw_text": "EPWA ARR ATIS A 2131Z EPWA ARR A. TIME 2130. EXP N ARR ILS Z APCH FOR RWY 11. TRANSITION LEVEL 80. WIND 350 DEG, 2 KT. VIS TDZ 10 KM OR MORE. CLD BKN 2200 FT. T 10. DP 8. QNH 1024. TREND TEMPO CLD BKN 1400 FT. CAUTION. BIRD ACT. END OF EPWA ARR A"
+    },
+    {
+      "icao": "EPWA",
+      "type": "DEPARTURE",
+      "info_letter": "R",
+      "issue_time": "2131Z",
+      "time": "2130Z",
+      "runway": "15, 11",
+      "approach": null,
+      "transition_level": "80",
+      "wind": "340 DEG, 4 KT, VRB BTN 320 AND 020 DEG",
+      "visibility": "MID 10 KM OR MORE",
+      "clouds": "BKN 2200 FT",
+      "weather": null,
+      "temperature": "10",
+      "dewpoint": "8",
+      "altimeter": "QNH 1024",
+      "trend": "TREND TEMPO CLD BKN 1400 FT",
+      "remarks": "CAUTION; BIRD ACT; REPORT READY FOR START UP ON DELIVERY 1; 2; 1 DECIMAL 6; 0; 5",
+      "complete": true,
+      "details": {
+        "observation_time": "2130Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 340 DEG, 4 KT, VRB BTN 320 AND 020 DEG",
+          "direction_deg": 340,
+          "variable_direction": false,
+          "speed_kt": 4
+        },
+        "visibility": {
+          "raw": "VIS MID 10 KM OR MORE",
+          "meters": 10000,
+          "or_more": true
+        },
+        "clouds": {
+          "raw": "CLD BKN 2200 FT",
+          "layers": [
+            {
+              "cover": "BKN",
+              "base_ft": 2200
+            }
+          ]
+        },
+        "temperature_c": 10,
+        "dewpoint_c": 8,
+        "qnh_hpa": 1024,
+        "trend": "TREND TEMPO CLD BKN 1400 FT"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA DEP R"
+        },
+        {
+          "key": "time",
+          "text": "TIME 2130"
+        },
+        {
+          "key": "runway",
+          "text": "DEP RWY 15"
+        },
+        {
+          "key": "runway",
+          "text": "ARR RWY 11, EXP N ARR ILS Z"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 340 DEG, 4 KT, VRB BTN 320 AND 020 DEG"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS MID 10 KM OR MORE"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD BKN 2200 FT"
+        },
+        {
+          "key": "temperature",
+          "text": "T 10"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP 8"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1024"
+        },
+        {
+          "key": "trend",
+          "text": "TREND TEMPO CLD BKN 1400 FT"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        },
+        {
+          "key": "remark",
+          "text": "REPORT READY FOR START UP ON DELIVERY 1"
+        },
+        {
+          "key": "remark",
+          "text": "2"
+        },
+        {
+          "key": "remark",
+          "text": "1 DECIMAL 6"
+        },
+        {
+          "key": "remark",
+          "text": "0"
+        },
+        {
+          "key": "remark",
+          "text": "5"
+        }
+      ],
+      "raw_text": "EPWA DEP ATIS R 2131Z EPWA DEP R. TIME 2130. DEP RWY 15. ARR RWY 11, EXP N ARR ILS Z. TRANSITION LEVEL 80. WIND 340 DEG, 4 KT, VRB BTN 320 AND 020 DEG. VIS MID 10 KM OR MORE. CLD BKN 2200 FT. T 10. DP 8. QNH 1024. TREND TEMPO CLD BKN 1400 FT. CAUTION. BIRD ACT. REPORT READY FOR START UP ON DELIVERY 1. 2. 1 DECIMAL 6. 0. 5. END OF EPWA DEP R"
+    }
+  ]
+}
