@@ -2,8 +2,7 @@ name: Monitor ATIS
 
 on:
   schedule:
-    # Skrypt startuje w 10. i 40. minucie każdej godziny
-    - cron: '10,40 * * * *'
+  - cron: '7,22,37,52 * * * *'
   workflow_dispatch:
 
 permissions:
