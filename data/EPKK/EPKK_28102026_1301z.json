@@ -1,0 +1,42 @@
+{
+  "airport": "EPKK",
+  "fetch_time_utc": "2026-10-28 01:13:48 UTC",
+  "reports": [
+    {
+      "type": "ARRIVAL",
+      "info_letter": "L",
+      "time": "1301Z",
+      "runway": "25",
+      "approach": "EXP G ARR FOR ILS APCH",
+      "transition_level": null,
+      "wind": null,
+      "visibility": null,
+      "clouds": null,
+      "weather": null,
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": null,
+      "trend": null,
+      "remarks": null,
+      "raw_text": "EPKK ARR ATIS L\n1301Z EPKK ATIS L.\nTIME 1301.\nEXP G ARR FOR ILS APCH\nFOR RWY 25.\nRWY 25 RCC 6, 6, 6. RWY\nREPORT END."
+    },
+    {
+      "type": "DEPARTURE",
+      "info_letter": "Z",
+      "time": "1857Z",
+      "runway": "07",
+      "approach": "EXP H ARR FOR RNP APCH FOR RWY 07",
+      "transition_level": "80",
+      "wind": "030 DEG, 3 KT",
+      "visibility": "TDZ 9 KM",
+      "clouds": null,
+      "weather": "RA",
+      "temperature": "15",
+      "dewpoint": "15",
+      "altimeter": "QNH 1007",
+      "trend": null,
+      "remarks": null,
+      "raw_text": "EPKK DEP ATIS Z\n1858Z EPKK ATIS Z.\nTIME 1857.\nEXP H ARR FOR RNP APCH FOR RWY 07.\nRWY 07 RCC 5, 5, 3.\nRWY WET. RWY REPORT END.\nTRANSITION LEVEL 80.\nATC CLR AVAILABLE VIA DATALINK OR\nCONTACT DELIVERY.\nWIND 030 DEG, 3 KT.\nVIS TDZ 9 KM.\nWX FBL RA.\nCLD BKN 4700 FT.\nT 15, DP 15.\nQNH 1007.\nAFTER DEP CONTACT APCH 121 DECIMAL 075.\nCAUTION. BIRDS ACT.\nEND OF ATIS Z"
+    }
+  ]
+}
