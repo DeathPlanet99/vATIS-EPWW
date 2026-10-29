@@ -1,0 +1,138 @@
+{
+  "airport": "EPWA",
+  "fetch_time_utc": "2026-10-29 16:06:30 UTC",
+  "reports": [
+    {
+      "icao": "EPWA",
+      "type": "DEPARTURE",
+      "info_letter": "X",
+      "issue_time": "1531Z",
+      "time": "1530Z",
+      "runway": "29, 33",
+      "approach": null,
+      "transition_level": "80",
+      "wind": "310 DEG, 6 KT",
+      "visibility": "MID 2700 M",
+      "clouds": "OVC 500 FT",
+      "weather": "WX FBL DZ, BR",
+      "temperature": "8",
+      "dewpoint": "8",
+      "altimeter": "QNH 1028",
+      "trend": "TREND TEMPO VIS 2000 M, BR, CLD BKN 400 FT",
+      "remarks": "CAUTION; BIRD ACT; REPORT READY FOR START UP ON DELIVERY 1; 2; 1 DECIMAL 6; 0; 5",
+      "complete": true,
+      "details": {
+        "observation_time": "1530Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 310 DEG, 6 KT",
+          "direction_deg": 310,
+          "variable_direction": false,
+          "speed_kt": 6
+        },
+        "visibility": {
+          "raw": "VIS MID 2700 M",
+          "meters": 2700,
+          "or_more": false
+        },
+        "weather": "WX FBL DZ, BR",
+        "clouds": {
+          "raw": "CLD OVC 500 FT",
+          "layers": [
+            {
+              "cover": "OVC",
+              "base_ft": 500
+            }
+          ]
+        },
+        "temperature_c": 8,
+        "dewpoint_c": 8,
+        "qnh_hpa": 1028,
+        "trend": "TREND TEMPO VIS 2000 M, BR, CLD BKN 400 FT"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA DEP X"
+        },
+        {
+          "key": "time",
+          "text": "TIME 1530"
+        },
+        {
+          "key": "runway",
+          "text": "DEP RWY 29"
+        },
+        {
+          "key": "runway",
+          "text": "ARR RWY 33, EXP U ARR ILS Z"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 310 DEG, 6 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS MID 2700 M"
+        },
+        {
+          "key": "weather",
+          "text": "WX FBL DZ, BR"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD OVC 500 FT"
+        },
+        {
+          "key": "temperature",
+          "text": "T 8"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP 8"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1028"
+        },
+        {
+          "key": "trend",
+          "text": "TREND TEMPO VIS 2000 M, BR, CLD BKN 400 FT"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        },
+        {
+          "key": "remark",
+          "text": "REPORT READY FOR START UP ON DELIVERY 1"
+        },
+        {
+          "key": "remark",
+          "text": "2"
+        },
+        {
+          "key": "remark",
+          "text": "1 DECIMAL 6"
+        },
+        {
+          "key": "remark",
+          "text": "0"
+        },
+        {
+          "key": "remark",
+          "text": "5"
+        }
+      ],
+      "raw_text": "EPWA DEP ATIS X 1531Z EPWA DEP X. TIME 1530. DEP RWY 29. ARR RWY 33, EXP U ARR ILS Z. TRANSITION LEVEL 80. WIND 310 DEG, 6 KT. VIS MID 2700 M. WX FBL DZ, BR. CLD OVC 500 FT. T 8. DP 8. QNH 1028. TREND TEMPO VIS 2000 M, BR, CLD BKN 400 FT. CAUTION. BIRD ACT. REPORT READY FOR START UP ON DELIVERY 1. 2. 1 DECIMAL 6. 0. 5. END OF EPWA DEP X"
+    }
+  ]
+}
