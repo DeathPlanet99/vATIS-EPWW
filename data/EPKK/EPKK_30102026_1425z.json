@@ -1,0 +1,200 @@
+{
+  "airport": "EPKK",
+  "fetch_time_utc": "2026-10-30 02:53:03 UTC",
+  "reports": [
+    {
+      "icao": "EPKK",
+      "type": "ARRIVAL",
+      "info_letter": "H",
+      "issue_time": "1426Z",
+      "time": "1425Z",
+      "runway": "07",
+      "approach": "EXP H ARR FOR RNP APCH FOR RWY 07; AFTER DEP CONTACT APCH 121 DECIMAL 075",
+      "transition_level": "80",
+      "wind": "100 DEG, 5 KT",
+      "visibility": "CAVOK",
+      "clouds": "CAVOK",
+      "weather": null,
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": "QNH 1024",
+      "trend": null,
+      "remarks": "CAUTION",
+      "complete": false,
+      "details": {
+        "observation_time": "1425Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 100 DEG, 5 KT",
+          "direction_deg": 100,
+          "variable_direction": false,
+          "speed_kt": 5
+        },
+        "cavok": true,
+        "qnh_hpa": 1024
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPKK ATIS H"
+        },
+        {
+          "key": "time",
+          "text": "TIME 1425"
+        },
+        {
+          "key": "approach",
+          "text": "EXP H ARR FOR RNP APCH FOR RWY 07"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 07 RCC 6, 6, 5"
+        },
+        {
+          "key": "other",
+          "text": "3RD PART 50 %, WET"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 100 DEG, 5 KT"
+        },
+        {
+          "key": "cavok",
+          "text": "CAVOK"
+        },
+        {
+          "key": "other",
+          "text": "T 11, DP 4"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1024"
+        },
+        {
+          "key": "approach",
+          "text": "AFTER DEP CONTACT APCH 121 DECIMAL 075"
+        },
+        {
+          "key": "other",
+          "text": "FOR CLR CONTACT DELIVERY"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "other",
+          "text": "BIRDS ACT"
+        },
+        {
+          "key": "other",
+          "text": "END OF ATIS H Departure ATIS 2026-10-28 18:05 UTC"
+        }
+      ],
+      "raw_text": "EPKK ARR ATIS H 1426Z EPKK ATIS H. TIME 1425. EXP H ARR FOR RNP APCH FOR RWY 07. RWY 07 RCC 6, 6, 5. 3RD PART 50 %, WET. RWY REPORT END. TRANSITION LEVEL 80. WIND 100 DEG, 5 KT. CAVOK. T 11, DP 4. QNH 1024. AFTER DEP CONTACT APCH 121 DECIMAL 075. FOR CLR CONTACT DELIVERY. CAUTION. BIRDS ACT. END OF ATIS H Departure ATIS 2026-10-28 18:05 UTC"
+    },
+    {
+      "icao": "EPKK",
+      "type": "DEPARTURE",
+      "info_letter": "D",
+      "issue_time": "1526Z",
+      "time": "1525Z",
+      "runway": "07",
+      "approach": "EXP H ARR FOR RNP APCH FOR RWY 07; AFTER DEP CONTACT APCH 121 DECIMAL 075",
+      "transition_level": "80",
+      "wind": "050 DEG, 4 KT",
+      "visibility": "CAVOK",
+      "clouds": "CAVOK",
+      "weather": null,
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": "QNH 1023",
+      "trend": null,
+      "remarks": "CAUTION",
+      "complete": false,
+      "details": {
+        "observation_time": "1525Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 050 DEG, 4 KT",
+          "direction_deg": 50,
+          "variable_direction": false,
+          "speed_kt": 4
+        },
+        "cavok": true,
+        "qnh_hpa": 1023
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPKK ATIS D"
+        },
+        {
+          "key": "time",
+          "text": "TIME 1525"
+        },
+        {
+          "key": "approach",
+          "text": "EXP H ARR FOR RNP APCH FOR RWY 07"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 07 RCC 6, 6, 6"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 050 DEG, 4 KT"
+        },
+        {
+          "key": "cavok",
+          "text": "CAVOK"
+        },
+        {
+          "key": "other",
+          "text": "T 9, DP 7"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1023"
+        },
+        {
+          "key": "other",
+          "text": "ATC CLR AVAILABLE VIA DATALINK OR CONTACT DELIVERY"
+        },
+        {
+          "key": "approach",
+          "text": "AFTER DEP CONTACT APCH 121 DECIMAL 075"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "other",
+          "text": "BIRDS ACT"
+        },
+        {
+          "key": "other",
+          "text": "END OF ATIS D METAR METAR EPKK 292300Z 27003KT 4000 BR BKN013 BKN023 08/08 Q1028 TAF TAF EPKK 292330Z 3000/3024 VRB02KT 4000 BR BKN012 TEMPO 3000/3009 2000 DZ BR BKN006 BKN012 PROB30 3000/3009 1200 DZ BR BKN001 BECMG 3009/3011 9999 TEMPO 3016/3024 2000 -RA DZ BR BKN006 BKN013"
+        }
+      ],
+      "raw_text": "EPKK DEP ATIS D 1526Z EPKK ATIS D. TIME 1525. EXP H ARR FOR RNP APCH FOR RWY 07. RWY 07 RCC 6, 6, 6. RWY REPORT END. TRANSITION LEVEL 80. WIND 050 DEG, 4 KT. CAVOK. T 9, DP 7. QNH 1023. ATC CLR AVAILABLE VIA DATALINK OR CONTACT DELIVERY. AFTER DEP CONTACT APCH 121 DECIMAL 075. CAUTION. BIRDS ACT. END OF ATIS D METAR METAR EPKK 292300Z 27003KT 4000 BR BKN013 BKN023 08/08 Q1028 TAF TAF EPKK 292330Z 3000/3024 VRB02KT 4000 BR BKN012 TEMPO 3000/3009 2000 DZ BR BKN006 BKN012 PROB30 3000/3009 1200 DZ BR BKN001 BECMG 3009/3011 9999 TEMPO 3016/3024 2000 -RA DZ BR BKN006 BKN013"
+    }
+  ]
+}
