@@ -1,0 +1,284 @@
+{
+  "airport": "EPWA",
+  "fetch_time_utc": "2026-10-31 21:26:03 UTC",
+  "reports": [
+    {
+      "icao": "EPWA",
+      "type": "ARRIVAL",
+      "info_letter": "E",
+      "issue_time": "2101Z",
+      "time": "2100Z",
+      "runway": "33",
+      "approach": "EXP U ARR ILS Z APCH FOR RWY 33",
+      "transition_level": "80",
+      "wind": "050 DEG, 10 KT",
+      "visibility": "TDZ 10 KM OR MORE",
+      "clouds": "SCT 900 FT, CLD BKN 4500 FT",
+      "weather": null,
+      "temperature": "8",
+      "dewpoint": "6",
+      "altimeter": "QNH 1027",
+      "trend": "TREND TEMPO CLD BKN 800 FT",
+      "remarks": "CAUTION; BIRD ACT",
+      "complete": true,
+      "details": {
+        "observation_time": "2100Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 050 DEG, 10 KT",
+          "direction_deg": 50,
+          "variable_direction": false,
+          "speed_kt": 10
+        },
+        "visibility": {
+          "raw": "VIS TDZ 10 KM OR MORE",
+          "meters": 10000,
+          "or_more": true
+        },
+        "clouds": {
+          "raw": "CLD SCT 900 FT, CLD BKN 4500 FT",
+          "layers": [
+            {
+              "cover": "SCT",
+              "base_ft": 900
+            },
+            {
+              "cover": "BKN",
+              "base_ft": 4500
+            }
+          ]
+        },
+        "temperature_c": 8,
+        "dewpoint_c": 6,
+        "qnh_hpa": 1027,
+        "trend": "TREND TEMPO CLD BKN 800 FT"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA ARR E"
+        },
+        {
+          "key": "time",
+          "text": "TIME 2100"
+        },
+        {
+          "key": "approach",
+          "text": "EXP U ARR ILS Z APCH FOR RWY 33"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 33 RCC 5, 5, 5"
+        },
+        {
+          "key": "other",
+          "text": "1ST PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "2ND PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "3RD PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 050 DEG, 10 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS TDZ 10 KM OR MORE"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD SCT 900 FT, CLD BKN 4500 FT"
+        },
+        {
+          "key": "temperature",
+          "text": "T 8"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP 6"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1027"
+        },
+        {
+          "key": "trend",
+          "text": "TREND TEMPO CLD BKN 800 FT"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        }
+      ],
+      "raw_text": "EPWA ARR ATIS E 2101Z EPWA ARR E. TIME 2100. EXP U ARR ILS Z APCH FOR RWY 33. RWY 33 RCC 5, 5, 5. 1ST PART, WET. 2ND PART, WET. 3RD PART, WET. RWY REPORT END. TRANSITION LEVEL 80. WIND 050 DEG, 10 KT. VIS TDZ 10 KM OR MORE. CLD SCT 900 FT, CLD BKN 4500 FT. T 8. DP 6. QNH 1027. TREND TEMPO CLD BKN 800 FT. CAUTION. BIRD ACT. END OF EPWA ARR E"
+    },
+    {
+      "icao": "EPWA",
+      "type": "DEPARTURE",
+      "info_letter": "V",
+      "issue_time": "2101Z",
+      "time": "2100Z",
+      "runway": "29, 33",
+      "approach": null,
+      "transition_level": "80",
+      "wind": "060 DEG, 8 KT",
+      "visibility": "MID 10 KM OR MORE",
+      "clouds": "SCT 900 FT, CLD BKN 4300 FT",
+      "weather": null,
+      "temperature": "8",
+      "dewpoint": "6",
+      "altimeter": "QNH 1027",
+      "trend": "TREND TEMPO CLD BKN 800 FT",
+      "remarks": "CAUTION; BIRD ACT; REPORT READY FOR START UP ON DELIVERY 1; 2; 1 DECIMAL 6; 0; 5",
+      "complete": true,
+      "details": {
+        "observation_time": "2100Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 060 DEG, 8 KT",
+          "direction_deg": 60,
+          "variable_direction": false,
+          "speed_kt": 8
+        },
+        "visibility": {
+          "raw": "VIS MID 10 KM OR MORE",
+          "meters": 10000,
+          "or_more": true
+        },
+        "clouds": {
+          "raw": "CLD SCT 900 FT, CLD BKN 4300 FT",
+          "layers": [
+            {
+              "cover": "SCT",
+              "base_ft": 900
+            },
+            {
+              "cover": "BKN",
+              "base_ft": 4300
+            }
+          ]
+        },
+        "temperature_c": 8,
+        "dewpoint_c": 6,
+        "qnh_hpa": 1027,
+        "trend": "TREND TEMPO CLD BKN 800 FT"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA DEP V"
+        },
+        {
+          "key": "time",
+          "text": "TIME 2100"
+        },
+        {
+          "key": "runway",
+          "text": "DEP RWY 29"
+        },
+        {
+          "key": "runway",
+          "text": "ARR RWY 33, EXP U ARR ILS Z"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 29 RCC 5, 5, 5"
+        },
+        {
+          "key": "other",
+          "text": "1ST PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "2ND PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "3RD PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 060 DEG, 8 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS MID 10 KM OR MORE"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD SCT 900 FT, CLD BKN 4300 FT"
+        },
+        {
+          "key": "temperature",
+          "text": "T 8"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP 6"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1027"
+        },
+        {
+          "key": "trend",
+          "text": "TREND TEMPO CLD BKN 800 FT"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        },
+        {
+          "key": "remark",
+          "text": "REPORT READY FOR START UP ON DELIVERY 1"
+        },
+        {
+          "key": "remark",
+          "text": "2"
+        },
+        {
+          "key": "remark",
+          "text": "1 DECIMAL 6"
+        },
+        {
+          "key": "remark",
+          "text": "0"
+        },
+        {
+          "key": "remark",
+          "text": "5"
+        }
+      ],
+      "raw_text": "EPWA DEP ATIS V 2101Z EPWA DEP V. TIME 2100. DEP RWY 29. ARR RWY 33, EXP U ARR ILS Z. RWY 29 RCC 5, 5, 5. 1ST PART, WET. 2ND PART, WET. 3RD PART, WET. RWY REPORT END. TRANSITION LEVEL 80. WIND 060 DEG, 8 KT. VIS MID 10 KM OR MORE. CLD SCT 900 FT, CLD BKN 4300 FT. T 8. DP 6. QNH 1027. TREND TEMPO CLD BKN 800 FT. CAUTION. BIRD ACT. REPORT READY FOR START UP ON DELIVERY 1. 2. 1 DECIMAL 6. 0. 5. END OF EPWA DEP V"
+    }
+  ]
+}
