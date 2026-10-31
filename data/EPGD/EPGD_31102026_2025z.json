@@ -1,0 +1,214 @@
+{
+  "airport": "EPGD",
+  "fetch_time_utc": "2026-10-31 00:52:53 UTC",
+  "reports": [
+    {
+      "icao": "EPGD",
+      "type": "ARRIVAL",
+      "info_letter": "I",
+      "issue_time": "2025Z",
+      "time": "2025Z",
+      "runway": "29",
+      "approach": "EXP T ARR ILS APCH FOR RWY 29",
+      "transition_level": "80",
+      "wind": "160 DEG, 6 KT",
+      "visibility": "CAVOK",
+      "clouds": "CAVOK",
+      "weather": null,
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": "QNH 1022",
+      "trend": null,
+      "remarks": "CAUTION: POSSIBLE GPS JAMMING AND SPOOFING",
+      "complete": false,
+      "details": {
+        "observation_time": "2025Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 160 DEG, 6 KT",
+          "direction_deg": 160,
+          "variable_direction": false,
+          "speed_kt": 6
+        },
+        "cavok": true,
+        "qnh_hpa": 1022
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPGD ATIS I"
+        },
+        {
+          "key": "time",
+          "text": "TIME 2025"
+        },
+        {
+          "key": "approach",
+          "text": "EXP T ARR ILS APCH FOR RWY 29"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 29 RCC 6, 6, 6"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION: POSSIBLE GPS JAMMING AND SPOOFING"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 160 DEG, 6 KT"
+        },
+        {
+          "key": "cavok",
+          "text": "CAVOK"
+        },
+        {
+          "key": "other",
+          "text": "T 8, DP 4"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1022"
+        },
+        {
+          "key": "other",
+          "text": "ATC CLR AVAILABLE VIA DATALINK GND IS NOT OPERATING CONTACT GDANSK TOWER"
+        },
+        {
+          "key": "other",
+          "text": "END OF ATIS I Departure ATIS 2026-10-28 22:16 UTC"
+        }
+      ],
+      "raw_text": "EPGD ARR ATIS I 2025Z EPGD ATIS I. TIME 2025. EXP T ARR ILS APCH FOR RWY 29. RWY 29 RCC 6, 6, 6. RWY REPORT END. TRANSITION LEVEL 80. CAUTION: POSSIBLE GPS JAMMING AND SPOOFING. WIND 160 DEG, 6 KT. CAVOK. T 8, DP 4. QNH 1022. ATC CLR AVAILABLE VIA DATALINK GND IS NOT OPERATING CONTACT GDANSK TOWER. END OF ATIS I Departure ATIS 2026-10-28 22:16 UTC"
+    },
+    {
+      "icao": "EPGD",
+      "type": "DEPARTURE",
+      "info_letter": "Y",
+      "issue_time": "2156Z",
+      "time": "2156Z",
+      "runway": "29",
+      "approach": "EXP T ARR ILS APCH FOR RWY 29",
+      "transition_level": "80",
+      "wind": "250 DEG, 3 KT",
+      "visibility": "TDZ 2700 M",
+      "clouds": "OVC 250 FT",
+      "weather": "WX BR",
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": "QNH 1024",
+      "trend": null,
+      "remarks": "CAUTION: POSSIBLE GPS JAMMING AND SPOOFING LOW VIS PROC IN OPS",
+      "complete": false,
+      "details": {
+        "observation_time": "2156Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 250 DEG, 3 KT",
+          "direction_deg": 250,
+          "variable_direction": false,
+          "speed_kt": 3
+        },
+        "visibility": {
+          "raw": "VIS TDZ 2700 M",
+          "meters": 2700,
+          "or_more": false
+        },
+        "weather": "WX BR",
+        "clouds": {
+          "raw": "CLD OVC 250 FT",
+          "layers": [
+            {
+              "cover": "OVC",
+              "base_ft": 250
+            }
+          ]
+        },
+        "qnh_hpa": 1024
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPGD ATIS Y"
+        },
+        {
+          "key": "time",
+          "text": "TIME 2156"
+        },
+        {
+          "key": "approach",
+          "text": "EXP T ARR ILS APCH FOR RWY 29"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 29 RCC 5, 5, 5"
+        },
+        {
+          "key": "other",
+          "text": "1ST PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "2ND PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "3RD PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION: POSSIBLE GPS JAMMING AND SPOOFING LOW VIS PROC IN OPS"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 250 DEG, 3 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS TDZ 2700 M"
+        },
+        {
+          "key": "weather",
+          "text": "WX BR"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD OVC 250 FT"
+        },
+        {
+          "key": "other",
+          "text": "T 8, DP 7"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1024"
+        },
+        {
+          "key": "other",
+          "text": "GND IS NOT OPERATING CONTACT GDANSK TOWER"
+        },
+        {
+          "key": "other",
+          "text": "END OF ATIS Y METAR METAR EPGD 301300Z 28014KT 9999 BKN017 11/08 Q1027 TAF TAF EPGD 301130Z 3012/3112 30012KT 9999 SCT014 BKN025 PROB40 TEMPO 3018/3104 BKN008"
+        }
+      ],
+      "raw_text": "EPGD DEP ATIS Y 2156Z EPGD ATIS Y. TIME 2156. EXP T ARR ILS APCH FOR RWY 29. RWY 29 RCC 5, 5, 5. 1ST PART, WET. 2ND PART, WET. 3RD PART, WET. RWY REPORT END. TRANSITION LEVEL 80. CAUTION: POSSIBLE GPS JAMMING AND SPOOFING LOW VIS PROC IN OPS. WIND 250 DEG, 3 KT. VIS TDZ 2700 M. WX BR. CLD OVC 250 FT. T 8, DP 7. QNH 1024. GND IS NOT OPERATING CONTACT GDANSK TOWER. END OF ATIS Y METAR METAR EPGD 301300Z 28014KT 9999 BKN017 11/08 Q1027 TAF TAF EPGD 301130Z 3012/3112 30012KT 9999 SCT014 BKN025 PROB40 TEMPO 3018/3104 BKN008"
+    }
+  ]
+}
