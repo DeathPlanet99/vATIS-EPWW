@@ -1,0 +1,170 @@
+{
+  "airport": "EPPO",
+  "fetch_time_utc": "2026-11-01 22:29:08 UTC",
+  "reports": [
+    {
+      "icao": "EPPO",
+      "type": "ARRIVAL",
+      "info_letter": "I",
+      "issue_time": "2057Z",
+      "time": "2056Z",
+      "runway": "10",
+      "approach": "EXP T ARR RNP APCH FOR RWY 10",
+      "transition_level": "80",
+      "wind": "VRB, 1 KT, VRB BTN 250 AND 040 DEG",
+      "visibility": "TDZ 10 KM OR MORE",
+      "clouds": "OVC 4400 FT",
+      "weather": null,
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": "QNH 1032",
+      "trend": null,
+      "remarks": null,
+      "complete": false,
+      "details": {
+        "observation_time": "2056Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND VRB, 1 KT, VRB BTN 250 AND 040 DEG"
+        },
+        "visibility": {
+          "raw": "VIS TDZ 10 KM OR MORE",
+          "meters": 10000,
+          "or_more": true
+        },
+        "clouds": {
+          "raw": "CLD OVC 4400 FT",
+          "layers": [
+            {
+              "cover": "OVC",
+              "base_ft": 4400
+            }
+          ]
+        },
+        "qnh_hpa": 1032
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPPO ATIS I"
+        },
+        {
+          "key": "time",
+          "text": "TIME 2056"
+        },
+        {
+          "key": "approach",
+          "text": "EXP T ARR RNP APCH FOR RWY 10"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND VRB, 1 KT, VRB BTN 250 AND 040 DEG"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS TDZ 10 KM OR MORE"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD OVC 4400 FT"
+        },
+        {
+          "key": "other",
+          "text": "T 7, DP 6"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1032"
+        },
+        {
+          "key": "other",
+          "text": "DATALINK DEP CLR AVAILABLE OR CONTACT TOWER 119 DECIMAL 980"
+        },
+        {
+          "key": "other",
+          "text": "END OF INFO I Departure ATIS 2026-10-19 12:33 UTC"
+        }
+      ],
+      "raw_text": "EPPO ARR ATIS I 2057Z EPPO ATIS I. TIME 2056. EXP T ARR RNP APCH FOR RWY 10. TRANSITION LEVEL 80. WIND VRB, 1 KT, VRB BTN 250 AND 040 DEG. VIS TDZ 10 KM OR MORE. CLD OVC 4400 FT. T 7, DP 6. QNH 1032. DATALINK DEP CLR AVAILABLE OR CONTACT TOWER 119 DECIMAL 980. END OF INFO I Departure ATIS 2026-10-19 12:33 UTC"
+    },
+    {
+      "icao": "EPPO",
+      "type": "DEPARTURE",
+      "info_letter": "P",
+      "issue_time": "1130Z",
+      "time": "1130Z",
+      "runway": "10",
+      "approach": "EXP T ARR RNP APCH FOR RWY 10",
+      "transition_level": "80",
+      "wind": "020 DEG, 8 KT, VRB BTN 350 AND 100 DEG",
+      "visibility": "CAVOK",
+      "clouds": "CAVOK",
+      "weather": null,
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": "QNH 1031",
+      "trend": null,
+      "remarks": null,
+      "complete": false,
+      "details": {
+        "observation_time": "1130Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 020 DEG, 8 KT, VRB BTN 350 AND 100 DEG",
+          "direction_deg": 20,
+          "variable_direction": false,
+          "speed_kt": 8
+        },
+        "cavok": true,
+        "qnh_hpa": 1031
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPPO ATIS P"
+        },
+        {
+          "key": "time",
+          "text": "TIME 1130"
+        },
+        {
+          "key": "approach",
+          "text": "EXP T ARR RNP APCH FOR RWY 10"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 020 DEG, 8 KT, VRB BTN 350 AND 100 DEG"
+        },
+        {
+          "key": "cavok",
+          "text": "CAVOK"
+        },
+        {
+          "key": "other",
+          "text": "T 10, DP 0"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1031"
+        },
+        {
+          "key": "other",
+          "text": "DATALINK DEP CLR AVAILABLE OR CONTACT DELIVERY 121 DECIMAL 805"
+        },
+        {
+          "key": "other",
+          "text": "END OF INFO P METAR METAR EPPO 012100Z VRB02KT 9999 OVC044 07/06 Q1032 TAF TAF EPPO 011730Z 0118/0218 03003KT 9999 BKN027 TEMPO 0119/0122 3000 BR TEMPO 0122/0207 2000 -RADZ BR BKN012 TEMPO 0210/0216 4000 -SHRA BKN020TCU"
+        }
+      ],
+      "raw_text": "EPPO DEP ATIS P 1130Z EPPO ATIS P. TIME 1130. EXP T ARR RNP APCH FOR RWY 10. TRANSITION LEVEL 80. WIND 020 DEG, 8 KT, VRB BTN 350 AND 100 DEG. CAVOK. T 10, DP 0. QNH 1031. DATALINK DEP CLR AVAILABLE OR CONTACT DELIVERY 121 DECIMAL 805. END OF INFO P METAR METAR EPPO 012100Z VRB02KT 9999 OVC044 07/06 Q1032 TAF TAF EPPO 011730Z 0118/0218 03003KT 9999 BKN027 TEMPO 0119/0122 3000 BR TEMPO 0122/0207 2000 -RADZ BR BKN012 TEMPO 0210/0216 4000 -SHRA BKN020TCU"
+    }
+  ]
+}
