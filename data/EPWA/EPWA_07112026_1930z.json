@@ -1,0 +1,107 @@
+{
+  "airport": "EPWA",
+  "fetch_time_utc": "2026-11-07 20:29:26 UTC",
+  "reports": [
+    {
+      "icao": "EPWA",
+      "type": "ARRIVAL",
+      "info_letter": "E",
+      "issue_time": "1930Z",
+      "time": "1930Z",
+      "runway": "33",
+      "approach": "EXP U ARR ILS Z APCH FOR RWY 33",
+      "transition_level": "80",
+      "wind": "CALM",
+      "visibility": "TDZ 5 KM",
+      "clouds": "NSC",
+      "weather": "WX BR",
+      "temperature": "-1",
+      "dewpoint": "-2",
+      "altimeter": "QNH 1029",
+      "trend": "TREND BECMG VIS 3000 M, BR",
+      "remarks": "CAUTION; BIRD ACT",
+      "complete": true,
+      "details": {
+        "observation_time": "1930Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND CALM"
+        },
+        "visibility": {
+          "raw": "VIS TDZ 5 KM",
+          "meters": 5000,
+          "or_more": false
+        },
+        "weather": "WX BR",
+        "clouds": {
+          "raw": "NSC",
+          "layers": [],
+          "no_significant_cloud": true
+        },
+        "temperature_c": -1,
+        "dewpoint_c": -2,
+        "qnh_hpa": 1029,
+        "trend": "TREND BECMG VIS 3000 M, BR"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA ARR E"
+        },
+        {
+          "key": "time",
+          "text": "TIME 1930"
+        },
+        {
+          "key": "approach",
+          "text": "EXP U ARR ILS Z APCH FOR RWY 33"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND CALM"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS TDZ 5 KM"
+        },
+        {
+          "key": "weather",
+          "text": "WX BR"
+        },
+        {
+          "key": "clouds",
+          "text": "NSC"
+        },
+        {
+          "key": "temperature",
+          "text": "T MS 1"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP MS 2"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1029"
+        },
+        {
+          "key": "trend",
+          "text": "TREND BECMG VIS 3000 M, BR"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        }
+      ],
+      "raw_text": "EPWA ARR ATIS E 1930Z EPWA ARR E. TIME 1930. EXP U ARR ILS Z APCH FOR RWY 33. TRANSITION LEVEL 80. WIND CALM. VIS TDZ 5 KM. WX BR. NSC. T MS 1. DP MS 2. QNH 1029. TREND BECMG VIS 3000 M, BR. CAUTION. BIRD ACT. END OF EPWA ARR E"
+    }
+  ]
+}
