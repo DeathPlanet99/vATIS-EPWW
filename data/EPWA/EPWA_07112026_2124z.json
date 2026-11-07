@@ -1,0 +1,235 @@
+{
+  "airport": "EPWA",
+  "fetch_time_utc": "2026-11-07 23:55:10 UTC",
+  "reports": [
+    {
+      "icao": "EPWA",
+      "type": "ARRIVAL",
+      "info_letter": "I",
+      "issue_time": "2126Z",
+      "time": "2124Z",
+      "runway": "33",
+      "approach": "EXP U ARR ILS Z APCH FOR RWY 33",
+      "transition_level": "80",
+      "wind": "VRB, 2 KT, VRB BTN 090 AND 170 DEG",
+      "visibility": "TDZ 7 KM",
+      "clouds": "NSC",
+      "weather": "WX MIFG",
+      "temperature": "-1",
+      "dewpoint": "-2",
+      "altimeter": "QNH 1028",
+      "trend": "TREND BECMG VIS 3000 M, BR",
+      "remarks": "CAUTION; BIRD ACT",
+      "complete": true,
+      "details": {
+        "observation_time": "2124Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND VRB, 2 KT, VRB BTN 090 AND 170 DEG"
+        },
+        "visibility": {
+          "raw": "VIS TDZ 7 KM",
+          "meters": 7000,
+          "or_more": false
+        },
+        "weather": "WX MIFG",
+        "clouds": {
+          "raw": "NSC",
+          "layers": [],
+          "no_significant_cloud": true
+        },
+        "temperature_c": -1,
+        "dewpoint_c": -2,
+        "qnh_hpa": 1028,
+        "trend": "TREND BECMG VIS 3000 M, BR"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA ARR I"
+        },
+        {
+          "key": "time",
+          "text": "TIME 2124"
+        },
+        {
+          "key": "approach",
+          "text": "EXP U ARR ILS Z APCH FOR RWY 33"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND VRB, 2 KT, VRB BTN 090 AND 170 DEG"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS TDZ 7 KM"
+        },
+        {
+          "key": "weather",
+          "text": "WX MIFG"
+        },
+        {
+          "key": "clouds",
+          "text": "NSC"
+        },
+        {
+          "key": "temperature",
+          "text": "T MS 1"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP MS 2"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1028"
+        },
+        {
+          "key": "trend",
+          "text": "TREND BECMG VIS 3000 M, BR"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        }
+      ],
+      "raw_text": "EPWA ARR ATIS I 2126Z EPWA ARR I. TIME 2124. EXP U ARR ILS Z APCH FOR RWY 33. TRANSITION LEVEL 80. WIND VRB, 2 KT, VRB BTN 090 AND 170 DEG. VIS TDZ 7 KM. WX MIFG. NSC. T MS 1. DP MS 2. QNH 1028. TREND BECMG VIS 3000 M, BR. CAUTION. BIRD ACT. END OF EPWA ARR I"
+    },
+    {
+      "icao": "EPWA",
+      "type": "DEPARTURE",
+      "info_letter": "Q",
+      "issue_time": "2126Z",
+      "time": "2124Z",
+      "runway": "29, 33",
+      "approach": null,
+      "transition_level": "80",
+      "wind": "130 DEG, 3 KT",
+      "visibility": "MID 8 KM",
+      "clouds": "NSC",
+      "weather": "WX MIFG",
+      "temperature": "-1",
+      "dewpoint": "-2",
+      "altimeter": "QNH 1028",
+      "trend": "TREND BECMG VIS 3000 M, BR",
+      "remarks": "CAUTION; BIRD ACT; REPORT READY FOR START UP ON DELIVERY 1; 2; 1 DECIMAL 6; 0; 5",
+      "complete": true,
+      "details": {
+        "observation_time": "2124Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 130 DEG, 3 KT",
+          "direction_deg": 130,
+          "variable_direction": false,
+          "speed_kt": 3
+        },
+        "visibility": {
+          "raw": "VIS MID 8 KM",
+          "meters": 8000,
+          "or_more": false
+        },
+        "weather": "WX MIFG",
+        "clouds": {
+          "raw": "NSC",
+          "layers": [],
+          "no_significant_cloud": true
+        },
+        "temperature_c": -1,
+        "dewpoint_c": -2,
+        "qnh_hpa": 1028,
+        "trend": "TREND BECMG VIS 3000 M, BR"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA DEP Q"
+        },
+        {
+          "key": "time",
+          "text": "TIME 2124"
+        },
+        {
+          "key": "runway",
+          "text": "DEP RWY 29"
+        },
+        {
+          "key": "runway",
+          "text": "ARR RWY 33, EXP U ARR ILS Z"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 130 DEG, 3 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS MID 8 KM"
+        },
+        {
+          "key": "weather",
+          "text": "WX MIFG"
+        },
+        {
+          "key": "clouds",
+          "text": "NSC"
+        },
+        {
+          "key": "temperature",
+          "text": "T MS 1"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP MS 2"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1028"
+        },
+        {
+          "key": "trend",
+          "text": "TREND BECMG VIS 3000 M, BR"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        },
+        {
+          "key": "remark",
+          "text": "REPORT READY FOR START UP ON DELIVERY 1"
+        },
+        {
+          "key": "remark",
+          "text": "2"
+        },
+        {
+          "key": "remark",
+          "text": "1 DECIMAL 6"
+        },
+        {
+          "key": "remark",
+          "text": "0"
+        },
+        {
+          "key": "remark",
+          "text": "5"
+        }
+      ],
+      "raw_text": "EPWA DEP ATIS Q 2126Z EPWA DEP Q. TIME 2124. DEP RWY 29. ARR RWY 33, EXP U ARR ILS Z. TRANSITION LEVEL 80. WIND 130 DEG, 3 KT. VIS MID 8 KM. WX MIFG. NSC. T MS 1. DP MS 2. QNH 1028. TREND BECMG VIS 3000 M, BR. CAUTION. BIRD ACT. REPORT READY FOR START UP ON DELIVERY 1. 2. 1 DECIMAL 6. 0. 5. END OF EPWA DEP Q"
+    }
+  ]
+}

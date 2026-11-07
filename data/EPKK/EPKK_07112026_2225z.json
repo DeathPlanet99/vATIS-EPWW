@@ -1,0 +1,252 @@
+{
+  "airport": "EPKK",
+  "fetch_time_utc": "2026-11-07 23:55:10 UTC",
+  "reports": [
+    {
+      "icao": "EPKK",
+      "type": "ARRIVAL",
+      "info_letter": "K",
+      "issue_time": "2226Z",
+      "time": "2225Z",
+      "runway": "25",
+      "approach": "EXP G ARR FOR ILS APCH FOR RWY 25; AFTER DEP CONTACT APCH 121 DECIMAL 075",
+      "transition_level": "80",
+      "wind": "VRB, 1 KT",
+      "visibility": "TDZ 100 M",
+      "clouds": "VV 100 FT",
+      "weather": "WX FZFG",
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": "QNH 1028",
+      "trend": null,
+      "remarks": "CAUTION",
+      "complete": false,
+      "details": {
+        "observation_time": "2225Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND VRB, 1 KT"
+        },
+        "visibility": {
+          "raw": "VIS TDZ 100 M",
+          "meters": 100,
+          "or_more": false
+        },
+        "rvr": "RVR TDZ 400 M, MID 450 M, END 450 M",
+        "weather": "WX FZFG",
+        "clouds": {
+          "raw": "VV 100 FT",
+          "layers": [],
+          "vertical_visibility_ft": 100
+        },
+        "qnh_hpa": 1028
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPKK ATIS K"
+        },
+        {
+          "key": "time",
+          "text": "TIME 2225"
+        },
+        {
+          "key": "approach",
+          "text": "EXP G ARR FOR ILS APCH FOR RWY 25"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 25 RCC 5, 5, 6"
+        },
+        {
+          "key": "other",
+          "text": "RWY WET"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "other",
+          "text": "LOW VIS PROC IN OPS"
+        },
+        {
+          "key": "wind",
+          "text": "WIND VRB, 1 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS TDZ 100 M"
+        },
+        {
+          "key": "rvr",
+          "text": "RVR TDZ 400 M, MID 450 M, END 450 M"
+        },
+        {
+          "key": "weather",
+          "text": "WX FZFG"
+        },
+        {
+          "key": "clouds",
+          "text": "VV 100 FT"
+        },
+        {
+          "key": "other",
+          "text": "T MS 0, DP MS 0"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1028"
+        },
+        {
+          "key": "other",
+          "text": "ATC CLR AVAILABLE VIA DATALINK OR CONTACT DELIVERY"
+        },
+        {
+          "key": "approach",
+          "text": "AFTER DEP CONTACT APCH 121 DECIMAL 075"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "other",
+          "text": "BIRDS ACT"
+        },
+        {
+          "key": "other",
+          "text": "END OF ATIS K Departure ATIS 2026-11-07 22:11 UTC"
+        }
+      ],
+      "raw_text": "EPKK ARR ATIS K 2226Z EPKK ATIS K. TIME 2225. EXP G ARR FOR ILS APCH FOR RWY 25. RWY 25 RCC 5, 5, 6. RWY WET. RWY REPORT END. TRANSITION LEVEL 80. LOW VIS PROC IN OPS. WIND VRB, 1 KT. VIS TDZ 100 M. RVR TDZ 400 M, MID 450 M, END 450 M. WX FZFG. VV 100 FT. T MS 0, DP MS 0. QNH 1028. ATC CLR AVAILABLE VIA DATALINK OR CONTACT DELIVERY. AFTER DEP CONTACT APCH 121 DECIMAL 075. CAUTION. BIRDS ACT. END OF ATIS K Departure ATIS 2026-11-07 22:11 UTC"
+    },
+    {
+      "icao": "EPKK",
+      "type": "DEPARTURE",
+      "info_letter": "J",
+      "issue_time": "2156Z",
+      "time": "2155Z",
+      "runway": "25",
+      "approach": "EXP G ARR FOR ILS APCH FOR RWY 25; AFTER DEP CONTACT APCH 121 DECIMAL 075",
+      "transition_level": "80",
+      "wind": "VRB, 2 KT, VRB BTN 340 AND 050 DEG",
+      "visibility": "TDZ 100 M",
+      "clouds": "VV 100 FT",
+      "weather": "WX FZFG",
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": "QNH 1028",
+      "trend": null,
+      "remarks": "CAUTION",
+      "complete": false,
+      "details": {
+        "observation_time": "2155Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND VRB, 2 KT, VRB BTN 340 AND 050 DEG"
+        },
+        "visibility": {
+          "raw": "VIS TDZ 100 M",
+          "meters": 100,
+          "or_more": false
+        },
+        "rvr": "RVR TDZ 375 M, MID 450 M, END 450 M",
+        "weather": "WX FZFG",
+        "clouds": {
+          "raw": "VV 100 FT",
+          "layers": [],
+          "vertical_visibility_ft": 100
+        },
+        "qnh_hpa": 1028
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPKK ATIS J"
+        },
+        {
+          "key": "time",
+          "text": "TIME 2155"
+        },
+        {
+          "key": "approach",
+          "text": "EXP G ARR FOR ILS APCH FOR RWY 25"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 25 RCC 5, 5, 6"
+        },
+        {
+          "key": "other",
+          "text": "RWY WET"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "other",
+          "text": "LOW VIS PROC IN OPS"
+        },
+        {
+          "key": "wind",
+          "text": "WIND VRB, 2 KT, VRB BTN 340 AND 050 DEG"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS TDZ 100 M"
+        },
+        {
+          "key": "rvr",
+          "text": "RVR TDZ 375 M, MID 450 M, END 450 M"
+        },
+        {
+          "key": "weather",
+          "text": "WX FZFG"
+        },
+        {
+          "key": "clouds",
+          "text": "VV 100 FT"
+        },
+        {
+          "key": "other",
+          "text": "T MS 0, DP MS 0"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1028"
+        },
+        {
+          "key": "other",
+          "text": "ATC CLR AVAILABLE VIA DATALINK OR CONTACT DELIVERY"
+        },
+        {
+          "key": "approach",
+          "text": "AFTER DEP CONTACT APCH 121 DECIMAL 075"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "other",
+          "text": "BIRDS ACT"
+        },
+        {
+          "key": "other",
+          "text": "END OF ATIS J METAR METAR EPKK 072200Z VRB02KT 0100 R25/0375N FZFG VV001 M00/M00 Q1028 TAF TAF EPKK 072030Z 0721/0821 VRB02KT 0100 FZFG OVC001 TEMPO 0721/0808 0300 FZFG OVC002 PROB40 0721/0804 OVC000 PROB30 0804/0808 1100 BR BECMG 0808/0811 3000 BR BKN003 BECMG 0811/0813 CAVOK BECMG 0816/0819 0800 FZFG BECMG 0819/0821 0100 FZFG OVC001"
+        }
+      ],
+      "raw_text": "EPKK DEP ATIS J 2156Z EPKK ATIS J. TIME 2155. EXP G ARR FOR ILS APCH FOR RWY 25. RWY 25 RCC 5, 5, 6. RWY WET. RWY REPORT END. TRANSITION LEVEL 80. LOW VIS PROC IN OPS. WIND VRB, 2 KT, VRB BTN 340 AND 050 DEG. VIS TDZ 100 M. RVR TDZ 375 M, MID 450 M, END 450 M. WX FZFG. VV 100 FT. T MS 0, DP MS 0. QNH 1028. ATC CLR AVAILABLE VIA DATALINK OR CONTACT DELIVERY. AFTER DEP CONTACT APCH 121 DECIMAL 075. CAUTION. BIRDS ACT. END OF ATIS J METAR METAR EPKK 072200Z VRB02KT 0100 R25/0375N FZFG VV001 M00/M00 Q1028 TAF TAF EPKK 072030Z 0721/0821 VRB02KT 0100 FZFG OVC001 TEMPO 0721/0808 0300 FZFG OVC002 PROB40 0721/0804 OVC000 PROB30 0804/0808 1100 BR BECMG 0808/0811 3000 BR BKN003 BECMG 0811/0813 CAVOK BECMG 0816/0819 0800 FZFG BECMG 0819/0821 0100 FZFG OVC001"
+    }
+  ]
+}
