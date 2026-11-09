@@ -1,0 +1,211 @@
+{
+  "airport": "EPKK",
+  "fetch_time_utc": "2026-11-09 19:14:10 UTC",
+  "reports": [
+    {
+      "icao": "EPKK",
+      "type": "ARRIVAL",
+      "info_letter": "S",
+      "issue_time": "1426Z",
+      "time": "1425Z",
+      "runway": "25",
+      "approach": "EXP G ARR FOR ILS APCH FOR RWY 25; AFTER DEP CONTACT APCH 121 DECIMAL 075",
+      "transition_level": "80",
+      "wind": "080 DEG, 5 KT",
+      "visibility": "CAVOK",
+      "clouds": "CAVOK",
+      "weather": null,
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": "QNH 1022",
+      "trend": null,
+      "remarks": "CAUTION",
+      "complete": false,
+      "details": {
+        "observation_time": "1425Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 080 DEG, 5 KT",
+          "direction_deg": 80,
+          "variable_direction": false,
+          "speed_kt": 5
+        },
+        "cavok": true,
+        "qnh_hpa": 1022
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPKK ATIS S"
+        },
+        {
+          "key": "time",
+          "text": "TIME 1425"
+        },
+        {
+          "key": "approach",
+          "text": "EXP G ARR FOR ILS APCH FOR RWY 25"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 25 RCC 6, 6, 6"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 080 DEG, 5 KT"
+        },
+        {
+          "key": "cavok",
+          "text": "CAVOK"
+        },
+        {
+          "key": "other",
+          "text": "T 6, DP 0"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1022"
+        },
+        {
+          "key": "other",
+          "text": "ATC CLR AVAILABLE VIA DATALINK OR CONTACT DELIVERY"
+        },
+        {
+          "key": "approach",
+          "text": "AFTER DEP CONTACT APCH 121 DECIMAL 075"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "other",
+          "text": "BIRDS ACT"
+        },
+        {
+          "key": "other",
+          "text": "END OF ATIS S Departure ATIS 2026-11-09 08:06 UTC"
+        }
+      ],
+      "raw_text": "EPKK ARR ATIS S 1426Z EPKK ATIS S. TIME 1425. EXP G ARR FOR ILS APCH FOR RWY 25. RWY 25 RCC 6, 6, 6. RWY REPORT END. TRANSITION LEVEL 80. WIND 080 DEG, 5 KT. CAVOK. T 6, DP 0. QNH 1022. ATC CLR AVAILABLE VIA DATALINK OR CONTACT DELIVERY. AFTER DEP CONTACT APCH 121 DECIMAL 075. CAUTION. BIRDS ACT. END OF ATIS S Departure ATIS 2026-11-09 08:06 UTC"
+    },
+    {
+      "icao": "EPKK",
+      "type": "DEPARTURE",
+      "info_letter": "B",
+      "issue_time": "0727Z",
+      "time": "0726Z",
+      "runway": "25",
+      "approach": "EXP G ARR FOR ILS APCH FOR RWY 25; AFTER DEP CONTACT APCH 121 DECIMAL 075",
+      "transition_level": "80",
+      "wind": "VRB, 1 KT, VRB BTN 020 AND 110 DEG",
+      "visibility": "TDZ 4500 M",
+      "clouds": "NSC",
+      "weather": "WX BR",
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": "QNH 1025",
+      "trend": null,
+      "remarks": "CAUTION",
+      "complete": false,
+      "details": {
+        "observation_time": "0726Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND VRB, 1 KT, VRB BTN 020 AND 110 DEG"
+        },
+        "visibility": {
+          "raw": "VIS TDZ 4500 M",
+          "meters": 4500,
+          "or_more": false
+        },
+        "weather": "WX BR",
+        "clouds": {
+          "raw": "NSC",
+          "layers": [],
+          "no_significant_cloud": true
+        },
+        "qnh_hpa": 1025
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPKK ATIS B"
+        },
+        {
+          "key": "time",
+          "text": "TIME 0726"
+        },
+        {
+          "key": "approach",
+          "text": "EXP G ARR FOR ILS APCH FOR RWY 25"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 25 RCC 5, 5, 5"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND VRB, 1 KT, VRB BTN 020 AND 110 DEG"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS TDZ 4500 M"
+        },
+        {
+          "key": "weather",
+          "text": "WX BR"
+        },
+        {
+          "key": "clouds",
+          "text": "NSC"
+        },
+        {
+          "key": "other",
+          "text": "T MS 3, DP MS 3"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1025"
+        },
+        {
+          "key": "other",
+          "text": "ATC CLR AVAILABLE VIA DATALINK OR CONTACT DELIVERY"
+        },
+        {
+          "key": "approach",
+          "text": "AFTER DEP CONTACT APCH 121 DECIMAL 075"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "other",
+          "text": "BIRDS ACT"
+        },
+        {
+          "key": "other",
+          "text": "END OF ATIS B METAR METAR EPKK 091830Z 04005KT 5000 BR NSC 02/00 Q1022 TAF TAF EPKK 091717Z 0918/1018 05004KT 6000 NSC BECMG 0918/0921 0800 FZFG BKN002 TEMPO 0918/1008 0100 FZFG OVC000 BECMG 1008/1011 9999 NSW BKN020 BECMG 1011/1014 27010KT -RA BKN008 TEMPO 1013/1018 4500 RADZ BR BKN003"
+        }
+      ],
+      "raw_text": "EPKK DEP ATIS B 0727Z EPKK ATIS B. TIME 0726. EXP G ARR FOR ILS APCH FOR RWY 25. RWY 25 RCC 5, 5, 5. RWY REPORT END. TRANSITION LEVEL 80. WIND VRB, 1 KT, VRB BTN 020 AND 110 DEG. VIS TDZ 4500 M. WX BR. NSC. T MS 3, DP MS 3. QNH 1025. ATC CLR AVAILABLE VIA DATALINK OR CONTACT DELIVERY. AFTER DEP CONTACT APCH 121 DECIMAL 075. CAUTION. BIRDS ACT. END OF ATIS B METAR METAR EPKK 091830Z 04005KT 5000 BR NSC 02/00 Q1022 TAF TAF EPKK 091717Z 0918/1018 05004KT 6000 NSC BECMG 0918/0921 0800 FZFG BKN002 TEMPO 0918/1008 0100 FZFG OVC000 BECMG 1008/1011 9999 NSW BKN020 BECMG 1011/1014 27010KT -RA BKN008 TEMPO 1013/1018 4500 RADZ BR BKN003"
+    }
+  ]
+}
