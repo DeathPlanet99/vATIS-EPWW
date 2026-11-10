@@ -1,0 +1,233 @@
+{
+  "airport": "EPWA",
+  "fetch_time_utc": "2026-11-10 10:01:38 UTC",
+  "reports": [
+    {
+      "icao": "EPWA",
+      "type": "ARRIVAL",
+      "info_letter": "J",
+      "issue_time": "0731Z",
+      "time": "0730Z",
+      "runway": "11",
+      "approach": "EXP N ARR ILS Z APCH FOR RWY 11",
+      "transition_level": "80",
+      "wind": "140 DEG, 6 KT",
+      "visibility": "TDZ 5 KM",
+      "clouds": "NSC",
+      "weather": "WX BR",
+      "temperature": "-1",
+      "dewpoint": "-2",
+      "altimeter": "QNH 1014",
+      "trend": "NOSIG",
+      "remarks": "CAUTION; BIRD ACT",
+      "complete": true,
+      "details": {
+        "observation_time": "0730Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 140 DEG, 6 KT",
+          "direction_deg": 140,
+          "variable_direction": false,
+          "speed_kt": 6
+        },
+        "visibility": {
+          "raw": "VIS TDZ 5 KM",
+          "meters": 5000,
+          "or_more": false
+        },
+        "weather": "WX BR",
+        "clouds": {
+          "raw": "NSC",
+          "layers": [],
+          "no_significant_cloud": true
+        },
+        "temperature_c": -1,
+        "dewpoint_c": -2,
+        "qnh_hpa": 1014,
+        "trend": "NOSIG"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA ARR J"
+        },
+        {
+          "key": "time",
+          "text": "TIME 0730"
+        },
+        {
+          "key": "approach",
+          "text": "EXP N ARR ILS Z APCH FOR RWY 11"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 140 DEG, 6 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS TDZ 5 KM"
+        },
+        {
+          "key": "weather",
+          "text": "WX BR"
+        },
+        {
+          "key": "clouds",
+          "text": "NSC"
+        },
+        {
+          "key": "temperature",
+          "text": "T MS 1"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP MS 2"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1014"
+        },
+        {
+          "key": "trend",
+          "text": "NOSIG"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        }
+      ],
+      "raw_text": "EPWA ARR ATIS J 0731Z EPWA ARR J. TIME 0730. EXP N ARR ILS Z APCH FOR RWY 11. TRANSITION LEVEL 80. WIND 140 DEG, 6 KT. VIS TDZ 5 KM. WX BR. NSC. T MS 1. DP MS 2. QNH 1014. NOSIG. CAUTION. BIRD ACT. END OF EPWA ARR J"
+    },
+    {
+      "icao": "EPWA",
+      "type": "DEPARTURE",
+      "info_letter": "U",
+      "issue_time": "0825Z",
+      "time": "0825Z",
+      "runway": "15, 11",
+      "approach": null,
+      "transition_level": "80",
+      "wind": "150 DEG, 7 KT",
+      "visibility": "MID 6 KM",
+      "clouds": "NSC",
+      "weather": null,
+      "temperature": "0",
+      "dewpoint": "-2",
+      "altimeter": "QNH 1013",
+      "trend": "NOSIG",
+      "remarks": "CAUTION; BIRD ACT; REPORT READY FOR START UP ON DELIVERY 1; 2; 1 DECIMAL 6; 0; 5",
+      "complete": true,
+      "details": {
+        "observation_time": "0825Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 150 DEG, 7 KT",
+          "direction_deg": 150,
+          "variable_direction": false,
+          "speed_kt": 7
+        },
+        "visibility": {
+          "raw": "VIS MID 6 KM",
+          "meters": 6000,
+          "or_more": false
+        },
+        "clouds": {
+          "raw": "NSC",
+          "layers": [],
+          "no_significant_cloud": true
+        },
+        "temperature_c": 0,
+        "dewpoint_c": -2,
+        "qnh_hpa": 1013,
+        "trend": "NOSIG"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA DEP U"
+        },
+        {
+          "key": "time",
+          "text": "TIME 0825"
+        },
+        {
+          "key": "runway",
+          "text": "DEP RWY 15"
+        },
+        {
+          "key": "runway",
+          "text": "ARR RWY 11, EXP N ARR ILS Z"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 150 DEG, 7 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS MID 6 KM"
+        },
+        {
+          "key": "clouds",
+          "text": "NSC"
+        },
+        {
+          "key": "temperature",
+          "text": "T 0"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP MS 2"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1013"
+        },
+        {
+          "key": "trend",
+          "text": "NOSIG"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        },
+        {
+          "key": "remark",
+          "text": "REPORT READY FOR START UP ON DELIVERY 1"
+        },
+        {
+          "key": "remark",
+          "text": "2"
+        },
+        {
+          "key": "remark",
+          "text": "1 DECIMAL 6"
+        },
+        {
+          "key": "remark",
+          "text": "0"
+        },
+        {
+          "key": "remark",
+          "text": "5"
+        }
+      ],
+      "raw_text": "EPWA DEP ATIS U 0825Z EPWA DEP U. TIME 0825. DEP RWY 15. ARR RWY 11, EXP N ARR ILS Z. TRANSITION LEVEL 80. WIND 150 DEG, 7 KT. VIS MID 6 KM. NSC. T 0. DP MS 2. QNH 1013. NOSIG. CAUTION. BIRD ACT. REPORT READY FOR START UP ON DELIVERY 1. 2. 1 DECIMAL 6. 0. 5. END OF EPWA DEP U"
+    }
+  ]
+}
