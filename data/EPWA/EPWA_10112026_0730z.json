@@ -1,6 +1,6 @@
 {
   "airport": "EPWA",
-  "fetch_time_utc": "2026-11-10 10:01:38 UTC",
+  "fetch_time_utc": "2026-11-10 17:42:02 UTC",
   "reports": [
     {
       "icao": "EPWA",
@@ -109,62 +109,87 @@
     {
       "icao": "EPWA",
       "type": "DEPARTURE",
-      "info_letter": "U",
-      "issue_time": "0825Z",
-      "time": "0825Z",
-      "runway": "15, 11",
+      "info_letter": "T",
+      "issue_time": "1723Z",
+      "time": "1721Z",
+      "runway": "29, 33",
       "approach": null,
       "transition_level": "80",
-      "wind": "150 DEG, 7 KT",
-      "visibility": "MID 6 KM",
-      "clouds": "NSC",
-      "weather": null,
-      "temperature": "0",
-      "dewpoint": "-2",
-      "altimeter": "QNH 1013",
-      "trend": "NOSIG",
+      "wind": "290 DEG, 8 KT",
+      "visibility": "MID 4600 M",
+      "clouds": "BKN 400 FT",
+      "weather": "WX FBL RASN, BR",
+      "temperature": "1",
+      "dewpoint": "1",
+      "altimeter": "QNH 1008",
+      "trend": "TREND TEMPO VIS 1200 M, RASN, CLD BKN 400 FT",
       "remarks": "CAUTION; BIRD ACT; REPORT READY FOR START UP ON DELIVERY 1; 2; 1 DECIMAL 6; 0; 5",
       "complete": true,
       "details": {
-        "observation_time": "0825Z",
+        "observation_time": "1721Z",
         "transition_level": "80",
         "wind": {
-          "raw": "WIND 150 DEG, 7 KT",
-          "direction_deg": 150,
+          "raw": "WIND 290 DEG, 8 KT",
+          "direction_deg": 290,
           "variable_direction": false,
-          "speed_kt": 7
+          "speed_kt": 8
         },
         "visibility": {
-          "raw": "VIS MID 6 KM",
-          "meters": 6000,
+          "raw": "VIS MID 4600 M",
+          "meters": 4600,
           "or_more": false
         },
+        "weather": "WX FBL RASN, BR",
         "clouds": {
-          "raw": "NSC",
-          "layers": [],
-          "no_significant_cloud": true
+          "raw": "CLD BKN 400 FT",
+          "layers": [
+            {
+              "cover": "BKN",
+              "base_ft": 400
+            }
+          ]
         },
-        "temperature_c": 0,
-        "dewpoint_c": -2,
-        "qnh_hpa": 1013,
-        "trend": "NOSIG"
+        "temperature_c": 1,
+        "dewpoint_c": 1,
+        "qnh_hpa": 1008,
+        "trend": "TREND TEMPO VIS 1200 M, RASN, CLD BKN 400 FT"
       },
       "elements": [
         {
           "key": "ident",
-          "text": "EPWA DEP U"
+          "text": "EPWA DEP T"
         },
         {
           "key": "time",
-          "text": "TIME 0825"
+          "text": "TIME 1721"
         },
         {
           "key": "runway",
-          "text": "DEP RWY 15"
+          "text": "DEP RWY 29"
         },
         {
           "key": "runway",
-          "text": "ARR RWY 11, EXP N ARR ILS Z"
+          "text": "ARR RWY 33, EXP U ARR ILS Z"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 29 RCC 5, 5, 5"
+        },
+        {
+          "key": "other",
+          "text": "1ST PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "2ND PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "3RD PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
         },
         {
           "key": "transition_level",
@@ -172,31 +197,35 @@
         },
         {
           "key": "wind",
-          "text": "WIND 150 DEG, 7 KT"
+          "text": "WIND 290 DEG, 8 KT"
         },
         {
           "key": "visibility",
-          "text": "VIS MID 6 KM"
+          "text": "VIS MID 4600 M"
+        },
+        {
+          "key": "weather",
+          "text": "WX FBL RASN, BR"
         },
         {
           "key": "clouds",
-          "text": "NSC"
+          "text": "CLD BKN 400 FT"
         },
         {
           "key": "temperature",
-          "text": "T 0"
+          "text": "T 1"
         },
         {
           "key": "dewpoint",
-          "text": "DP MS 2"
+          "text": "DP 1"
         },
         {
           "key": "qnh",
-          "text": "QNH 1013"
+          "text": "QNH 1008"
         },
         {
           "key": "trend",
-          "text": "NOSIG"
+          "text": "TREND TEMPO VIS 1200 M, RASN, CLD BKN 400 FT"
         },
         {
           "key": "remark",
@@ -227,7 +256,7 @@
           "text": "5"
         }
       ],
-      "raw_text": "EPWA DEP ATIS U 0825Z EPWA DEP U. TIME 0825. DEP RWY 15. ARR RWY 11, EXP N ARR ILS Z. TRANSITION LEVEL 80. WIND 150 DEG, 7 KT. VIS MID 6 KM. NSC. T 0. DP MS 2. QNH 1013. NOSIG. CAUTION. BIRD ACT. REPORT READY FOR START UP ON DELIVERY 1. 2. 1 DECIMAL 6. 0. 5. END OF EPWA DEP U"
+      "raw_text": "EPWA DEP ATIS T 1723Z EPWA DEP T. TIME 1721. DEP RWY 29. ARR RWY 33, EXP U ARR ILS Z. RWY 29 RCC 5, 5, 5. 1ST PART, WET. 2ND PART, WET. 3RD PART, WET. RWY REPORT END. TRANSITION LEVEL 80. WIND 290 DEG, 8 KT. VIS MID 4600 M. WX FBL RASN, BR. CLD BKN 400 FT. T 1. DP 1. QNH 1008. TREND TEMPO VIS 1200 M, RASN, CLD BKN 400 FT. CAUTION. BIRD ACT. REPORT READY FOR START UP ON DELIVERY 1. 2. 1 DECIMAL 6. 0. 5. END OF EPWA DEP T"
     }
   ]
 }
