@@ -1,0 +1,207 @@
+{
+  "airport": "EPPO",
+  "fetch_time_utc": "2026-11-11 09:35:49 UTC",
+  "reports": [
+    {
+      "icao": "EPPO",
+      "type": "ARRIVAL",
+      "info_letter": "Z",
+      "issue_time": "1207Z",
+      "time": "1207Z",
+      "runway": "28",
+      "approach": "EXP M ARR ILS Y APCH FOR RWY 28",
+      "transition_level": "80",
+      "wind": "310 DEG, 6 KT",
+      "visibility": "TDZ 1100 M",
+      "clouds": "BKN 250 FT",
+      "weather": "WX FBL SN, BR",
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": "QNH 1011",
+      "trend": null,
+      "remarks": null,
+      "complete": false,
+      "details": {
+        "observation_time": "1207Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 310 DEG, 6 KT",
+          "direction_deg": 310,
+          "variable_direction": false,
+          "speed_kt": 6
+        },
+        "visibility": {
+          "raw": "VIS TDZ 1100 M",
+          "meters": 1100,
+          "or_more": false
+        },
+        "rvr": "RVR TDZ 1500 M, MID 1600 M, END 1700 M",
+        "weather": "WX FBL SN, BR",
+        "clouds": {
+          "raw": "CLD BKN 250 FT",
+          "layers": [
+            {
+              "cover": "BKN",
+              "base_ft": 250
+            }
+          ]
+        },
+        "qnh_hpa": 1011
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPPO ATIS Z"
+        },
+        {
+          "key": "time",
+          "text": "TIME 1207"
+        },
+        {
+          "key": "approach",
+          "text": "EXP M ARR ILS Y APCH FOR RWY 28"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 28 CONDITION REPORT AT 1200"
+        },
+        {
+          "key": "other",
+          "text": "RCC 5, 5, 5"
+        },
+        {
+          "key": "other",
+          "text": "1ST PART 100 %, WET"
+        },
+        {
+          "key": "other",
+          "text": "2ND PART 100 %, WET"
+        },
+        {
+          "key": "other",
+          "text": "3RD PART 100 %, WET"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 310 DEG, 6 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS TDZ 1100 M"
+        },
+        {
+          "key": "rvr",
+          "text": "RVR TDZ 1500 M, MID 1600 M, END 1700 M"
+        },
+        {
+          "key": "weather",
+          "text": "WX FBL SN, BR"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD BKN 250 FT"
+        },
+        {
+          "key": "other",
+          "text": "T 0, DP MS 0"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1011"
+        },
+        {
+          "key": "other",
+          "text": "DATALINK DEP CLR AVAILABLE OR CONTACT TOWER 119 DECIMAL 980"
+        },
+        {
+          "key": "other",
+          "text": "END OF INFO Z Departure ATIS 2026-10-19 12:33 UTC"
+        }
+      ],
+      "raw_text": "EPPO ARR ATIS Z 1207Z EPPO ATIS Z. TIME 1207. EXP M ARR ILS Y APCH FOR RWY 28. RWY 28 CONDITION REPORT AT 1200. RCC 5, 5, 5. 1ST PART 100 %, WET. 2ND PART 100 %, WET. 3RD PART 100 %, WET. RWY REPORT END. TRANSITION LEVEL 80. WIND 310 DEG, 6 KT. VIS TDZ 1100 M. RVR TDZ 1500 M, MID 1600 M, END 1700 M. WX FBL SN, BR. CLD BKN 250 FT. T 0, DP MS 0. QNH 1011. DATALINK DEP CLR AVAILABLE OR CONTACT TOWER 119 DECIMAL 980. END OF INFO Z Departure ATIS 2026-10-19 12:33 UTC"
+    },
+    {
+      "icao": "EPPO",
+      "type": "DEPARTURE",
+      "info_letter": "P",
+      "issue_time": "1130Z",
+      "time": "1130Z",
+      "runway": "10",
+      "approach": "EXP T ARR RNP APCH FOR RWY 10",
+      "transition_level": "80",
+      "wind": "020 DEG, 8 KT, VRB BTN 350 AND 100 DEG",
+      "visibility": "CAVOK",
+      "clouds": "CAVOK",
+      "weather": null,
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": "QNH 1031",
+      "trend": null,
+      "remarks": null,
+      "complete": false,
+      "details": {
+        "observation_time": "1130Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 020 DEG, 8 KT, VRB BTN 350 AND 100 DEG",
+          "direction_deg": 20,
+          "variable_direction": false,
+          "speed_kt": 8
+        },
+        "cavok": true,
+        "qnh_hpa": 1031
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPPO ATIS P"
+        },
+        {
+          "key": "time",
+          "text": "TIME 1130"
+        },
+        {
+          "key": "approach",
+          "text": "EXP T ARR RNP APCH FOR RWY 10"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 020 DEG, 8 KT, VRB BTN 350 AND 100 DEG"
+        },
+        {
+          "key": "cavok",
+          "text": "CAVOK"
+        },
+        {
+          "key": "other",
+          "text": "T 10, DP 0"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1031"
+        },
+        {
+          "key": "other",
+          "text": "DATALINK DEP CLR AVAILABLE OR CONTACT DELIVERY 121 DECIMAL 805"
+        },
+        {
+          "key": "other",
+          "text": "END OF INFO P METAR METAR EPPO 110500Z 23005KT 0800 R28/P2000D FG OVC001 02/02 Q1011 TAF TAF EPPO 102330Z 1100/1124 27010KT 2300 BR OVC002 BECMG 1100/1103 0700 FG OVC001 TEMPO 1102/1107 0200 FG BECMG 1105/1107 18005KT BECMG 1107/1110 9999 BKN010 BECMG 1110/1113 SCT015 BECMG 1121/1124 2000 -RA BR BKN005"
+        }
+      ],
+      "raw_text": "EPPO DEP ATIS P 1130Z EPPO ATIS P. TIME 1130. EXP T ARR RNP APCH FOR RWY 10. TRANSITION LEVEL 80. WIND 020 DEG, 8 KT, VRB BTN 350 AND 100 DEG. CAVOK. T 10, DP 0. QNH 1031. DATALINK DEP CLR AVAILABLE OR CONTACT DELIVERY 121 DECIMAL 805. END OF INFO P METAR METAR EPPO 110500Z 23005KT 0800 R28/P2000D FG OVC001 02/02 Q1011 TAF TAF EPPO 102330Z 1100/1124 27010KT 2300 BR OVC002 BECMG 1100/1103 0700 FG OVC001 TEMPO 1102/1107 0200 FG BECMG 1105/1107 18005KT BECMG 1107/1110 9999 BKN010 BECMG 1110/1113 SCT015 BECMG 1121/1124 2000 -RA BR BKN005"
+    }
+  ]
+}
