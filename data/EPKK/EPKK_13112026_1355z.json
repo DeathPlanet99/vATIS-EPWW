@@ -1,0 +1,214 @@
+{
+  "airport": "EPKK",
+  "fetch_time_utc": "2026-11-13 01:46:40 UTC",
+  "reports": [
+    {
+      "icao": "EPKK",
+      "type": "ARRIVAL",
+      "info_letter": "X",
+      "issue_time": "1356Z",
+      "time": "1355Z",
+      "runway": "07",
+      "approach": "EXP H ARR FOR RNP APCH FOR RWY 07; AFTER DEP CONTACT APCH 121 DECIMAL 075",
+      "transition_level": "80",
+      "wind": "070 DEG, 8 KT",
+      "visibility": "CAVOK",
+      "clouds": "CAVOK",
+      "weather": null,
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": "QNH 1007",
+      "trend": null,
+      "remarks": "CAUTION",
+      "complete": false,
+      "details": {
+        "observation_time": "1355Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 070 DEG, 8 KT",
+          "direction_deg": 70,
+          "variable_direction": false,
+          "speed_kt": 8
+        },
+        "cavok": true,
+        "qnh_hpa": 1007
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPKK ATIS X"
+        },
+        {
+          "key": "time",
+          "text": "TIME 1355"
+        },
+        {
+          "key": "approach",
+          "text": "EXP H ARR FOR RNP APCH FOR RWY 07"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 07 RCC 6, 6, 6"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 070 DEG, 8 KT"
+        },
+        {
+          "key": "cavok",
+          "text": "CAVOK"
+        },
+        {
+          "key": "other",
+          "text": "T 7, DP 1"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1007"
+        },
+        {
+          "key": "other",
+          "text": "CLR AVAILABLE VIA DATALINK OR CONTACT DELIVERY"
+        },
+        {
+          "key": "approach",
+          "text": "AFTER DEP CONTACT APCH 121 DECIMAL 075"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "other",
+          "text": "BIRDS ACT"
+        },
+        {
+          "key": "other",
+          "text": "END OF ATIS X Departure ATIS 2026-11-10 04:37 UTC"
+        }
+      ],
+      "raw_text": "EPKK ARR ATIS X 1356Z EPKK ATIS X. TIME 1355. EXP H ARR FOR RNP APCH FOR RWY 07. RWY 07 RCC 6, 6, 6. RWY REPORT END. TRANSITION LEVEL 80. WIND 070 DEG, 8 KT. CAVOK. T 7, DP 1. QNH 1007. CLR AVAILABLE VIA DATALINK OR CONTACT DELIVERY. AFTER DEP CONTACT APCH 121 DECIMAL 075. CAUTION. BIRDS ACT. END OF ATIS X Departure ATIS 2026-11-10 04:37 UTC"
+    },
+    {
+      "icao": "EPKK",
+      "type": "DEPARTURE",
+      "info_letter": "I",
+      "issue_time": "2017Z",
+      "time": "2017Z",
+      "runway": "25",
+      "approach": "EXP G ARR FOR ILS APCH FOR RWY 25; AFTER DEP CONTACT APCH 121 DECIMAL 075",
+      "transition_level": "80",
+      "wind": "060 DEG, 7 KT",
+      "visibility": "TDZ 4000 M",
+      "clouds": "NSC",
+      "weather": "WX BR",
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": "QNH 1020",
+      "trend": null,
+      "remarks": "CAUTION",
+      "complete": false,
+      "details": {
+        "observation_time": "2017Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 060 DEG, 7 KT",
+          "direction_deg": 60,
+          "variable_direction": false,
+          "speed_kt": 7
+        },
+        "visibility": {
+          "raw": "VIS TDZ 4000 M",
+          "meters": 4000,
+          "or_more": false
+        },
+        "weather": "WX BR",
+        "clouds": {
+          "raw": "NSC",
+          "layers": [],
+          "no_significant_cloud": true
+        },
+        "qnh_hpa": 1020
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPKK ATIS I"
+        },
+        {
+          "key": "time",
+          "text": "TIME 2017"
+        },
+        {
+          "key": "approach",
+          "text": "EXP G ARR FOR ILS APCH FOR RWY 25"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 25 RCC 5, 6, 6"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 060 DEG, 7 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS TDZ 4000 M"
+        },
+        {
+          "key": "weather",
+          "text": "WX BR"
+        },
+        {
+          "key": "clouds",
+          "text": "NSC"
+        },
+        {
+          "key": "other",
+          "text": "T MS 0, DP MS 1"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1020"
+        },
+        {
+          "key": "other",
+          "text": "ATC CLR AVAILABLE VIA DATALINK OR CONTACT DELIVERY"
+        },
+        {
+          "key": "approach",
+          "text": "AFTER DEP CONTACT APCH 121 DECIMAL 075"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "other",
+          "text": "BIRDS ACT"
+        },
+        {
+          "key": "other",
+          "text": "END OF ATIS I METAR METAR EPKK 122100Z VRB01KT 8000 -SHRA BKN045CB OVC057 09/08 Q0994 TAF TAF EPKK 122030Z 1221/1321 VRB02KT 9999 BKN040 BECMG 1221/1223 4000 -RA BR OVC013 BECMG 1223/1301 29012KT 2500 RA BR OVC008 TEMPO 1223/1306 1300 RA BR BKN004 PROB30 TEMPO 1303/1306 RASN BECMG 1306/1309 9999 NSW BKN025 TEMPO 1309/1316 30015G27KT"
+        }
+      ],
+      "raw_text": "EPKK DEP ATIS I 2017Z EPKK ATIS I. TIME 2017. EXP G ARR FOR ILS APCH FOR RWY 25. RWY 25 RCC 5, 6, 6. RWY REPORT END. TRANSITION LEVEL 80. WIND 060 DEG, 7 KT. VIS TDZ 4000 M. WX BR. NSC. T MS 0, DP MS 1. QNH 1020. ATC CLR AVAILABLE VIA DATALINK OR CONTACT DELIVERY. AFTER DEP CONTACT APCH 121 DECIMAL 075. CAUTION. BIRDS ACT. END OF ATIS I METAR METAR EPKK 122100Z VRB01KT 8000 -SHRA BKN045CB OVC057 09/08 Q0994 TAF TAF EPKK 122030Z 1221/1321 VRB02KT 9999 BKN040 BECMG 1221/1223 4000 -RA BR OVC013 BECMG 1223/1301 29012KT 2500 RA BR OVC008 TEMPO 1223/1306 1300 RA BR BKN004 PROB30 TEMPO 1303/1306 RASN BECMG 1306/1309 9999 NSW BKN025 TEMPO 1309/1316 30015G27KT"
+    }
+  ]
+}
