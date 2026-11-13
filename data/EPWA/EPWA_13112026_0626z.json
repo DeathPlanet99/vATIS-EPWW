@@ -1,0 +1,294 @@
+{
+  "airport": "EPWA",
+  "fetch_time_utc": "2026-11-13 16:48:23 UTC",
+  "reports": [
+    {
+      "icao": "EPWA",
+      "type": "ARRIVAL",
+      "info_letter": "E",
+      "issue_time": "0626Z",
+      "time": "0626Z",
+      "runway": "11",
+      "approach": "EXP N ARR ILS Z APCH FOR RWY 11",
+      "transition_level": "80",
+      "wind": "130 DEG, 8 KT",
+      "visibility": "TDZ 2500 M",
+      "clouds": "BKN 400 FT",
+      "weather": "WX FBL RA, BR",
+      "temperature": "2",
+      "dewpoint": "2",
+      "altimeter": "QNH 999",
+      "trend": "TREND TEMPO VIS 1400 M, DZ, CLD BKN 200 FT",
+      "remarks": "CAUTION; BIRD ACT",
+      "complete": true,
+      "details": {
+        "observation_time": "0626Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 130 DEG, 8 KT",
+          "direction_deg": 130,
+          "variable_direction": false,
+          "speed_kt": 8
+        },
+        "visibility": {
+          "raw": "VIS TDZ 2500 M",
+          "meters": 2500,
+          "or_more": false
+        },
+        "weather": "WX FBL RA, BR",
+        "clouds": {
+          "raw": "CLD BKN 400 FT",
+          "layers": [
+            {
+              "cover": "BKN",
+              "base_ft": 400
+            }
+          ]
+        },
+        "temperature_c": 2,
+        "dewpoint_c": 2,
+        "qnh_hpa": 999,
+        "trend": "TREND TEMPO VIS 1400 M, DZ, CLD BKN 200 FT"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA ARR E"
+        },
+        {
+          "key": "time",
+          "text": "TIME 0626"
+        },
+        {
+          "key": "approach",
+          "text": "EXP N ARR ILS Z APCH FOR RWY 11"
+        },
+        {
+          "key": "other",
+          "text": "LOW VIS PROC IN OPS"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 11 RCC 5, 5, 5"
+        },
+        {
+          "key": "other",
+          "text": "1ST PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "2ND PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "3RD PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 130 DEG, 8 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS TDZ 2500 M"
+        },
+        {
+          "key": "weather",
+          "text": "WX FBL RA, BR"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD BKN 400 FT"
+        },
+        {
+          "key": "temperature",
+          "text": "T 2"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP 2"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 0999"
+        },
+        {
+          "key": "trend",
+          "text": "TREND TEMPO VIS 1400 M, DZ, CLD BKN 200 FT"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        }
+      ],
+      "raw_text": "EPWA ARR ATIS E 0626Z EPWA ARR E. TIME 0626. EXP N ARR ILS Z APCH FOR RWY 11. LOW VIS PROC IN OPS. RWY 11 RCC 5, 5, 5. 1ST PART, WET. 2ND PART, WET. 3RD PART, WET. RWY REPORT END. TRANSITION LEVEL 80. WIND 130 DEG, 8 KT. VIS TDZ 2500 M. WX FBL RA, BR. CLD BKN 400 FT. T 2. DP 2. QNH 0999. TREND TEMPO VIS 1400 M, DZ, CLD BKN 200 FT. CAUTION. BIRD ACT. END OF EPWA ARR E"
+    },
+    {
+      "icao": "EPWA",
+      "type": "DEPARTURE",
+      "info_letter": "Y",
+      "issue_time": "0626Z",
+      "time": "0626Z",
+      "runway": "15, 11",
+      "approach": null,
+      "transition_level": "80",
+      "wind": "130 DEG, 8 KT",
+      "visibility": "MID 2600 M",
+      "clouds": "BKN 400 FT",
+      "weather": "WX FBL RA, BR",
+      "temperature": "2",
+      "dewpoint": "2",
+      "altimeter": "QNH 999",
+      "trend": "TREND TEMPO VIS 1400 M, DZ, CLD BKN 200 FT",
+      "remarks": "CAUTION; BIRD ACT; REPORT READY FOR START UP ON DELIVERY 1; 2; 1 DECIMAL 6; 0; 5",
+      "complete": true,
+      "details": {
+        "observation_time": "0626Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 130 DEG, 8 KT",
+          "direction_deg": 130,
+          "variable_direction": false,
+          "speed_kt": 8
+        },
+        "visibility": {
+          "raw": "VIS MID 2600 M",
+          "meters": 2600,
+          "or_more": false
+        },
+        "weather": "WX FBL RA, BR",
+        "clouds": {
+          "raw": "CLD BKN 400 FT",
+          "layers": [
+            {
+              "cover": "BKN",
+              "base_ft": 400
+            }
+          ]
+        },
+        "temperature_c": 2,
+        "dewpoint_c": 2,
+        "qnh_hpa": 999,
+        "trend": "TREND TEMPO VIS 1400 M, DZ, CLD BKN 200 FT"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA DEP Y"
+        },
+        {
+          "key": "time",
+          "text": "TIME 0626"
+        },
+        {
+          "key": "runway",
+          "text": "DEP RWY 15"
+        },
+        {
+          "key": "runway",
+          "text": "ARR RWY 11, EXP N ARR ILS Z"
+        },
+        {
+          "key": "other",
+          "text": "LOW VIS PROC IN OPS"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 15 RCC 5, 5, 5"
+        },
+        {
+          "key": "other",
+          "text": "1ST PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "2ND PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "3RD PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 130 DEG, 8 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS MID 2600 M"
+        },
+        {
+          "key": "weather",
+          "text": "WX FBL RA, BR"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD BKN 400 FT"
+        },
+        {
+          "key": "temperature",
+          "text": "T 2"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP 2"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 0999"
+        },
+        {
+          "key": "trend",
+          "text": "TREND TEMPO VIS 1400 M, DZ, CLD BKN 200 FT"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        },
+        {
+          "key": "remark",
+          "text": "REPORT READY FOR START UP ON DELIVERY 1"
+        },
+        {
+          "key": "remark",
+          "text": "2"
+        },
+        {
+          "key": "remark",
+          "text": "1 DECIMAL 6"
+        },
+        {
+          "key": "remark",
+          "text": "0"
+        },
+        {
+          "key": "remark",
+          "text": "5"
+        }
+      ],
+      "raw_text": "EPWA DEP ATIS Y 0626Z EPWA DEP Y. TIME 0626. DEP RWY 15. ARR RWY 11, EXP N ARR ILS Z. LOW VIS PROC IN OPS. RWY 15 RCC 5, 5, 5. 1ST PART, WET. 2ND PART, WET. 3RD PART, WET. RWY REPORT END. TRANSITION LEVEL 80. WIND 130 DEG, 8 KT. VIS MID 2600 M. WX FBL RA, BR. CLD BKN 400 FT. T 2. DP 2. QNH 0999. TREND TEMPO VIS 1400 M, DZ, CLD BKN 200 FT. CAUTION. BIRD ACT. REPORT READY FOR START UP ON DELIVERY 1. 2. 1 DECIMAL 6. 0. 5. END OF EPWA DEP Y"
+    }
+  ]
+}
