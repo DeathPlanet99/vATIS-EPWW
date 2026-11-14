@@ -1,0 +1,211 @@
+{
+  "airport": "EPKK",
+  "fetch_time_utc": "2026-11-14 20:39:23 UTC",
+  "reports": [
+    {
+      "icao": "EPKK",
+      "type": "ARRIVAL",
+      "info_letter": "C",
+      "issue_time": "1756Z",
+      "time": "1755Z",
+      "runway": "25",
+      "approach": "EXP G ARR FOR ILS APCH FOR RWY 25; AFTER DEP CONTACT APCH 121 DECIMAL 075",
+      "transition_level": "80",
+      "wind": "VRB, 1 KT, VRB BTN 140 AND 240 DEG",
+      "visibility": "CAVOK",
+      "clouds": "CAVOK",
+      "weather": null,
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": "QNH 1024",
+      "trend": null,
+      "remarks": "CAUTION",
+      "complete": false,
+      "details": {
+        "observation_time": "1755Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND VRB, 1 KT, VRB BTN 140 AND 240 DEG"
+        },
+        "cavok": true,
+        "qnh_hpa": 1024
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPKK ATIS C"
+        },
+        {
+          "key": "time",
+          "text": "TIME 1755"
+        },
+        {
+          "key": "approach",
+          "text": "EXP G ARR FOR ILS APCH FOR RWY 25"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 25 RCC 6, 6, 6"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "other",
+          "text": "ATC CLR AVAILABLE VIA DATALINK OR CONTACT DELIVERY"
+        },
+        {
+          "key": "wind",
+          "text": "WIND VRB, 1 KT, VRB BTN 140 AND 240 DEG"
+        },
+        {
+          "key": "cavok",
+          "text": "CAVOK"
+        },
+        {
+          "key": "other",
+          "text": "T 1, DP MS 1"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1024"
+        },
+        {
+          "key": "approach",
+          "text": "AFTER DEP CONTACT APCH 121 DECIMAL 075"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "other",
+          "text": "BIRDS ACT"
+        },
+        {
+          "key": "other",
+          "text": "END OF ATIS C Departure ATIS 2026-11-10 04:37 UTC"
+        }
+      ],
+      "raw_text": "EPKK ARR ATIS C 1756Z EPKK ATIS C. TIME 1755. EXP G ARR FOR ILS APCH FOR RWY 25. RWY 25 RCC 6, 6, 6. RWY REPORT END. TRANSITION LEVEL 80. ATC CLR AVAILABLE VIA DATALINK OR CONTACT DELIVERY. WIND VRB, 1 KT, VRB BTN 140 AND 240 DEG. CAVOK. T 1, DP MS 1. QNH 1024. AFTER DEP CONTACT APCH 121 DECIMAL 075. CAUTION. BIRDS ACT. END OF ATIS C Departure ATIS 2026-11-10 04:37 UTC"
+    },
+    {
+      "icao": "EPKK",
+      "type": "DEPARTURE",
+      "info_letter": "I",
+      "issue_time": "2017Z",
+      "time": "2017Z",
+      "runway": "25",
+      "approach": "EXP G ARR FOR ILS APCH FOR RWY 25; AFTER DEP CONTACT APCH 121 DECIMAL 075",
+      "transition_level": "80",
+      "wind": "060 DEG, 7 KT",
+      "visibility": "TDZ 4000 M",
+      "clouds": "NSC",
+      "weather": "WX BR",
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": "QNH 1020",
+      "trend": null,
+      "remarks": "CAUTION",
+      "complete": false,
+      "details": {
+        "observation_time": "2017Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 060 DEG, 7 KT",
+          "direction_deg": 60,
+          "variable_direction": false,
+          "speed_kt": 7
+        },
+        "visibility": {
+          "raw": "VIS TDZ 4000 M",
+          "meters": 4000,
+          "or_more": false
+        },
+        "weather": "WX BR",
+        "clouds": {
+          "raw": "NSC",
+          "layers": [],
+          "no_significant_cloud": true
+        },
+        "qnh_hpa": 1020
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPKK ATIS I"
+        },
+        {
+          "key": "time",
+          "text": "TIME 2017"
+        },
+        {
+          "key": "approach",
+          "text": "EXP G ARR FOR ILS APCH FOR RWY 25"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 25 RCC 5, 6, 6"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 060 DEG, 7 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS TDZ 4000 M"
+        },
+        {
+          "key": "weather",
+          "text": "WX BR"
+        },
+        {
+          "key": "clouds",
+          "text": "NSC"
+        },
+        {
+          "key": "other",
+          "text": "T MS 0, DP MS 1"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1020"
+        },
+        {
+          "key": "other",
+          "text": "ATC CLR AVAILABLE VIA DATALINK OR CONTACT DELIVERY"
+        },
+        {
+          "key": "approach",
+          "text": "AFTER DEP CONTACT APCH 121 DECIMAL 075"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "other",
+          "text": "BIRDS ACT"
+        },
+        {
+          "key": "other",
+          "text": "END OF ATIS I METAR METAR EPKK 141730Z 24003KT CAVOK 01/M01 Q1024 TAF TAF EPKK 141730Z 1418/1518 23002KT CAVOK TEMPO 1423/1506 3000 BR BECMG 1507/1509 06010KT"
+        }
+      ],
+      "raw_text": "EPKK DEP ATIS I 2017Z EPKK ATIS I. TIME 2017. EXP G ARR FOR ILS APCH FOR RWY 25. RWY 25 RCC 5, 6, 6. RWY REPORT END. TRANSITION LEVEL 80. WIND 060 DEG, 7 KT. VIS TDZ 4000 M. WX BR. NSC. T MS 0, DP MS 1. QNH 1020. ATC CLR AVAILABLE VIA DATALINK OR CONTACT DELIVERY. AFTER DEP CONTACT APCH 121 DECIMAL 075. CAUTION. BIRDS ACT. END OF ATIS I METAR METAR EPKK 141730Z 24003KT CAVOK 01/M01 Q1024 TAF TAF EPKK 141730Z 1418/1518 23002KT CAVOK TEMPO 1423/1506 3000 BR BECMG 1507/1509 06010KT"
+    }
+  ]
+}
