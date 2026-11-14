@@ -1,0 +1,133 @@
+{
+  "airport": "EPWA",
+  "fetch_time_utc": "2026-11-14 15:54:35 UTC",
+  "reports": [
+    {
+      "icao": "EPWA",
+      "type": "DEPARTURE",
+      "info_letter": "S",
+      "issue_time": "1527Z",
+      "time": "1526Z",
+      "runway": "29, 33",
+      "approach": null,
+      "transition_level": "80",
+      "wind": "250 DEG, 8 KT",
+      "visibility": "MID 10 KM OR MORE",
+      "clouds": "SCT 3400 FT",
+      "weather": null,
+      "temperature": "4",
+      "dewpoint": "1",
+      "altimeter": "QNH 1021",
+      "trend": "NOSIG",
+      "remarks": "CAUTION; BIRD ACT; REPORT READY FOR START UP ON DELIVERY 1; 2; 1 DECIMAL 6; 0; 5",
+      "complete": true,
+      "details": {
+        "observation_time": "1526Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 250 DEG, 8 KT",
+          "direction_deg": 250,
+          "variable_direction": false,
+          "speed_kt": 8
+        },
+        "visibility": {
+          "raw": "VIS MID 10 KM OR MORE",
+          "meters": 10000,
+          "or_more": true
+        },
+        "clouds": {
+          "raw": "CLD SCT 3400 FT",
+          "layers": [
+            {
+              "cover": "SCT",
+              "base_ft": 3400
+            }
+          ]
+        },
+        "temperature_c": 4,
+        "dewpoint_c": 1,
+        "qnh_hpa": 1021,
+        "trend": "NOSIG"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA DEP S"
+        },
+        {
+          "key": "time",
+          "text": "TIME 1526"
+        },
+        {
+          "key": "runway",
+          "text": "DEP RWY 29"
+        },
+        {
+          "key": "runway",
+          "text": "ARR RWY 33, EXP U ARR ILS Z"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 250 DEG, 8 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS MID 10 KM OR MORE"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD SCT 3400 FT"
+        },
+        {
+          "key": "temperature",
+          "text": "T 4"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP 1"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1021"
+        },
+        {
+          "key": "trend",
+          "text": "NOSIG"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        },
+        {
+          "key": "remark",
+          "text": "REPORT READY FOR START UP ON DELIVERY 1"
+        },
+        {
+          "key": "remark",
+          "text": "2"
+        },
+        {
+          "key": "remark",
+          "text": "1 DECIMAL 6"
+        },
+        {
+          "key": "remark",
+          "text": "0"
+        },
+        {
+          "key": "remark",
+          "text": "5"
+        }
+      ],
+      "raw_text": "EPWA DEP ATIS S 1527Z EPWA DEP S. TIME 1526. DEP RWY 29. ARR RWY 33, EXP U ARR ILS Z. TRANSITION LEVEL 80. WIND 250 DEG, 8 KT. VIS MID 10 KM OR MORE. CLD SCT 3400 FT. T 4. DP 1. QNH 1021. NOSIG. CAUTION. BIRD ACT. REPORT READY FOR START UP ON DELIVERY 1. 2. 1 DECIMAL 6. 0. 5. END OF EPWA DEP S"
+    }
+  ]
+}
