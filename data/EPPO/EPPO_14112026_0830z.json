@@ -1,0 +1,211 @@
+{
+  "airport": "EPPO",
+  "fetch_time_utc": "2026-11-14 02:30:33 UTC",
+  "reports": [
+    {
+      "icao": "EPPO",
+      "type": "ARRIVAL",
+      "info_letter": "Z",
+      "issue_time": "0830Z",
+      "time": "0830Z",
+      "runway": "28",
+      "approach": "EXP M ARR ILS Y APCH FOR RWY 28",
+      "transition_level": "80",
+      "wind": "230 DEG, 4 KT, VRB BTN 190 AND 250 DEG",
+      "visibility": "TDZ 800 M",
+      "clouds": "OVC 150 FT",
+      "weather": "WX FBL DZ, FG",
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": "QNH 996",
+      "trend": null,
+      "remarks": null,
+      "complete": false,
+      "details": {
+        "observation_time": "0830Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 230 DEG, 4 KT, VRB BTN 190 AND 250 DEG",
+          "direction_deg": 230,
+          "variable_direction": false,
+          "speed_kt": 4
+        },
+        "visibility": {
+          "raw": "VIS TDZ 800 M",
+          "meters": 800,
+          "or_more": false
+        },
+        "rvr": "RVR TDZ 1200 M, MID 1100 M, END 900 M",
+        "weather": "WX FBL DZ, FG",
+        "clouds": {
+          "raw": "CLD OVC 150 FT",
+          "layers": [
+            {
+              "cover": "OVC",
+              "base_ft": 150
+            }
+          ]
+        },
+        "qnh_hpa": 996
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPPO ATIS Z"
+        },
+        {
+          "key": "time",
+          "text": "TIME 0830"
+        },
+        {
+          "key": "approach",
+          "text": "EXP M ARR ILS Y APCH FOR RWY 28"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 28 CONDITION REPORT AT 0750"
+        },
+        {
+          "key": "other",
+          "text": "RCC 5, 5, 5"
+        },
+        {
+          "key": "other",
+          "text": "1ST PART 100 %, WET"
+        },
+        {
+          "key": "other",
+          "text": "2ND PART 100 %, WET"
+        },
+        {
+          "key": "other",
+          "text": "3RD PART 100 %, WET"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "other",
+          "text": "LOW VIS PROC IN OPS"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 230 DEG, 4 KT, VRB BTN 190 AND 250 DEG"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS TDZ 800 M"
+        },
+        {
+          "key": "rvr",
+          "text": "RVR TDZ 1200 M, MID 1100 M, END 900 M"
+        },
+        {
+          "key": "weather",
+          "text": "WX FBL DZ, FG"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD OVC 150 FT"
+        },
+        {
+          "key": "other",
+          "text": "T 4, DP 4"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 0996"
+        },
+        {
+          "key": "other",
+          "text": "DATALINK DEP CLR AVAILABLE OR CONTACT TOWER 119 DECIMAL 980"
+        },
+        {
+          "key": "other",
+          "text": "END OF INFO Z Departure ATIS 2026-10-19 12:33 UTC"
+        }
+      ],
+      "raw_text": "EPPO ARR ATIS Z 0830Z EPPO ATIS Z. TIME 0830. EXP M ARR ILS Y APCH FOR RWY 28. RWY 28 CONDITION REPORT AT 0750. RCC 5, 5, 5. 1ST PART 100 %, WET. 2ND PART 100 %, WET. 3RD PART 100 %, WET. RWY REPORT END. TRANSITION LEVEL 80. LOW VIS PROC IN OPS. WIND 230 DEG, 4 KT, VRB BTN 190 AND 250 DEG. VIS TDZ 800 M. RVR TDZ 1200 M, MID 1100 M, END 900 M. WX FBL DZ, FG. CLD OVC 150 FT. T 4, DP 4. QNH 0996. DATALINK DEP CLR AVAILABLE OR CONTACT TOWER 119 DECIMAL 980. END OF INFO Z Departure ATIS 2026-10-19 12:33 UTC"
+    },
+    {
+      "icao": "EPPO",
+      "type": "DEPARTURE",
+      "info_letter": "P",
+      "issue_time": "1130Z",
+      "time": "1130Z",
+      "runway": "10",
+      "approach": "EXP T ARR RNP APCH FOR RWY 10",
+      "transition_level": "80",
+      "wind": "020 DEG, 8 KT, VRB BTN 350 AND 100 DEG",
+      "visibility": "CAVOK",
+      "clouds": "CAVOK",
+      "weather": null,
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": "QNH 1031",
+      "trend": null,
+      "remarks": null,
+      "complete": false,
+      "details": {
+        "observation_time": "1130Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 020 DEG, 8 KT, VRB BTN 350 AND 100 DEG",
+          "direction_deg": 20,
+          "variable_direction": false,
+          "speed_kt": 8
+        },
+        "cavok": true,
+        "qnh_hpa": 1031
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPPO ATIS P"
+        },
+        {
+          "key": "time",
+          "text": "TIME 1130"
+        },
+        {
+          "key": "approach",
+          "text": "EXP T ARR RNP APCH FOR RWY 10"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 020 DEG, 8 KT, VRB BTN 350 AND 100 DEG"
+        },
+        {
+          "key": "cavok",
+          "text": "CAVOK"
+        },
+        {
+          "key": "other",
+          "text": "T 10, DP 0"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1031"
+        },
+        {
+          "key": "other",
+          "text": "DATALINK DEP CLR AVAILABLE OR CONTACT DELIVERY 121 DECIMAL 805"
+        },
+        {
+          "key": "other",
+          "text": "END OF INFO P METAR METAR EPPO 132200Z 27014KT 9999 BKN023 06/01 Q1009 TAF TAF EPPO 131730Z 1318/1418 27010KT CAVOK TEMPO 1318/1324 27015G25KT PROB40 TEMPO 1318/1324 -SHRA BKN020CB TEMPO 1400/1403 27015G25KT BECMG 1403/1406 BKN012 TEMPO 1403/1412 27015G25KT BKN007 BECMG 1412/1414 SCT020 BECMG 1414/1416 21005KT"
+        }
+      ],
+      "raw_text": "EPPO DEP ATIS P 1130Z EPPO ATIS P. TIME 1130. EXP T ARR RNP APCH FOR RWY 10. TRANSITION LEVEL 80. WIND 020 DEG, 8 KT, VRB BTN 350 AND 100 DEG. CAVOK. T 10, DP 0. QNH 1031. DATALINK DEP CLR AVAILABLE OR CONTACT DELIVERY 121 DECIMAL 805. END OF INFO P METAR METAR EPPO 132200Z 27014KT 9999 BKN023 06/01 Q1009 TAF TAF EPPO 131730Z 1318/1418 27010KT CAVOK TEMPO 1318/1324 27015G25KT PROB40 TEMPO 1318/1324 -SHRA BKN020CB TEMPO 1400/1403 27015G25KT BECMG 1403/1406 BKN012 TEMPO 1403/1412 27015G25KT BKN007 BECMG 1412/1414 SCT020 BECMG 1414/1416 21005KT"
+    }
+  ]
+}
