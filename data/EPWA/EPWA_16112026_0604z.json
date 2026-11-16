@@ -1,0 +1,219 @@
+{
+  "airport": "EPWA",
+  "fetch_time_utc": "2026-11-16 06:13:01 UTC",
+  "reports": [
+    {
+      "icao": "EPWA",
+      "type": "ARRIVAL",
+      "info_letter": "L",
+      "issue_time": "0606Z",
+      "time": "0604Z",
+      "runway": "11",
+      "approach": "EXP N ARR ILS Z APCH FOR RWY 11",
+      "transition_level": "80",
+      "wind": "150 DEG, 7 KT",
+      "visibility": "CAVOK",
+      "clouds": "CAVOK",
+      "weather": null,
+      "temperature": "-1",
+      "dewpoint": "-2",
+      "altimeter": "QNH 1007",
+      "trend": "NOSIG",
+      "remarks": "CAUTION; BIRD ACT",
+      "complete": true,
+      "details": {
+        "observation_time": "0604Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 150 DEG, 7 KT",
+          "direction_deg": 150,
+          "variable_direction": false,
+          "speed_kt": 7
+        },
+        "cavok": true,
+        "temperature_c": -1,
+        "dewpoint_c": -2,
+        "qnh_hpa": 1007,
+        "trend": "NOSIG"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA ARR L"
+        },
+        {
+          "key": "time",
+          "text": "TIME 0604"
+        },
+        {
+          "key": "approach",
+          "text": "EXP N ARR ILS Z APCH FOR RWY 11"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 150 DEG, 7 KT"
+        },
+        {
+          "key": "cavok",
+          "text": "CAVOK"
+        },
+        {
+          "key": "temperature",
+          "text": "T MS 1"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP MS 2"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1007"
+        },
+        {
+          "key": "trend",
+          "text": "NOSIG"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        }
+      ],
+      "raw_text": "EPWA ARR ATIS L 0606Z EPWA ARR L. TIME 0604. EXP N ARR ILS Z APCH FOR RWY 11. TRANSITION LEVEL 80. WIND 150 DEG, 7 KT. CAVOK. T MS 1. DP MS 2. QNH 1007. NOSIG. CAUTION. BIRD ACT. END OF EPWA ARR L"
+    },
+    {
+      "icao": "EPWA",
+      "type": "DEPARTURE",
+      "info_letter": "Z",
+      "issue_time": "0423Z",
+      "time": "0423Z",
+      "runway": "29, 33",
+      "approach": null,
+      "transition_level": "80",
+      "wind": "270 DEG, 15 KT GUSTING FM 9 KT TO 20 KT",
+      "visibility": "MID 10 KM OR MORE",
+      "clouds": "FEW 2300 FT",
+      "weather": null,
+      "temperature": "4",
+      "dewpoint": "2",
+      "altimeter": "QNH 1012",
+      "trend": "NOSIG",
+      "remarks": "CAUTION; BIRD ACT; REPORT READY FOR START UP ON DELIVERY 1; 2; 1 DECIMAL 6; 0; 5",
+      "complete": true,
+      "details": {
+        "observation_time": "0423Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 270 DEG, 15 KT GUSTING FM 9 KT TO 20 KT",
+          "direction_deg": 270,
+          "variable_direction": false,
+          "speed_kt": 15
+        },
+        "visibility": {
+          "raw": "VIS MID 10 KM OR MORE",
+          "meters": 10000,
+          "or_more": true
+        },
+        "clouds": {
+          "raw": "CLD FEW 2300 FT",
+          "layers": [
+            {
+              "cover": "FEW",
+              "base_ft": 2300
+            }
+          ]
+        },
+        "temperature_c": 4,
+        "dewpoint_c": 2,
+        "qnh_hpa": 1012,
+        "trend": "NOSIG"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA DEP Z"
+        },
+        {
+          "key": "time",
+          "text": "TIME 0423"
+        },
+        {
+          "key": "runway",
+          "text": "DEP RWY 29"
+        },
+        {
+          "key": "runway",
+          "text": "ARR RWY 33, EXP U ARR ILS Z"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 270 DEG, 15 KT GUSTING FM 9 KT TO 20 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS MID 10 KM OR MORE"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD FEW 2300 FT"
+        },
+        {
+          "key": "temperature",
+          "text": "T 4"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP 2"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1012"
+        },
+        {
+          "key": "trend",
+          "text": "NOSIG"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        },
+        {
+          "key": "remark",
+          "text": "REPORT READY FOR START UP ON DELIVERY 1"
+        },
+        {
+          "key": "remark",
+          "text": "2"
+        },
+        {
+          "key": "remark",
+          "text": "1 DECIMAL 6"
+        },
+        {
+          "key": "remark",
+          "text": "0"
+        },
+        {
+          "key": "remark",
+          "text": "5"
+        }
+      ],
+      "raw_text": "EPWA DEP ATIS Z 0423Z EPWA DEP Z. TIME 0423. DEP RWY 29. ARR RWY 33, EXP U ARR ILS Z. TRANSITION LEVEL 80. WIND 270 DEG, 15 KT GUSTING FM 9 KT TO 20 KT. VIS MID 10 KM OR MORE. CLD FEW 2300 FT. T 4. DP 2. QNH 1012. NOSIG. CAUTION. BIRD ACT. REPORT READY FOR START UP ON DELIVERY 1. 2. 1 DECIMAL 6. 0. 5. END OF EPWA DEP Z"
+    }
+  ]
+}
