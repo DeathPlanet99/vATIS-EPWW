@@ -1,0 +1,162 @@
+{
+  "airport": "EPWA",
+  "fetch_time_utc": "2026-11-18 00:01:01 UTC",
+  "reports": [
+    {
+      "icao": "EPWA",
+      "type": "DEPARTURE",
+      "info_letter": "V",
+      "issue_time": "2047Z",
+      "time": "2047Z",
+      "runway": "15, 11",
+      "approach": null,
+      "transition_level": "90",
+      "wind": "110 DEG, 8 KT",
+      "visibility": "MID 5 KM",
+      "clouds": "OVC 200 FT",
+      "weather": "WX BR",
+      "temperature": "4",
+      "dewpoint": "3",
+      "altimeter": "QNH 990",
+      "trend": "TREND TEMPO VIS 3000 M, RA BR",
+      "remarks": "CAUTION; BIRD ACT; REPORT READY FOR START UP ON DELIVERY 1; 2; 1 DECIMAL 6; 0; 5",
+      "complete": true,
+      "details": {
+        "observation_time": "2047Z",
+        "transition_level": "90",
+        "wind": {
+          "raw": "WIND 110 DEG, 8 KT",
+          "direction_deg": 110,
+          "variable_direction": false,
+          "speed_kt": 8
+        },
+        "visibility": {
+          "raw": "VIS MID 5 KM",
+          "meters": 5000,
+          "or_more": false
+        },
+        "weather": "WX BR",
+        "clouds": {
+          "raw": "CLD OVC 200 FT",
+          "layers": [
+            {
+              "cover": "OVC",
+              "base_ft": 200
+            }
+          ]
+        },
+        "temperature_c": 4,
+        "dewpoint_c": 3,
+        "qnh_hpa": 990,
+        "trend": "TREND TEMPO VIS 3000 M, RA BR"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA DEP V"
+        },
+        {
+          "key": "time",
+          "text": "TIME 2047"
+        },
+        {
+          "key": "runway",
+          "text": "DEP RWY 15"
+        },
+        {
+          "key": "runway",
+          "text": "ARR RWY 11, EXP N ARR ILS Z"
+        },
+        {
+          "key": "other",
+          "text": "LOW VIS PROC IN OPS"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 15 RCC 6, 5, 6"
+        },
+        {
+          "key": "other",
+          "text": "1ST PART, DRY"
+        },
+        {
+          "key": "other",
+          "text": "2ND PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "3RD PART, DRY"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 90"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 110 DEG, 8 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS MID 5 KM"
+        },
+        {
+          "key": "weather",
+          "text": "WX BR"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD OVC 200 FT"
+        },
+        {
+          "key": "temperature",
+          "text": "T 4"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP 3"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 0990"
+        },
+        {
+          "key": "trend",
+          "text": "TREND TEMPO VIS 3000 M, RA BR"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        },
+        {
+          "key": "remark",
+          "text": "REPORT READY FOR START UP ON DELIVERY 1"
+        },
+        {
+          "key": "remark",
+          "text": "2"
+        },
+        {
+          "key": "remark",
+          "text": "1 DECIMAL 6"
+        },
+        {
+          "key": "remark",
+          "text": "0"
+        },
+        {
+          "key": "remark",
+          "text": "5"
+        }
+      ],
+      "raw_text": "EPWA DEP ATIS V 2047Z EPWA DEP V. TIME 2047. DEP RWY 15. ARR RWY 11, EXP N ARR ILS Z. LOW VIS PROC IN OPS. RWY 15 RCC 6, 5, 6. 1ST PART, DRY. 2ND PART, WET. 3RD PART, DRY. RWY REPORT END. TRANSITION LEVEL 90. WIND 110 DEG, 8 KT. VIS MID 5 KM. WX BR. CLD OVC 200 FT. T 4. DP 3. QNH 0990. TREND TEMPO VIS 3000 M, RA BR. CAUTION. BIRD ACT. REPORT READY FOR START UP ON DELIVERY 1. 2. 1 DECIMAL 6. 0. 5. END OF EPWA DEP V"
+    }
+  ]
+}
