@@ -1,0 +1,194 @@
+{
+  "airport": "EPGD",
+  "fetch_time_utc": "2026-11-18 07:13:14 UTC",
+  "reports": [
+    {
+      "icao": "EPGD",
+      "type": "ARRIVAL",
+      "info_letter": "L",
+      "issue_time": "0610Z",
+      "time": "0610Z",
+      "runway": "29",
+      "approach": "EXP T ARR ILS APCH FOR RWY 29",
+      "transition_level": "90",
+      "wind": null,
+      "visibility": null,
+      "clouds": null,
+      "weather": null,
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": null,
+      "trend": null,
+      "remarks": "CAUTION: POSS Departure ATIS 2026-10-28 22:16 UTC",
+      "complete": false,
+      "details": {
+        "observation_time": "0610Z",
+        "transition_level": "90"
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPGD ATIS L"
+        },
+        {
+          "key": "time",
+          "text": "TIME 0610"
+        },
+        {
+          "key": "approach",
+          "text": "EXP T ARR ILS APCH FOR RWY 29"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 29 RCC 5, 5, 5"
+        },
+        {
+          "key": "other",
+          "text": "1ST PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "2ND PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "3RD PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 90"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION: POSS Departure ATIS 2026-10-28 22:16 UTC"
+        }
+      ],
+      "raw_text": "EPGD ARR ATIS L 0610Z EPGD ATIS L. TIME 0610. EXP T ARR ILS APCH FOR RWY 29. RWY 29 RCC 5, 5, 5. 1ST PART, WET. 2ND PART, WET. 3RD PART, WET. RWY REPORT END. TRANSITION LEVEL 90. CAUTION: POSS Departure ATIS 2026-10-28 22:16 UTC"
+    },
+    {
+      "icao": "EPGD",
+      "type": "DEPARTURE",
+      "info_letter": "Y",
+      "issue_time": "2156Z",
+      "time": "2156Z",
+      "runway": "29",
+      "approach": "EXP T ARR ILS APCH FOR RWY 29",
+      "transition_level": "80",
+      "wind": "250 DEG, 3 KT",
+      "visibility": "TDZ 2700 M",
+      "clouds": "OVC 250 FT",
+      "weather": "WX BR",
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": "QNH 1024",
+      "trend": null,
+      "remarks": "CAUTION: POSSIBLE GPS JAMMING AND SPOOFING LOW VIS PROC IN OPS",
+      "complete": false,
+      "details": {
+        "observation_time": "2156Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 250 DEG, 3 KT",
+          "direction_deg": 250,
+          "variable_direction": false,
+          "speed_kt": 3
+        },
+        "visibility": {
+          "raw": "VIS TDZ 2700 M",
+          "meters": 2700,
+          "or_more": false
+        },
+        "weather": "WX BR",
+        "clouds": {
+          "raw": "CLD OVC 250 FT",
+          "layers": [
+            {
+              "cover": "OVC",
+              "base_ft": 250
+            }
+          ]
+        },
+        "qnh_hpa": 1024
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPGD ATIS Y"
+        },
+        {
+          "key": "time",
+          "text": "TIME 2156"
+        },
+        {
+          "key": "approach",
+          "text": "EXP T ARR ILS APCH FOR RWY 29"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 29 RCC 5, 5, 5"
+        },
+        {
+          "key": "other",
+          "text": "1ST PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "2ND PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "3RD PART, WET"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION: POSSIBLE GPS JAMMING AND SPOOFING LOW VIS PROC IN OPS"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 250 DEG, 3 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS TDZ 2700 M"
+        },
+        {
+          "key": "weather",
+          "text": "WX BR"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD OVC 250 FT"
+        },
+        {
+          "key": "other",
+          "text": "T 8, DP 7"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1024"
+        },
+        {
+          "key": "other",
+          "text": "GND IS NOT OPERATING CONTACT GDANSK TOWER"
+        },
+        {
+          "key": "other",
+          "text": "END OF ATIS Y METAR METAR EPGD 180600Z 14009KT 0150 R29/0500N FG OVC000 02/02 Q0981 TAF TAF EPGD 180530Z 1806/1906 13006KT 0300 FG OVC001 BECMG 1807/1809 0800 FG TEMPO 1807/1809 1200 -RADZ BR BKN002 BECMG 1810/1813 23010KT 9999 SCT004 BKN012 TEMPO 1817/1906 4000 RADZ BR BKN002"
+        }
+      ],
+      "raw_text": "EPGD DEP ATIS Y 2156Z EPGD ATIS Y. TIME 2156. EXP T ARR ILS APCH FOR RWY 29. RWY 29 RCC 5, 5, 5. 1ST PART, WET. 2ND PART, WET. 3RD PART, WET. RWY REPORT END. TRANSITION LEVEL 80. CAUTION: POSSIBLE GPS JAMMING AND SPOOFING LOW VIS PROC IN OPS. WIND 250 DEG, 3 KT. VIS TDZ 2700 M. WX BR. CLD OVC 250 FT. T 8, DP 7. QNH 1024. GND IS NOT OPERATING CONTACT GDANSK TOWER. END OF ATIS Y METAR METAR EPGD 180600Z 14009KT 0150 R29/0500N FG OVC000 02/02 Q0981 TAF TAF EPGD 180530Z 1806/1906 13006KT 0300 FG OVC001 BECMG 1807/1809 0800 FG TEMPO 1807/1809 1200 -RADZ BR BKN002 BECMG 1810/1813 23010KT 9999 SCT004 BKN012 TEMPO 1817/1906 4000 RADZ BR BKN002"
+    }
+  ]
+}
