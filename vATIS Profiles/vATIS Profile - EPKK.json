@@ -1,6 +1,6 @@
 {
   "name": "EPKK",
-  "id": "45f39bf7-827e-48ad-a2d0-ab8097342b52",
+  "id": "361580a5-2d49-4529-9882-994b06a8e0a0",
   "stations": [
     {
       "id": "50fcf505-c268-4b25-85d1-71c07765f813",
@@ -142,12 +142,12 @@
           "formatRules": [
             {
               "fromMeters": 0,
-              "text": "{raw}",
+              "text": "{raw} M",
               "voice": "{m} meters"
             },
             {
               "fromMeters": 4996,
-              "text": "{raw}",
+              "text": "{raw} M",
               "voice": "{km} kilometers"
             },
             {
@@ -182,7 +182,7 @@
             "7/8SM": "seven eighths."
           },
           "template": {
-            "text": "VIS {visibility} M.",
+            "text": "VIS {visibility}.",
             "voice": "VISIBILITY {visibility}"
           }
         },
@@ -2076,7 +2076,7 @@
           "variableFormats": {
             "altimeter": {
               "text": {
-                "style": "Default",
+                "style": "Digits",
                 "suffix": ""
               },
               "voice": {
@@ -2274,8 +2274,8 @@
         "closingStatement": {
           "autoIncludeClosingStatement": true,
           "template": {
-            "text": "END OF EPWA {letter}.",
-            "voice": "END OF WARSAW INFORMATION {letter|word}."
+            "text": "END OF ATIS {letter}",
+            "voice": "END OF KRAKOW INFORMATION {letter|word}."
           }
         }
       },
@@ -2289,16 +2289,17 @@
       "atisVoice": {
         "useTextToSpeech": true,
         "useWavPack": false,
-        "voice": "UK Female",
+        "voice": "American Male (Nathan)",
         "speechRate": 130
       },
       "presets": [
         {
-          "id": "122eefa7-21b3-4014-84e9-508e0ebdf5e3",
-          "name": "29/33ILSz",
+          "id": "3aff87cf-f591-41d9-9350-ed8c8becb458",
+          "ordinal": 0,
+          "name": "07",
           "airportConditions": "",
           "notams": "",
-          "template": "@EPWA [ATIS_CODE].\r\n[TIME].\r\nEXP U ARR ILS Z APCH FOR RWY 33.\r\nDEP RWY 29.\r\n[ARPT_COND]\r\n[TL]\r\n[WIND].\r\n[VIS]\r\n[RVR]\r\n[PRESENT_WX]\r\n[CLOUDS]\r\n[TEMP]\r\n[DEW]\r\n[PRESSURE]\r\n[RECENT_WX]\r\n[TREND]\r\n[NOTAMS]\r\n[CLOSING]",
+          "template": "@EPKK [ATIS_CODE]\r\n[TIME].\r\nEXP H ARR FOR RNP APCH FOR RWY 07.\r\nDEP RWY 07.\r\nRWY 07 [ARPT_COND].\r\n[TL]\r\n[WIND].\r\n[VIS]\r\n[RVR]\r\n[PRESENT_WX]\r\n[CLOUDS]\r\n[TEMP], [DEW]\r\n[PRESSURE]\r\n[RECENT_WX]\r\n[TREND]\r\n[NOTAMS]\r\n[CLOSING]",
           "externalGenerator": {
             "enabled": false,
             "textUrl": "",
@@ -2311,10 +2312,11 @@
         },
         {
           "id": "dce94670-91b5-4927-be6f-dc1b4576cfb2",
+          "ordinal": 2,
           "name": "25",
           "airportConditions": "",
           "notams": "",
-          "template": "@EPKK [ATIS_CODE].\r\n[TIME].\r\nEXP G ARR ILS APCH FOR RWY 25.\r\nDEP RWY 25.\r\n[ARPT_COND]\r\n[TL]\r\nFOR ATC CLR CONTACT DELIVERY OR VIA DATALINK.\r\n[WIND].\r\n[VIS]\r\n[RVR]\r\n[PRESENT_WX]\r\n[CLOUDS]\r\n[TEMP], [DEW]\r\n[PRESSURE]\r\n[RECENT_WX]\r\n[TREND]\r\n[NOTAMS]\r\n[CLOSING]",
+          "template": "@EPKK [ATIS_CODE]\r\n[TIME].\r\nEXP G ARR FOR ILS APCH FOR RWY 25.\r\nDEP RWY 25.\r\nRWY 25 [ARPT_COND].\r\n[TL]\r\n[WIND].\r\n[VIS]\r\n[RVR]\r\n[PRESENT_WX]\r\n[CLOUDS]\r\n[TEMP], [DEW]\r\n[PRESSURE]\r\n[RECENT_WX]\r\n[TREND]\r\n[NOTAMS]\r\n[CLOSING]",
           "externalGenerator": {
             "enabled": false,
             "textUrl": "",
@@ -2487,116 +2489,112 @@
       ],
       "airportConditionDefinitions": [
         {
-          "text": "RWY 11 RCC 5, 5, 5. \r\n1ST PART WET, \r\n2ND PART WET, \r\n3RD PART WET. RWY REPORT END.",
+          "text": "RCC 6, 6, 6.",
           "ordinal": 1,
-          "separatorAfter": ".",
-          "weatherCondition": "weather INCLUDES SHRA OR weather INCLUDES RA OR weather INCLUDES DZ OR weather INCLUDES TSRA",
+          "separatorAfter": ". ",
+          "weatherCondition": "NOT (weather INCLUDES SHRA OR weather INCLUDES RA OR weather INCLUDES DZ OR weather INCLUDES TSRA)",
           "enabled": true
         },
         {
-          "text": "RWY 11 RCC 5, 5, 5. \r\n1ST PART DRY SNOW, \r\n2ND PART DRY SNOW, \r\n3RD PART DRY SNOW. RWY REPORT END.",
+          "text": "RCC 5, 5, 5. RWY WET.",
           "ordinal": 2,
           "separatorAfter": ".",
-          "weatherCondition": "weather INCLUDES SN OR weather INCLUDES SHSN OR weather INCLUDES BLSN",
+          "weatherCondition": "weather INCLUDES SHRA OR weather INCLUDES RA OR weather INCLUDES DZ OR weather INCLUDES TSRA",
           "enabled": true
         },
         {
-          "text": "RWY 15 RCC 5, 5, 5. \r\n1ST PART WET, \r\n2ND PART WET, \r\n3RD PART WET. RWY REPORT END.",
+          "text": "RCC 5, 5, 5. \r\n1ST PART DRY SNOW, \r\n2ND PART DRY SNOW, \r\n3RD PART DRY SNOW.",
           "ordinal": 3,
           "separatorAfter": ".",
-          "weatherCondition": "weather INCLUDES SHRA OR weather INCLUDES RA OR weather INCLUDES DZ OR weather INCLUDES TSRA",
+          "weatherCondition": "weather INCLUDES SN OR weather INCLUDES SHSN OR weather INCLUDES BLSN",
           "enabled": true
         },
         {
-          "text": "RWY 15 RCC 5, 5, 5. \r\n1ST PART DRY SNOW, \r\n2ND PART DRY SNOW, \r\n3RD PART DRY SNOW. RWY REPORT END.",
+          "text": "RWY REPORT END",
           "ordinal": 4,
-          "separatorAfter": ".",
-          "weatherCondition": "weather INCLUDES SN OR weather INCLUDES SHSN OR weather INCLUDES BLSN",
-          "enabled": true
-        },
-        {
-          "text": "RWY 29 RCC 5, 5, 5. \r\n1ST PART WET, \r\n2ND PART WET, \r\n3RD PART WET. RWY REPORT END.",
-          "ordinal": 5,
-          "separatorAfter": ".",
-          "weatherCondition": "weather INCLUDES SHRA OR weather INCLUDES RA OR weather INCLUDES DZ OR weather INCLUDES TSRA",
-          "enabled": true
-        },
-        {
-          "text": "RWY 29 RCC 5, 5, 5. \r\n1ST PART DRY SNOW, \r\n2ND PART DRY SNOW, \r\n3RD PART DRY SNOW. RWY REPORT END.",
-          "ordinal": 6,
-          "separatorAfter": ".",
-          "weatherCondition": "weather INCLUDES SN OR weather INCLUDES SHSN OR weather INCLUDES BLSN",
-          "enabled": true
-        },
-        {
-          "text": "RWY 33 RCC 5, 5, 5. \r\n1ST PART WET, \r\n2ND PART WET, \r\n3RD PART WET. RWY REPORT END.",
-          "ordinal": 7,
-          "separatorAfter": ".",
-          "weatherCondition": "weather INCLUDES SHRA OR weather INCLUDES RA OR weather INCLUDES DZ OR weather INCLUDES TSRA",
-          "enabled": true
-        },
-        {
-          "text": "RWY 33 RCC 5, 5, 5. \r\n1ST PART DRY SNOW, \r\n2ND PART DRY SNOW, \r\n3RD PART DRY SNOW. RWY REPORT END.",
-          "ordinal": 8,
-          "separatorAfter": ".",
-          "weatherCondition": "weather INCLUDES SN OR weather INCLUDES SHSN OR weather INCLUDES BLSN",
+          "separatorAfter": ". ",
           "enabled": true
         },
         {
           "text": "",
-          "ordinal": 9,
+          "ordinal": 5,
+          "newLineOnly": true,
           "enabled": true
         },
         {
           "text": "LVP.",
-          "ordinal": 10,
+          "ordinal": 6,
           "separatorAfter": ".",
-          "weatherCondition": "ceiling <= 300ft OR rvr < 800ft",
+          "weatherCondition": "ceiling <= 300ft OR rvr < 550m",
           "enabled": true
         }
       ],
       "notamDefinitions": [
         {
-          "text": "CAUTION. BIRD ACT",
+          "text": "ATC CLR AVAILABLE VIA DATALINK OR CONTACT DELIVERY.",
           "ordinal": 1,
-          "separatorAfter": ".",
+          "onlineCondition": "EPKK_DEL",
           "enabled": true
         },
         {
-          "text": "",
+          "text": "ATC CLR AVAILABLE VIA DATALINK OR CONTACT GROUND.",
           "ordinal": 2,
+          "onlineCondition": "EPKK_GND ANT NOT EPKK_DEL",
           "enabled": true
         },
         {
-          "text": "\r\nA-CDM IN USE. ALL DEPARTURES SHALL SUBMIT THEIR TOBT @VDGS.",
+          "text": "ATC CLR AVAILABLE VIA DATALINK OR CONTACT TOWER.",
           "ordinal": 3,
-          "enabled": false
+          "onlineCondition": "EPKK_TWR AND NOT (EPKK_DEL OR EPKK_GND)",
+          "enabled": true
         },
         {
-          "text": "REPORT READY FOR STARTUP ON DELIVERY 121.980.",
+          "text": "ATC CLR AVAILABLE VIA DATALINK OR CONTACT APPROACH.",
           "ordinal": 4,
-          "separatorAfter": ".",
-          "enabled": false
+          "onlineCondition": "EPKK_*APP AND NOT (EPKK_DEL OR EPKK_GND OR EPKK_TWR)",
+          "enabled": true
         },
         {
-          "text": "",
+          "text": "ATC CLR AVAILABLE VIA DATALINK OR CONTACT RADAR.",
           "ordinal": 5,
-          "enabled": false
-        },
-        {
-          "text": "\r\nWHEN AIRBORNE CONTACT APPROACH ON 121.075.",
-          "ordinal": 6,
-          "enabled": false
+          "onlineCondition": "(EPWW_ALL_CTR OR EPWW_ALH_CTR OR EPWW_J_CTR OR EPWW_JR_CTR OR EPWW_TCJ_CTR OR EPWW_E_CTR OR EPWW_S_CTR) AND NOT (EPKK_DEL OR EPKK_GND OR EPKK_TWR OR EPKK_APP)",
+          "enabled": true
         },
         {
           "text": "",
-          "ordinal": 7,
-          "enabled": false
+          "ordinal": 6,
+          "newLineOnly": true,
+          "enabled": true
         },
         {
-          "text": "\r\nWHEN AIRBORNE CONTACT RADAR ON 125.450.",
+          "text": "\r\nAFTER DEP CONTACT APCH 121.075.",
+          "ordinal": 7,
+          "onlineCondition": "EPKK_APP",
+          "enabled": true
+        },
+        {
+          "text": "\r\nAFTER DEP CONTACT RADAR 125.450.",
           "ordinal": 8,
-          "enabled": false
+          "onlineCondition": "EPWW_ALL_CTR AND NOT EPKK_APP",
+          "enabled": true
+        },
+        {
+          "text": "AFTER DEP CONTACT RADAR 123.625.",
+          "ordinal": 9,
+          "onlineCondition": "EPWW_S_CTR AND NOT EPKK_APP",
+          "enabled": true
+        },
+        {
+          "text": "",
+          "ordinal": 10,
+          "newLineOnly": true,
+          "enabled": true
+        },
+        {
+          "text": "CAUTION. BIRDS ACT.",
+          "ordinal": 11,
+          "separatorAfter": ".",
+          "enabled": true
         }
       ],
       "datisTextReplacements": [],
