@@ -1,7 +1,7 @@
 {
   "name": "EPWW ATIS 001",
   "isNameOverridden": true,
-  "id": "335be342-b913-4055-9b7b-8aec55157e56",
+  "id": "8110bac1-6196-4b05-93ea-c3b239790c54",
   "updateUrl": "https://raw.githubusercontent.com/DeathPlanet99/vATIS-EPWW/refs/heads/main/vATIS Profiles/vATIS%20Profile%20-%20EPWW%20ATIS%20001.json",
   "updateSerial": 2026112600,
   "stations": [
@@ -5337,35 +5337,44 @@
         {
           "text": "\r\nA-CDM IN USE. ALL DEPARTURES SHALL SUBMIT THEIR TOBT AT VDGS.",
           "ordinal": 3,
-          "enabled": false
-        },
-        {
-          "text": "REPORT READY FOR STARTUP ON DELIVERY 121.605.",
-          "ordinal": 4,
-          "separatorAfter": ".",
           "enabled": true
         },
         {
           "text": "",
+          "ordinal": 4,
+          "newLineOnly": true,
+          "enabled": true
+        },
+        {
+          "text": "REPORT READY FOR STARTUP ON DELIVERY 121.605.",
           "ordinal": 5,
+          "separatorAfter": ".",
+          "onlineCondition": "EPWA_DEL",
+          "enabled": true
+        },
+        {
+          "text": "",
+          "ordinal": 6,
           "newLineOnly": true,
           "enabled": false
         },
         {
           "text": "\r\nWHEN AIRBORNE CONTACT APPROACH ON 128.805.",
-          "ordinal": 6,
-          "enabled": false
+          "ordinal": 7,
+          "onlineCondition": "EPWA_APP",
+          "enabled": true
         },
         {
           "text": "",
-          "ordinal": 7,
+          "ordinal": 8,
           "newLineOnly": true,
           "enabled": false
         },
         {
           "text": "\r\nWHEN AIRBORNE CONTACT RADAR ON 125.450.",
-          "ordinal": 8,
-          "enabled": false
+          "ordinal": 9,
+          "onlineCondition": "EPWW_ALL_CTR AND NOT EPWA_APP",
+          "enabled": true
         }
       ],
       "datisTextReplacements": [],
@@ -7647,7 +7656,7 @@
           "autoIncludeClosingStatement": true,
           "template": {
             "text": "END OF ATIS {letter}",
-            "voice": "END OF KRAKOW INFORMATION {letter|word}."
+            "voice": "END OF INFORMATION {letter|word}."
           }
         }
       },
@@ -7870,14 +7879,14 @@
         {
           "text": "RCC 5, 5, 5. RWY WET.",
           "ordinal": 2,
-          "separatorAfter": ".",
+          "separatorAfter": ". ",
           "weatherCondition": "weather INCLUDES SHRA OR weather INCLUDES RA OR weather INCLUDES DZ OR weather INCLUDES TSRA",
           "enabled": true
         },
         {
-          "text": "RCC 5, 5, 5. \r\n1ST PART DRY SNOW, \r\n2ND PART DRY SNOW, \r\n3RD PART DRY SNOW.",
+          "text": "RCC 5, 5, 5. RWY DRY SNOW, ",
           "ordinal": 3,
-          "separatorAfter": ".",
+          "separatorAfter": ". ",
           "weatherCondition": "weather INCLUDES SN OR weather INCLUDES SHSN OR weather INCLUDES BLSN",
           "enabled": true
         },
@@ -7921,7 +7930,7 @@
           "enabled": true
         },
         {
-          "text": "\r\nAFTER DEP CONTACT APCH 121.075.",
+          "text": "AFTER DEP CONTACT APCH 121.075.",
           "ordinal": 4,
           "onlineCondition": "EPKK_APP",
           "enabled": true
