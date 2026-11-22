@@ -1,7 +1,7 @@
 {
   "name": "EPWW ATIS 001",
   "isNameOverridden": true,
-  "id": "c97ea300-77fa-4d2d-85fe-1734ba0d8fcd",
+  "id": "8110bac1-6196-4b05-93ea-c3b239790c54",
   "updateUrl": "https://raw.githubusercontent.com/DeathPlanet99/vATIS-EPWW/refs/heads/main/vATIS Profiles/vATIS%20Profile%20-%20EPWW%20ATIS%20001.json",
   "updateSerial": 2026112600,
   "stations": [
@@ -5337,35 +5337,2634 @@
         {
           "text": "\r\nA-CDM IN USE. ALL DEPARTURES SHALL SUBMIT THEIR TOBT AT VDGS.",
           "ordinal": 3,
-          "enabled": false
+          "enabled": true
+        },
+        {
+          "text": "",
+          "ordinal": 4,
+          "newLineOnly": true,
+          "enabled": true
         },
         {
           "text": "REPORT READY FOR STARTUP ON DELIVERY 121.605.",
-          "ordinal": 4,
+          "ordinal": 5,
           "separatorAfter": ".",
+          "onlineCondition": "EPWA_DEL",
+          "enabled": true
+        },
+        {
+          "text": "",
+          "ordinal": 6,
+          "newLineOnly": true,
+          "enabled": false
+        },
+        {
+          "text": "\r\nWHEN AIRBORNE CONTACT APPROACH ON 128.805.",
+          "ordinal": 7,
+          "onlineCondition": "EPWA_APP",
+          "enabled": true
+        },
+        {
+          "text": "",
+          "ordinal": 8,
+          "newLineOnly": true,
+          "enabled": false
+        },
+        {
+          "text": "\r\nWHEN AIRBORNE CONTACT RADAR ON 125.450.",
+          "ordinal": 9,
+          "onlineCondition": "EPWW_ALL_CTR AND NOT EPWA_APP",
+          "enabled": true
+        }
+      ],
+      "datisTextReplacements": [],
+      "datisPrependAirportConditions": "",
+      "datisAppendAirportConditions": "",
+      "datisPrependNotams": "",
+      "datisAppendNotams": ""
+    },
+    {
+      "id": "ebc35dae-e23e-41f5-a356-ffd13bbd7848",
+      "ordinal": 0,
+      "identifier": "EPKK",
+      "name": "Kraków-Balice",
+      "atisType": "Combined",
+      "codeRange": {
+        "low": "A",
+        "high": "Z"
+      },
+      "atisFormat": {
+        "observationTime": {
+          "standardUpdateTime": [
+            20,
+            50
+          ],
+          "template": {
+            "text": "TIME {time}",
+            "voice": "TIME. {time}"
+          }
+        },
+        "surfaceWind": {
+          "speakLeadingZero": false,
+          "speakWindSpeedGroupFormat": false,
+          "magneticVariation": {
+            "enabled": false,
+            "magneticDegrees": 0
+          },
+          "standard": {
+            "template": {
+              "text": "WIND {wind_dir} DEG, {wind_spd:#} KT ",
+              "voice": ". WIND. {wind_dir} DEGREES, {wind_spd} KNOTS"
+            }
+          },
+          "standardGust": {
+            "template": {
+              "text": "WIND {wind_dir} DEG, {wind_spd:#}G{wind_gust} KT ",
+              "voice": ". WIND. {wind_dir} DEGREES, {wind_spd} KNOTS, MAXIMUM {wind_gust} "
+            }
+          },
+          "variable": {
+            "template": {
+              "text": "WIND VRB, {wind_spd:#} KT",
+              "voice": "WIND VARIABLE AT {wind_spd} KNOTS"
+            }
+          },
+          "variableGust": {
+            "template": {
+              "text": "WIND VRB, {wind_spd}G{wind_gust} KT",
+              "voice": ". WIND VARIABLE AT {wind_spd} KNOTS, MAX {wind_gust} KNOTS"
+            }
+          },
+          "variableDirection": {
+            "template": {
+              "text": ", VRB BTN {wind_vmin} AND {wind_vmax} DEG",
+              "voice": "VARIABLE BETWEEN {wind_vmin} AND {wind_vmax} DEGREES."
+            }
+          },
+          "calm": {
+            "calmWindSpeed": 0,
+            "template": {
+              "text": "WIND CALM",
+              "voice": "WIND CALM"
+            }
+          },
+          "variableFormats": {
+            "wind_dir": {
+              "text": {
+                "style": "Default",
+                "suffix": ""
+              },
+              "voice": {
+                "style": "Default",
+                "suffix": ""
+              }
+            },
+            "wind_spd": {
+              "text": {
+                "style": "Default",
+                "suffix": ""
+              },
+              "voice": {
+                "style": "Default",
+                "suffix": ""
+              }
+            },
+            "wind_gust": {
+              "text": {
+                "style": "Default",
+                "suffix": ""
+              },
+              "voice": {
+                "style": "Default",
+                "suffix": ""
+              }
+            },
+            "wind_vmin": {
+              "text": {
+                "style": "Default",
+                "suffix": ""
+              },
+              "voice": {
+                "style": "Default",
+                "suffix": ""
+              }
+            },
+            "wind_vmax": {
+              "text": {
+                "style": "Default",
+                "suffix": ""
+              },
+              "voice": {
+                "style": "Default",
+                "suffix": ""
+              }
+            }
+          }
+        },
+        "visibility": {
+          "north": "to the north",
+          "northEast": "to the north-east",
+          "east": "to the east",
+          "southEast": "to the south-east",
+          "south": "to the south",
+          "southWest": "to the south-west",
+          "west": "to the west",
+          "northWest": "to the north-west",
+          "directionText": {
+            "N": "N",
+            "NE": "NE",
+            "E": "E",
+            "SE": "SE",
+            "S": "S",
+            "SW": "SW",
+            "W": "W",
+            "NW": "NW"
+          },
+          "formatRules": [
+            {
+              "fromMeters": 0,
+              "text": "{raw} M",
+              "voice": "{m} meters"
+            },
+            {
+              "fromMeters": 4996,
+              "text": "{raw} M",
+              "voice": "{km} kilometers"
+            },
+            {
+              "fromMeters": 9999,
+              "text": "10 KM OR MORE",
+              "voice": "10 kilometers or more"
+            }
+          ],
+          "cavokVoice": "CAVOK",
+          "cavokText": "CAVOK",
+          "fractionVoice": {
+            "M1/4SM": "less than one quarter.",
+            "1 1/8SM": "one and one eighth.",
+            "1 1/4SM": "one and one quarter.",
+            "1 3/8SM": "one and three eighths.",
+            "1 1/2SM": "one and one half.",
+            "1 5/8SM": "one and five eighths.",
+            "1 3/4SM": "one and three quarters.",
+            "1 7/8SM": "one and seven eighths.",
+            "2 1/4SM": "two and one quarter.",
+            "2 1/2SM": "two and one half.",
+            "2 3/4SM": "two and three quarters.",
+            "1/16SM": "one sixteenth.",
+            "1/8SM": "one eighth.",
+            "3/16SM": "three sixteenths.",
+            "1/4SM": "one quarter.",
+            "5/16SM": "five sixteenths.",
+            "3/8SM": "three eighths.",
+            "1/2SM": "one half.",
+            "5/8SM": "five eighths.",
+            "3/4SM": "three quarters.",
+            "7/8SM": "seven eighths."
+          },
+          "template": {
+            "text": "VIS {visibility}.",
+            "voice": "VISIBILITY {visibility}"
+          }
+        },
+        "runwayVisualRange": {
+          "spokenText": "R-V-R",
+          "neutralTendency": "meters, no change",
+          "goingUpTendency": "meters, increasing",
+          "goingDownTendency": "meters, decreasing",
+          "tendencyText": {
+            "N": "N",
+            "U": "U",
+            "D": "D"
+          },
+          "voicePhrases": {
+            "Less than": "less than {value}",
+            "More than": "more than {value}",
+            "Variable": "variable between {min} and {max}",
+            "Variable, less than": "variable from less than {min} to {max}",
+            "Variable to greater than": "{min} variable to greater than {max}",
+            "Variable, less than to greater than": "variable from less than {min} to greater than {max}"
+          },
+          "template": {}
+        },
+        "presentWeather": {
+          "presentWeatherTypes": {
+            "-DS": {
+              "text": "-DS",
+              "spoken": "Light Duststorm"
+            },
+            "-DZ": {
+              "text": "-DZ",
+              "spoken": "Light Drizzle"
+            },
+            "-DZPL": {
+              "text": "-DZPL",
+              "spoken": "Light Drizzle And Ice Pellets"
+            },
+            "-DZPLRA": {
+              "text": "-DZPLRA",
+              "spoken": "Light Drizzle, Ice Pellets And Rain"
+            },
+            "-DZRA": {
+              "text": "-DZRA",
+              "spoken": "Light Drizzle And Rain"
+            },
+            "-DZRAPL": {
+              "text": "-DZRAPL",
+              "spoken": "Light Drizzle, Rain And Ice Pellets"
+            },
+            "-DZRASG": {
+              "text": "-DZRASG",
+              "spoken": "Light Drizzle, Rain And Snow Grains"
+            },
+            "-DZRASN": {
+              "text": "-DZRASN",
+              "spoken": "Light Drizzle, Rain And Snow"
+            },
+            "-DZSG": {
+              "text": "-DZSG",
+              "spoken": "Light Drizzle And Snow Grains"
+            },
+            "-DZSGRA": {
+              "text": "-DZSGRA",
+              "spoken": "Light Drizzle, Snow Grains And Rain"
+            },
+            "-DZSN": {
+              "text": "-DZSN",
+              "spoken": "Light Drizzle And Snow"
+            },
+            "-DZSNRA": {
+              "text": "-DZSNRA",
+              "spoken": "Light Drizzle, Snow And Rain"
+            },
+            "-FZDZ": {
+              "text": "-FZDZ",
+              "spoken": "Light Freezing Drizzle"
+            },
+            "-FZDZPL": {
+              "text": "-FZDZPL",
+              "spoken": "Light Freezing Drizzle And Ice Pellets"
+            },
+            "-FZDZRA": {
+              "text": "-FZDZRA",
+              "spoken": "Light Freezing Drizzle And Rain"
+            },
+            "-FZDZSG": {
+              "text": "-FZDZSG",
+              "spoken": "Light Freezing Drizzle And Snow Grains"
+            },
+            "-FZDZSN": {
+              "text": "-FZDZSN",
+              "spoken": "Light Freezing Drizzle And Snow"
+            },
+            "-FZRA": {
+              "text": "-FZRA",
+              "spoken": "Light Freezing Rain"
+            },
+            "-FZRADZ": {
+              "text": "-FZRADZ",
+              "spoken": "Light Freezing Rain And Drizzle"
+            },
+            "-FZRAPL": {
+              "text": "-FZRAPL",
+              "spoken": "Light Freezing Rain And Ice Pellets"
+            },
+            "-FZRASG": {
+              "text": "-FZRASG",
+              "spoken": "Light Freezing Rain And Snow Grains"
+            },
+            "-FZRASN": {
+              "text": "-FZRASN",
+              "spoken": "Light Freezing Rain And Snow"
+            },
+            "-FZUP": {
+              "text": "-FZUP",
+              "spoken": "Light Unidentified Freezing Precipitation"
+            },
+            "-PL": {
+              "text": "-PL",
+              "spoken": "Light Ice Pellets"
+            },
+            "-PLDZ": {
+              "text": "-PLDZ",
+              "spoken": "Light Ice Pellets And Drizzle"
+            },
+            "-PLDZRA": {
+              "text": "-PLDZRA",
+              "spoken": "Light Ice Pellets, Drizzle And Rain"
+            },
+            "-PLRA": {
+              "text": "-PLRA",
+              "spoken": "Light Ice Pellets And Rain"
+            },
+            "-PLRADZ": {
+              "text": "-PLRADZ",
+              "spoken": "Light Ice Pellets, Rain And Drizzle"
+            },
+            "-PLRASN": {
+              "text": "-PLRASN",
+              "spoken": "Light Ice Pellets, Rain And Snow"
+            },
+            "-PLSG": {
+              "text": "-PLSG",
+              "spoken": "Light Ice Pellets And Snow Grains"
+            },
+            "-PLSGSN": {
+              "text": "-PLSGSN",
+              "spoken": "Light Ice Pellets, Snow Grains And Snow"
+            },
+            "-PLSN": {
+              "text": "-PLSN",
+              "spoken": "Light Ice Pellets And Snow"
+            },
+            "-PLSNRA": {
+              "text": "-PLSNRA",
+              "spoken": "Light Ice Pellets, Snow And Rain"
+            },
+            "-PLSNSG": {
+              "text": "-PLSNSG",
+              "spoken": "Light Ice Pellets, Snow And Snow Grains"
+            },
+            "-RA": {
+              "text": "-RA",
+              "spoken": "Light Rain"
+            },
+            "-RADZ": {
+              "text": "-RADZ",
+              "spoken": "Light Rain And Drizzle"
+            },
+            "-RADZPL": {
+              "text": "-RADZPL",
+              "spoken": "Light Rain, Drizzle And Ice Pellets"
+            },
+            "-RADZSG": {
+              "text": "-RADZSG",
+              "spoken": "Light Rain, Drizzle And Snow Grains"
+            },
+            "-RADZSN": {
+              "text": "-RADZSN",
+              "spoken": "Light Rain, Drizzle And Snow"
+            },
+            "-RAPL": {
+              "text": "-RAPL",
+              "spoken": "Light Rain And Ice Pellets"
+            },
+            "-RAPLDZ": {
+              "text": "-RAPLDZ",
+              "spoken": "Light Rain, Ice Pellets And Drizzle"
+            },
+            "-RAPLSN": {
+              "text": "-RAPLSN",
+              "spoken": "Light Rain, Ice Pellets And Snow"
+            },
+            "-RASG": {
+              "text": "-RASG",
+              "spoken": "Light Rain And Snow Grains"
+            },
+            "-RASGDZ": {
+              "text": "-RASGDZ",
+              "spoken": "Light Rain, Snow Grains And Drizzle"
+            },
+            "-RASGSN": {
+              "text": "-RASGSN",
+              "spoken": "Light Rain, Snow Grains And Snow"
+            },
+            "-RASN": {
+              "text": "-RASN",
+              "spoken": "Light Rain And Snow"
+            },
+            "-RASNDZ": {
+              "text": "-RASNDZ",
+              "spoken": "Light Rain, Snow And Drizzle"
+            },
+            "-RASNPL": {
+              "text": "-RASNPL",
+              "spoken": "Light Rain, Snow And Ice Pellets"
+            },
+            "-RASNSG": {
+              "text": "-RASNSG",
+              "spoken": "Light Rain, Snow And Snow Grains"
+            },
+            "-SG": {
+              "text": "-SG",
+              "spoken": "Light Snow Grains"
+            },
+            "-SGDZ": {
+              "text": "-SGDZ",
+              "spoken": "Light Snow Grains And Drizzle"
+            },
+            "-SGDZRA": {
+              "text": "-SGDZRA",
+              "spoken": "Light Snow Grains, Drizzle And Rain"
+            },
+            "-SGPL": {
+              "text": "-SGPL",
+              "spoken": "Light Snow Grains And Ice Pellets"
+            },
+            "-SGPLSN": {
+              "text": "-SGPLSN",
+              "spoken": "Light Snow Grains, Ice Pellets And Snow"
+            },
+            "-SGRA": {
+              "text": "-SGRA",
+              "spoken": "Light Snow Grains And Rain"
+            },
+            "-SGRADZ": {
+              "text": "-SGRADZ",
+              "spoken": "Light Snow Grains, Rain And Drizzle"
+            },
+            "-SGRASN": {
+              "text": "-SGRASN",
+              "spoken": "Light Snow Grains, Rain And Snow"
+            },
+            "-SGSN": {
+              "text": "-SGSN",
+              "spoken": "Light Snow Grains And Snow"
+            },
+            "-SGSNPL": {
+              "text": "-SGSNPL",
+              "spoken": "Light Snow Grains, Snow And Ice Pellets"
+            },
+            "-SGSNRA": {
+              "text": "-SGSNRA",
+              "spoken": "Light Snow Grains, Snow And Rain"
+            },
+            "-SHGR": {
+              "text": "-SHGR",
+              "spoken": "Light Showers Of Hail"
+            },
+            "-SHGRRA": {
+              "text": "-SHGRRA",
+              "spoken": "Light Showers Of Hail And Rain"
+            },
+            "-SHGRRASN": {
+              "text": "-SHGRRASN",
+              "spoken": "Light Showers Of Hail, Rain And Snow"
+            },
+            "-SHGRSN": {
+              "text": "-SHGRSN",
+              "spoken": "Light Showers Of Hail And Snow"
+            },
+            "-SHGRSNRA": {
+              "text": "-SHGRSNRA",
+              "spoken": "Light Showers Of Hail, Snow And Rain"
+            },
+            "-SHGS": {
+              "text": "-SHGS",
+              "spoken": "Light Showers Of Snow Pellets"
+            },
+            "-SHGSRA": {
+              "text": "-SHGSRA",
+              "spoken": "Light Showers Of Snow Pellets And Rain"
+            },
+            "-SHGSRASN": {
+              "text": "-SHGSRASN",
+              "spoken": "Light Showers Of Snow Pellets, Rain And Snow"
+            },
+            "-SHGSSN": {
+              "text": "-SHGSSN",
+              "spoken": "Light Showers Of Snow Pellets And Snow"
+            },
+            "-SHGSSNRA": {
+              "text": "-SHGSSNRA",
+              "spoken": "Light Showers Of Snow Pellets, Snow And Rain"
+            },
+            "-SHRA": {
+              "text": "-SHRA",
+              "spoken": "Light Showers Of Rain"
+            },
+            "-SHRAGR": {
+              "text": "-SHRAGR",
+              "spoken": "Light Showers Of Rain And Hail"
+            },
+            "-SHRAGRSN": {
+              "text": "-SHRAGRSN",
+              "spoken": "Light Showers Of Rain, Hail And Snow"
+            },
+            "-SHRAGS": {
+              "text": "-SHRAGS",
+              "spoken": "Light Showers Of Rain And Snow Pellets"
+            },
+            "-SHRAGSSN": {
+              "text": "-SHRAGSSN",
+              "spoken": "Light Showers Of Rain, Snow Pellets And Snow"
+            },
+            "-SHRASN": {
+              "text": "-SHRASN",
+              "spoken": "Light Showers Of Rain And Snow"
+            },
+            "-SHRASNGR": {
+              "text": "-SHRASNGR",
+              "spoken": "Light Showers Of Rain, Snow And Hail"
+            },
+            "-SHRASNGS": {
+              "text": "-SHRASNGS",
+              "spoken": "Light Showers Of Rain, Snow And Snow Pellets"
+            },
+            "-SHSN": {
+              "text": "-SHSN",
+              "spoken": "Light Showers Of Snow"
+            },
+            "-SHSNGR": {
+              "text": "-SHSNGR",
+              "spoken": "Light Showers Of Snow And Hail"
+            },
+            "-SHSNGRRA": {
+              "text": "-SHSNGRRA",
+              "spoken": "Light Showers Of Snow, Hail And Rain"
+            },
+            "-SHSNGS": {
+              "text": "-SHSNGS",
+              "spoken": "Light Showers Of Snow And Snow Pellets"
+            },
+            "-SHSNGSRA": {
+              "text": "-SHSNGSRA",
+              "spoken": "Light Showers Of Snow, Snow Pellets And Rain"
+            },
+            "-SHSNRA": {
+              "text": "-SHSNRA",
+              "spoken": "Light Showers Of Snow And Rain"
+            },
+            "-SHSNRAGR": {
+              "text": "-SHSNRAGR",
+              "spoken": "Light Showers Of Snow, Rain And Hail"
+            },
+            "-SHSNRAGS": {
+              "text": "-SHSNRAGS",
+              "spoken": "Light Showers Of Snow, Rain And Snow Pellets"
+            },
+            "-SHUP": {
+              "text": "-SHUP",
+              "spoken": "Light Unidentified Showers Of Precipitation"
+            },
+            "-SN": {
+              "text": "-SN",
+              "spoken": "Light Snow"
+            },
+            "-SNDZ": {
+              "text": "-SNDZ",
+              "spoken": "Light Snow And Drizzle"
+            },
+            "-SNDZRA": {
+              "text": "-SNDZRA",
+              "spoken": "Light Snow, Drizzle And Rain"
+            },
+            "-SNPL": {
+              "text": "-SNPL",
+              "spoken": "Light Snow And Ice Pellets"
+            },
+            "-SNPLRA": {
+              "text": "-SNPLRA",
+              "spoken": "Light Snow, Ice Pellets And Rain"
+            },
+            "-SNPLSG": {
+              "text": "-SNPLSG",
+              "spoken": "Light Snow, Ice Pellets And Snow Grains"
+            },
+            "-SNRA": {
+              "text": "-SNRA",
+              "spoken": "Light Snow And Rain"
+            },
+            "-SNRADZ": {
+              "text": "-SNRADZ",
+              "spoken": "Light Snow, Rain And Drizzle"
+            },
+            "-SNRAPL": {
+              "text": "-SNRAPL",
+              "spoken": "Light Snow, Rain And Ice Pellets"
+            },
+            "-SNRASG": {
+              "text": "-SNRASG",
+              "spoken": "Light Snow, Rain And Snow Grains"
+            },
+            "-SNSG": {
+              "text": "-SNSG",
+              "spoken": "Light Snow And Snow Grains"
+            },
+            "-SNSGPL": {
+              "text": "-SNSGPL",
+              "spoken": "Light Snow, Snow Grains And Ice Pellets"
+            },
+            "-SNSGRA": {
+              "text": "-SNSGRA",
+              "spoken": "Light Snow, Snow Grains And Rain"
+            },
+            "-SS": {
+              "text": "-SS",
+              "spoken": "Light Sandstorm"
+            },
+            "-TSGR": {
+              "text": "-TSGR",
+              "spoken": "Thunderstorm With Light Hail"
+            },
+            "-TSGRRA": {
+              "text": "-TSGRRA",
+              "spoken": "Thunderstorm With Light Hail And Rain"
+            },
+            "-TSGRRASN": {
+              "text": "-TSGRRASN",
+              "spoken": "Thunderstorm With Light Hail, Rain And Snow"
+            },
+            "-TSGRSN": {
+              "text": "-TSGRSN",
+              "spoken": "Thunderstorm With Light Hail And Snow"
+            },
+            "-TSGRSNRA": {
+              "text": "-TSGRSNRA",
+              "spoken": "Thunderstorm With Light Hail, Snow And Rain"
+            },
+            "-TSGS": {
+              "text": "-TSGS",
+              "spoken": "Thunderstorm With Light Snow Pellets"
+            },
+            "-TSGSRA": {
+              "text": "-TSGSRA",
+              "spoken": "Thunderstorm With Light Snow Pellets And Rain"
+            },
+            "-TSGSRASN": {
+              "text": "-TSGSRASN",
+              "spoken": "Thunderstorm With Light Snow Pellets, Rain And Snow"
+            },
+            "-TSGSSN": {
+              "text": "-TSGSSN",
+              "spoken": "Thunderstorm With Light Snow Pellets And Snow"
+            },
+            "-TSGSSNRA": {
+              "text": "-TSGSSNRA",
+              "spoken": "Thunderstorm With Light Snow Pellets, Snow And Rain"
+            },
+            "-TSRA": {
+              "text": "-TSRA",
+              "spoken": "Thunderstorm With Light Rain"
+            },
+            "-TSRAGR": {
+              "text": "-TSRAGR",
+              "spoken": "Thunderstorm With Light Rain And Hail"
+            },
+            "-TSRAGRSN": {
+              "text": "-TSRAGRSN",
+              "spoken": "Thunderstorm With Light Rain, Hail And Snow"
+            },
+            "-TSRAGS": {
+              "text": "-TSRAGS",
+              "spoken": "Thunderstorm With Light Rain And Snow Pellets"
+            },
+            "-TSRAGSSN": {
+              "text": "-TSRAGSSN",
+              "spoken": "Thunderstorm With Light Rain, Snow Pellets And Snow"
+            },
+            "-TSRASN": {
+              "text": "-TSRASN",
+              "spoken": "Thunderstorm With Light Rain And Snow"
+            },
+            "-TSRASNGR": {
+              "text": "-TSRASNGR",
+              "spoken": "Thunderstorm With Light Rain, Snow And Hail"
+            },
+            "-TSRASNGS": {
+              "text": "-TSRASNGS",
+              "spoken": "Thunderstorm With Light Rain, Snow And Snow Pellets"
+            },
+            "-TSSN": {
+              "text": "-TSSN",
+              "spoken": "Thunderstorm With Light Snow"
+            },
+            "-TSSNGR": {
+              "text": "-TSSNGR",
+              "spoken": "Thunderstorm With Light Snow And Hail"
+            },
+            "-TSSNGRRA": {
+              "text": "-TSSNGRRA",
+              "spoken": "Thunderstorm With Light Snow, Hail And Rain"
+            },
+            "-TSSNGS": {
+              "text": "-TSSNGS",
+              "spoken": "Thunderstorm With Light Snow And Snow Pellets"
+            },
+            "-TSSNGSRA": {
+              "text": "-TSSNGSRA",
+              "spoken": "Thunderstorm With Light Snow, Snow Pellets And Rain"
+            },
+            "-TSSNRA": {
+              "text": "-TSSNRA",
+              "spoken": "Thunderstorm With Light Snow And Rain"
+            },
+            "-TSSNRAGR": {
+              "text": "-TSSNRAGR",
+              "spoken": "Thunderstorm With Light Snow, Rain And Hail"
+            },
+            "-TSSNRAGS": {
+              "text": "-TSSNRAGS",
+              "spoken": "Thunderstorm With Light Snow, Rain And Snow Pellets"
+            },
+            "-TSUP": {
+              "text": "-TSUP",
+              "spoken": "Thunderstorm With Light Unidentified Precipitation"
+            },
+            "-UP": {
+              "text": "-UP",
+              "spoken": "Light Unidentified Precipitation"
+            },
+            "+DS": {
+              "text": "+DS",
+              "spoken": "Heavy Duststorm"
+            },
+            "+DZ": {
+              "text": "+DZ",
+              "spoken": "Heavy Drizzle"
+            },
+            "+DZPL": {
+              "text": "+DZPL",
+              "spoken": "Heavy Drizzle And Ice Pellets"
+            },
+            "+DZPLRA": {
+              "text": "+DZPLRA",
+              "spoken": "Heavy Drizzle, Ice Pellets And Rain"
+            },
+            "+DZRA": {
+              "text": "+DZRA",
+              "spoken": "Heavy Drizzle And Rain"
+            },
+            "+DZRAPL": {
+              "text": "+DZRAPL",
+              "spoken": "Heavy Drizzle, Rain And Ice Pellets"
+            },
+            "+DZRASG": {
+              "text": "+DZRASG",
+              "spoken": "Heavy Drizzle, Rain And Snow Grains"
+            },
+            "+DZRASN": {
+              "text": "+DZRASN",
+              "spoken": "Heavy Drizzle, Rain And Snow"
+            },
+            "+DZSG": {
+              "text": "+DZSG",
+              "spoken": "Heavy Drizzle And Snow Grains"
+            },
+            "+DZSGRA": {
+              "text": "+DZSGRA",
+              "spoken": "Heavy Drizzle, Snow Grains And Rain"
+            },
+            "+DZSN": {
+              "text": "+DZSN",
+              "spoken": "Heavy Drizzle And Snow"
+            },
+            "+DZSNRA": {
+              "text": "+DZSNRA",
+              "spoken": "Heavy Drizzle, Snow And Rain"
+            },
+            "+FC": {
+              "text": "+FC",
+              "spoken": "Well-Developed Funnel Cloud"
+            },
+            "+FZDZ": {
+              "text": "+FZDZ",
+              "spoken": "Heavy Freezing Drizzle"
+            },
+            "+FZDZPL": {
+              "text": "+FZDZPL",
+              "spoken": "Heavy Freezing Drizzle And Ice Pellets"
+            },
+            "+FZDZRA": {
+              "text": "+FZDZRA",
+              "spoken": "Heavy Freezing Drizzle And Rain"
+            },
+            "+FZDZSG": {
+              "text": "+FZDZSG",
+              "spoken": "Heavy Freezing Drizzle And Snow Grains"
+            },
+            "+FZDZSN": {
+              "text": "+FZDZSN",
+              "spoken": "Heavy Freezing Drizzle And Snow"
+            },
+            "+FZRA": {
+              "text": "+FZRA",
+              "spoken": "Heavy Freezing Rain"
+            },
+            "+FZRADZ": {
+              "text": "+FZRADZ",
+              "spoken": "Heavy Freezing Rain And Drizzle"
+            },
+            "+FZRAPL": {
+              "text": "+FZRAPL",
+              "spoken": "Heavy Freezing Rain And Ice Pellets"
+            },
+            "+FZRASG": {
+              "text": "+FZRASG",
+              "spoken": "Heavy Freezing Rain And Snow Grains"
+            },
+            "+FZRASN": {
+              "text": "+FZRASN",
+              "spoken": "Heavy Freezing Rain And Snow"
+            },
+            "+FZUP": {
+              "text": "+FZUP",
+              "spoken": "Heavy Unidentified Freezing Precipitation"
+            },
+            "+PL": {
+              "text": "+PL",
+              "spoken": "Heavy Ice Pellets"
+            },
+            "+PLDZ": {
+              "text": "+PLDZ",
+              "spoken": "Heavy Ice Pellets And Drizzle"
+            },
+            "+PLDZRA": {
+              "text": "+PLDZRA",
+              "spoken": "Heavy Ice Pellets, Drizzle And Rain"
+            },
+            "+PLRA": {
+              "text": "+PLRA",
+              "spoken": "Heavy Ice Pellets And Rain"
+            },
+            "+PLRADZ": {
+              "text": "+PLRADZ",
+              "spoken": "Heavy Ice Pellets, Rain And Drizzle"
+            },
+            "+PLRASN": {
+              "text": "+PLRASN",
+              "spoken": "Heavy Ice Pellets, Rain And Snow"
+            },
+            "+PLSG": {
+              "text": "+PLSG",
+              "spoken": "Heavy Ice Pellets And Snow Grains"
+            },
+            "+PLSGSN": {
+              "text": "+PLSGSN",
+              "spoken": "Heavy Ice Pellets, Snow Grains And Snow"
+            },
+            "+PLSN": {
+              "text": "+PLSN",
+              "spoken": "Heavy Ice Pellets And Snow"
+            },
+            "+PLSNRA": {
+              "text": "+PLSNRA",
+              "spoken": "Heavy Ice Pellets, Snow And Rain"
+            },
+            "+PLSNSG": {
+              "text": "+PLSNSG",
+              "spoken": "Heavy Ice Pellets, Snow And Snow Grains"
+            },
+            "+RA": {
+              "text": "+RA",
+              "spoken": "Heavy Rain"
+            },
+            "+RADZ": {
+              "text": "+RADZ",
+              "spoken": "Heavy Rain And Drizzle"
+            },
+            "+RADZPL": {
+              "text": "+RADZPL",
+              "spoken": "Heavy Rain, Drizzle And Ice Pellets"
+            },
+            "+RADZSG": {
+              "text": "+RADZSG",
+              "spoken": "Heavy Rain, Drizzle And Snow Grains"
+            },
+            "+RADZSN": {
+              "text": "+RADZSN",
+              "spoken": "Heavy Rain, Drizzle And Snow"
+            },
+            "+RAPL": {
+              "text": "+RAPL",
+              "spoken": "Heavy Rain And Ice Pellets"
+            },
+            "+RAPLDZ": {
+              "text": "+RAPLDZ",
+              "spoken": "Heavy Rain, Ice Pellets And Drizzle"
+            },
+            "+RAPLSN": {
+              "text": "+RAPLSN",
+              "spoken": "Heavy Rain, Ice Pellets And Snow"
+            },
+            "+RASG": {
+              "text": "+RASG",
+              "spoken": "Heavy Rain And Snow Grains"
+            },
+            "+RASGDZ": {
+              "text": "+RASGDZ",
+              "spoken": "Heavy Rain, Snow Grains And Drizzle"
+            },
+            "+RASGSN": {
+              "text": "+RASGSN",
+              "spoken": "Heavy Rain, Snow Grains And Snow"
+            },
+            "+RASN": {
+              "text": "+RASN",
+              "spoken": "Heavy Rain And Snow"
+            },
+            "+RASNDZ": {
+              "text": "+RASNDZ",
+              "spoken": "Heavy Rain, Snow And Drizzle"
+            },
+            "+RASNPL": {
+              "text": "+RASNPL",
+              "spoken": "Heavy Rain, Snow And Ice Pellets"
+            },
+            "+RASNSG": {
+              "text": "+RASNSG",
+              "spoken": "Heavy Rain, Snow And Snow Grains"
+            },
+            "+SG": {
+              "text": "+SG",
+              "spoken": "Heavy Snow Grains"
+            },
+            "+SGDZ": {
+              "text": "+SGDZ",
+              "spoken": "Heavy Snow Grains And Drizzle"
+            },
+            "+SGDZRA": {
+              "text": "+SGDZRA",
+              "spoken": "Heavy Snow Grains, Drizzle And Rain"
+            },
+            "+SGPL": {
+              "text": "+SGPL",
+              "spoken": "Heavy Snow Grains And Ice Pellets"
+            },
+            "+SGPLSN": {
+              "text": "+SGPLSN",
+              "spoken": "Heavy Snow Grains, Ice Pellets And Snow"
+            },
+            "+SGRA": {
+              "text": "+SGRA",
+              "spoken": "Heavy Snow Grains And Rain"
+            },
+            "+SGRADZ": {
+              "text": "+SGRADZ",
+              "spoken": "Heavy Snow Grains, Rain And Drizzle"
+            },
+            "+SGRASN": {
+              "text": "+SGRASN",
+              "spoken": "Heavy Snow Grains, Rain And Snow"
+            },
+            "+SGSN": {
+              "text": "+SGSN",
+              "spoken": "Heavy Snow Grains And Snow"
+            },
+            "+SGSNPL": {
+              "text": "+SGSNPL",
+              "spoken": "Heavy Snow Grains, Snow And Ice Pellets"
+            },
+            "+SGSNRA": {
+              "text": "+SGSNRA",
+              "spoken": "Heavy Snow Grains, Snow And Rain"
+            },
+            "+SHGR": {
+              "text": "+SHGR",
+              "spoken": "Heavy Showers Of Hail"
+            },
+            "+SHGRRA": {
+              "text": "+SHGRRA",
+              "spoken": "Heavy Showers Of Hail And Rain"
+            },
+            "+SHGRRASN": {
+              "text": "+SHGRRASN",
+              "spoken": "Heavy Showers Of Hail, Rain And Snow"
+            },
+            "+SHGRSN": {
+              "text": "+SHGRSN",
+              "spoken": "Heavy Showers Of Hail And Snow"
+            },
+            "+SHGRSNRA": {
+              "text": "+SHGRSNRA",
+              "spoken": "Heavy Showers Of Hail, Snow And Rain"
+            },
+            "+SHGS": {
+              "text": "+SHGS",
+              "spoken": "Heavy Showers Of Snow Pellets"
+            },
+            "+SHGSRA": {
+              "text": "+SHGSRA",
+              "spoken": "Heavy Showers Of Snow Pellets And Rain"
+            },
+            "+SHGSRASN": {
+              "text": "+SHGSRASN",
+              "spoken": "Heavy Showers Of Snow Pellets, Rain And Snow"
+            },
+            "+SHGSSN": {
+              "text": "+SHGSSN",
+              "spoken": "Heavy Showers Of Snow Pellets And Snow"
+            },
+            "+SHGSSNRA": {
+              "text": "+SHGSSNRA",
+              "spoken": "Heavy Showers Of Snow Pellets, Snow And Rain"
+            },
+            "+SHRA": {
+              "text": "+SHRA",
+              "spoken": "Heavy Showers Of Rain"
+            },
+            "+SHRAGR": {
+              "text": "+SHRAGR",
+              "spoken": "Heavy Showers Of Rain And Hail"
+            },
+            "+SHRAGRSN": {
+              "text": "+SHRAGRSN",
+              "spoken": "Heavy Showers Of Rain, Hail And Snow"
+            },
+            "+SHRAGS": {
+              "text": "+SHRAGS",
+              "spoken": "Heavy Showers Of Rain And Snow Pellets"
+            },
+            "+SHRAGSSN": {
+              "text": "+SHRAGSSN",
+              "spoken": "Heavy Showers Of Rain, Snow Pellets And Snow"
+            },
+            "+SHRASN": {
+              "text": "+SHRASN",
+              "spoken": "Heavy Showers Of Rain And Snow"
+            },
+            "+SHRASNGR": {
+              "text": "+SHRASNGR",
+              "spoken": "Heavy Showers Of Rain, Snow And Hail"
+            },
+            "+SHRASNGS": {
+              "text": "+SHRASNGS",
+              "spoken": "Heavy Showers Of Rain, Snow And Snow Pellets"
+            },
+            "+SHSN": {
+              "text": "+SHSN",
+              "spoken": "Heavy Showers Of Snow"
+            },
+            "+SHSNGR": {
+              "text": "+SHSNGR",
+              "spoken": "Heavy Showers Of Snow And Hail"
+            },
+            "+SHSNGRRA": {
+              "text": "+SHSNGRRA",
+              "spoken": "Heavy Showers Of Snow, Hail And Rain"
+            },
+            "+SHSNGS": {
+              "text": "+SHSNGS",
+              "spoken": "Heavy Showers Of Snow And Snow Pellets"
+            },
+            "+SHSNGSRA": {
+              "text": "+SHSNGSRA",
+              "spoken": "Heavy Showers Of Snow, Snow Pellets And Rain"
+            },
+            "+SHSNRA": {
+              "text": "+SHSNRA",
+              "spoken": "Heavy Showers Of Snow And Rain"
+            },
+            "+SHSNRAGR": {
+              "text": "+SHSNRAGR",
+              "spoken": "Heavy Showers Of Snow, Rain And Hail"
+            },
+            "+SHSNRAGS": {
+              "text": "+SHSNRAGS",
+              "spoken": "Heavy Showers Of Snow, Rain And Snow Pellets"
+            },
+            "+SHUP": {
+              "text": "+SHUP",
+              "spoken": "Heavy Unidentified Showers Of Precipitation"
+            },
+            "+SN": {
+              "text": "+SN",
+              "spoken": "Heavy Snow"
+            },
+            "+SNDZ": {
+              "text": "+SNDZ",
+              "spoken": "Heavy Snow And Drizzle"
+            },
+            "+SNDZRA": {
+              "text": "+SNDZRA",
+              "spoken": "Heavy Snow, Drizzle And Rain"
+            },
+            "+SNPL": {
+              "text": "+SNPL",
+              "spoken": "Heavy Snow And Ice Pellets"
+            },
+            "+SNPLRA": {
+              "text": "+SNPLRA",
+              "spoken": "Heavy Snow, Ice Pellets And Rain"
+            },
+            "+SNPLSG": {
+              "text": "+SNPLSG",
+              "spoken": "Heavy Snow, Ice Pellets And Snow Grains"
+            },
+            "+SNRA": {
+              "text": "+SNRA",
+              "spoken": "Heavy Snow And Rain"
+            },
+            "+SNRADZ": {
+              "text": "+SNRADZ",
+              "spoken": "Heavy Snow, Rain And Drizzle"
+            },
+            "+SNRAPL": {
+              "text": "+SNRAPL",
+              "spoken": "Heavy Snow, Rain And Ice Pellets"
+            },
+            "+SNRASG": {
+              "text": "+SNRASG",
+              "spoken": "Heavy Snow, Rain And Snow Grains"
+            },
+            "+SNSG": {
+              "text": "+SNSG",
+              "spoken": "Heavy Snow And Snow Grains"
+            },
+            "+SNSGPL": {
+              "text": "+SNSGPL",
+              "spoken": "Heavy Snow, Snow Grains And Ice Pellets"
+            },
+            "+SNSGRA": {
+              "text": "+SNSGRA",
+              "spoken": "Heavy Snow, Snow Grains And Rain"
+            },
+            "+SS": {
+              "text": "+SS",
+              "spoken": "Heavy Sandstorm"
+            },
+            "+TSGR": {
+              "text": "+TSGR",
+              "spoken": "Thunderstorm With Heavy Hail"
+            },
+            "+TSGRRA": {
+              "text": "+TSGRRA",
+              "spoken": "Thunderstorm With Heavy Hail And Rain"
+            },
+            "+TSGRRASN": {
+              "text": "+TSGRRASN",
+              "spoken": "Thunderstorm With Heavy Hail, Rain And Snow"
+            },
+            "+TSGRSN": {
+              "text": "+TSGRSN",
+              "spoken": "Thunderstorm With Heavy Hail And Snow"
+            },
+            "+TSGRSNRA": {
+              "text": "+TSGRSNRA",
+              "spoken": "Thunderstorm With Heavy Hail, Snow And Rain"
+            },
+            "+TSGS": {
+              "text": "+TSGS",
+              "spoken": "Thunderstorm With Heavy Snow Pellets"
+            },
+            "+TSGSRA": {
+              "text": "+TSGSRA",
+              "spoken": "Thunderstorm With Heavy Snow Pellets And Rain"
+            },
+            "+TSGSRASN": {
+              "text": "+TSGSRASN",
+              "spoken": "Thunderstorm With Heavy Snow Pellets, Rain And Snow"
+            },
+            "+TSGSSN": {
+              "text": "+TSGSSN",
+              "spoken": "Thunderstorm With Heavy Snow Pellets And Snow"
+            },
+            "+TSGSSNRA": {
+              "text": "+TSGSSNRA",
+              "spoken": "Thunderstorm With Heavy Snow Pellets, Snow And Rain"
+            },
+            "+TSRA": {
+              "text": "+TSRA",
+              "spoken": "Thunderstorm With Heavy Rain"
+            },
+            "+TSRAGR": {
+              "text": "+TSRAGR",
+              "spoken": "Thunderstorm With Heavy Rain And Hail"
+            },
+            "+TSRAGRSN": {
+              "text": "+TSRAGRSN",
+              "spoken": "Thunderstorm With Heavy Rain, Hail And Snow"
+            },
+            "+TSRAGS": {
+              "text": "+TSRAGS",
+              "spoken": "Thunderstorm With Heavy Rain And Snow Pellets"
+            },
+            "+TSRAGSSN": {
+              "text": "+TSRAGSSN",
+              "spoken": "Thunderstorm With Heavy Rain, Snow Pellets And Snow"
+            },
+            "+TSRASN": {
+              "text": "+TSRASN",
+              "spoken": "Thunderstorm With Heavy Rain And Snow"
+            },
+            "+TSRASNGR": {
+              "text": "+TSRASNGR",
+              "spoken": "Thunderstorm With Heavy Rain, Snow And Hail"
+            },
+            "+TSRASNGS": {
+              "text": "+TSRASNGS",
+              "spoken": "Thunderstorm With Heavy Rain, Snow And Snow Pellets"
+            },
+            "+TSSN": {
+              "text": "+TSSN",
+              "spoken": "Thunderstorm With Heavy Snow"
+            },
+            "+TSSNGR": {
+              "text": "+TSSNGR",
+              "spoken": "Thunderstorm With Heavy Snow And Hail"
+            },
+            "+TSSNGRRA": {
+              "text": "+TSSNGRRA",
+              "spoken": "Thunderstorm With Heavy Snow, Hail And Rain"
+            },
+            "+TSSNGS": {
+              "text": "+TSSNGS",
+              "spoken": "Thunderstorm With Heavy Snow And Snow Pellets"
+            },
+            "+TSSNGSRA": {
+              "text": "+TSSNGSRA",
+              "spoken": "Thunderstorm With Heavy Snow, Snow Pellets And Rain"
+            },
+            "+TSSNRA": {
+              "text": "+TSSNRA",
+              "spoken": "Thunderstorm With Heavy Snow And Rain"
+            },
+            "+TSSNRAGR": {
+              "text": "+TSSNRAGR",
+              "spoken": "Thunderstorm With Heavy Snow, Rain And Hail"
+            },
+            "+TSSNRAGS": {
+              "text": "+TSSNRAGS",
+              "spoken": "Thunderstorm With Heavy Snow, Rain And Snow Pellets"
+            },
+            "+TSUP": {
+              "text": "+TSUP",
+              "spoken": "Thunderstorm With Heavy Unidentified Precipitation"
+            },
+            "+UP": {
+              "text": "+UP",
+              "spoken": "Heavy Unidentified Precipitation"
+            },
+            "BC": {
+              "text": "BC",
+              "spoken": "patches"
+            },
+            "BCFG": {
+              "text": "BCFG",
+              "spoken": "Patches Of Fog"
+            },
+            "BL": {
+              "text": "BL",
+              "spoken": "blowing"
+            },
+            "BLDU": {
+              "text": "BLDU",
+              "spoken": "Blowing Dust"
+            },
+            "BLSA": {
+              "text": "BLSA",
+              "spoken": "Blowing Sand"
+            },
+            "BLSN": {
+              "text": "BLSN",
+              "spoken": "Blowing Snow"
+            },
+            "BR": {
+              "text": "BR",
+              "spoken": "mist"
+            },
+            "DR": {
+              "text": "DR",
+              "spoken": "low drifting"
+            },
+            "DRDU": {
+              "text": "DRDU",
+              "spoken": "Low Drifting Dust"
+            },
+            "DRSA": {
+              "text": "DRSA",
+              "spoken": "Low Drifting Sand"
+            },
+            "DRSN": {
+              "text": "DRSN",
+              "spoken": "Low Drifting Snow"
+            },
+            "DS": {
+              "text": "DS",
+              "spoken": "dust storm"
+            },
+            "DU": {
+              "text": "DU",
+              "spoken": "widespread dust"
+            },
+            "DZ": {
+              "text": "DZ",
+              "spoken": "drizzle"
+            },
+            "DZPL": {
+              "text": "DZPL",
+              "spoken": "Drizzle And Ice Pellets"
+            },
+            "DZPLRA": {
+              "text": "DZPLRA",
+              "spoken": "Drizzle, Ice Pellets And Rain"
+            },
+            "DZRA": {
+              "text": "DZRA",
+              "spoken": "Drizzle And Rain"
+            },
+            "DZRAPL": {
+              "text": "DZRAPL",
+              "spoken": "Drizzle, Rain And Ice Pellets"
+            },
+            "DZRASG": {
+              "text": "DZRASG",
+              "spoken": "Drizzle, Rain And Snow Grains"
+            },
+            "DZRASN": {
+              "text": "DZRASN",
+              "spoken": "Drizzle, Rain And Snow"
+            },
+            "DZSG": {
+              "text": "DZSG",
+              "spoken": "Drizzle And Snow Grains"
+            },
+            "DZSGRA": {
+              "text": "DZSGRA",
+              "spoken": "Drizzle, Snow Grains And Rain"
+            },
+            "DZSN": {
+              "text": "DZSN",
+              "spoken": "Drizzle And Snow"
+            },
+            "DZSNRA": {
+              "text": "DZSNRA",
+              "spoken": "Drizzle, Snow And Rain"
+            },
+            "FC": {
+              "text": "FC",
+              "spoken": "funnel cloud tornado waterspout"
+            },
+            "FG": {
+              "text": "FG",
+              "spoken": "fog"
+            },
+            "FU": {
+              "text": "FU",
+              "spoken": "smoke"
+            },
+            "FZ": {
+              "text": "FZ",
+              "spoken": "freezing"
+            },
+            "FZDZ": {
+              "text": "FZDZ",
+              "spoken": "Freezing Drizzle"
+            },
+            "FZDZPL": {
+              "text": "FZDZPL",
+              "spoken": "Freezing Drizzle And Ice Pellets"
+            },
+            "FZDZRA": {
+              "text": "FZDZRA",
+              "spoken": "Freezing Drizzle And Rain"
+            },
+            "FZDZSG": {
+              "text": "FZDZSG",
+              "spoken": "Freezing Drizzle And Snow Grains"
+            },
+            "FZDZSN": {
+              "text": "FZDZSN",
+              "spoken": "Freezing Drizzle And Snow"
+            },
+            "FZFG": {
+              "text": "FZFG",
+              "spoken": "Freezing Fog"
+            },
+            "FZRA": {
+              "text": "FZRA",
+              "spoken": "Freezing Rain"
+            },
+            "FZRADZ": {
+              "text": "FZRADZ",
+              "spoken": "Freezing Rain And Drizzle"
+            },
+            "FZRAPL": {
+              "text": "FZRAPL",
+              "spoken": "Freezing Rain And Ice Pellets"
+            },
+            "FZRASG": {
+              "text": "FZRASG",
+              "spoken": "Freezing Rain And Snow Grains"
+            },
+            "FZRASN": {
+              "text": "FZRASN",
+              "spoken": "Freezing Rain And Snow"
+            },
+            "FZUP": {
+              "text": "FZUP",
+              "spoken": "Unidentified Freezing Precipitation"
+            },
+            "GR": {
+              "text": "GR",
+              "spoken": "hail"
+            },
+            "GS": {
+              "text": "GS",
+              "spoken": "small hail"
+            },
+            "HZ": {
+              "text": "HZ",
+              "spoken": "haze"
+            },
+            "IC": {
+              "text": "IC",
+              "spoken": "ice crystals"
+            },
+            "MI": {
+              "text": "MI",
+              "spoken": "shallow"
+            },
+            "MIFG": {
+              "text": "MIFG",
+              "spoken": "Shallow Fog"
+            },
+            "NSW": {
+              "text": "NSW",
+              "spoken": "No Significant Weather"
+            },
+            "PL": {
+              "text": "PL",
+              "spoken": "ice pellets"
+            },
+            "PLDZ": {
+              "text": "PLDZ",
+              "spoken": "Ice Pellets And Drizzle"
+            },
+            "PLDZRA": {
+              "text": "PLDZRA",
+              "spoken": "Ice Pellets, Drizzle And Rain"
+            },
+            "PLRA": {
+              "text": "PLRA",
+              "spoken": "Ice Pellets And Rain"
+            },
+            "PLRADZ": {
+              "text": "PLRADZ",
+              "spoken": "Ice Pellets, Rain And Drizzle"
+            },
+            "PLRASN": {
+              "text": "PLRASN",
+              "spoken": "Ice Pellets, Rain And Snow"
+            },
+            "PLSG": {
+              "text": "PLSG",
+              "spoken": "Ice Pellets And Snow Grains"
+            },
+            "PLSGSN": {
+              "text": "PLSGSN",
+              "spoken": "Ice Pellets, Snow Grains And Snow"
+            },
+            "PLSN": {
+              "text": "PLSN",
+              "spoken": "Ice Pellets And Snow"
+            },
+            "PLSNRA": {
+              "text": "PLSNRA",
+              "spoken": "Ice Pellets, Snow And Rain"
+            },
+            "PLSNSG": {
+              "text": "PLSNSG",
+              "spoken": "Ice Pellets, Snow And Snow Grains"
+            },
+            "PO": {
+              "text": "PO",
+              "spoken": "well developed dust, sand whirls"
+            },
+            "PR": {
+              "text": "PR",
+              "spoken": "partial"
+            },
+            "PRFG": {
+              "text": "PRFG",
+              "spoken": "Partial Fog"
+            },
+            "PY": {
+              "text": "PY",
+              "spoken": "spray"
+            },
+            "RA": {
+              "text": "RA",
+              "spoken": "rain"
+            },
+            "RADZ": {
+              "text": "RADZ",
+              "spoken": "Rain And Drizzle"
+            },
+            "RADZPL": {
+              "text": "RADZPL",
+              "spoken": "Rain, Drizzle And Ice Pellets"
+            },
+            "RADZSG": {
+              "text": "RADZSG",
+              "spoken": "Rain, Drizzle And Snow Grains"
+            },
+            "RADZSN": {
+              "text": "RADZSN",
+              "spoken": "Rain, Drizzle And Snow"
+            },
+            "RAPL": {
+              "text": "RAPL",
+              "spoken": "Rain And Ice Pellets"
+            },
+            "RAPLDZ": {
+              "text": "RAPLDZ",
+              "spoken": "Rain, Ice Pellets And Drizzle"
+            },
+            "RAPLSN": {
+              "text": "RAPLSN",
+              "spoken": "Rain, Ice Pellets And Snow"
+            },
+            "RASG": {
+              "text": "RASG",
+              "spoken": "Rain And Snow Grains"
+            },
+            "RASGDZ": {
+              "text": "RASGDZ",
+              "spoken": "Rain, Snow Grains And Drizzle"
+            },
+            "RASGSN": {
+              "text": "RASGSN",
+              "spoken": "Rain, Snow Grains And Snow"
+            },
+            "RASN": {
+              "text": "RASN",
+              "spoken": "Rain And Snow"
+            },
+            "RASNDZ": {
+              "text": "RASNDZ",
+              "spoken": "Rain, Snow And Drizzle"
+            },
+            "RASNPL": {
+              "text": "RASNPL",
+              "spoken": "Rain, Snow And Ice Pellets"
+            },
+            "RASNSG": {
+              "text": "RASNSG",
+              "spoken": "Rain, Snow And Snow Grains"
+            },
+            "SA": {
+              "text": "SA",
+              "spoken": "sand"
+            },
+            "SG": {
+              "text": "SG",
+              "spoken": "snow grains"
+            },
+            "SGDZ": {
+              "text": "SGDZ",
+              "spoken": "Snow Grains And Drizzle"
+            },
+            "SGDZRA": {
+              "text": "SGDZRA",
+              "spoken": "Snow Grains, Drizzle And Rain"
+            },
+            "SGPL": {
+              "text": "SGPL",
+              "spoken": "Snow Grains And Ice Pellets"
+            },
+            "SGPLSN": {
+              "text": "SGPLSN",
+              "spoken": "Snow Grains, Ice Pellets And Snow"
+            },
+            "SGRA": {
+              "text": "SGRA",
+              "spoken": "Snow Grains And Rain"
+            },
+            "SGRADZ": {
+              "text": "SGRADZ",
+              "spoken": "Snow Grains, Rain And Drizzle"
+            },
+            "SGRASN": {
+              "text": "SGRASN",
+              "spoken": "Snow Grains, Rain And Snow"
+            },
+            "SGSN": {
+              "text": "SGSN",
+              "spoken": "Snow Grains And Snow"
+            },
+            "SGSNPL": {
+              "text": "SGSNPL",
+              "spoken": "Snow Grains, Snow And Ice Pellets"
+            },
+            "SGSNRA": {
+              "text": "SGSNRA",
+              "spoken": "Snow Grains, Snow And Rain"
+            },
+            "SH": {
+              "text": "MOD SH",
+              "spoken": "Moderate Showers"
+            },
+            "SHGR": {
+              "text": "MOD SHGR",
+              "spoken": "Moderate Showers Of Hail"
+            },
+            "SHGRRA": {
+              "text": "MOD SHGRRA",
+              "spoken": "Moderate Showers Of Hail And Rain"
+            },
+            "SHGRRASN": {
+              "text": "MOD SHGRRASN",
+              "spoken": "Moderate Showers Of Hail, Rain And Snow"
+            },
+            "SHGRSN": {
+              "text": "MOD SHGRSN",
+              "spoken": "Moderate Showers Of Hail And Snow"
+            },
+            "SHGRSNRA": {
+              "text": "MOD SHGRSNRA",
+              "spoken": "Moderate Showers Of Hail, Snow And Rain"
+            },
+            "SHGS": {
+              "text": "MOD SHGS",
+              "spoken": "Moderate Showers Of Snow Pellets"
+            },
+            "SHGSRA": {
+              "text": "MOD SHGSRA",
+              "spoken": "Moderate Showers Of Snow Pellets And Rain"
+            },
+            "SHGSRASN": {
+              "text": "MOD SHGSRASN",
+              "spoken": "Moderate Showers Of Snow Pellets, Rain And Snow"
+            },
+            "SHGSSN": {
+              "text": "MOD SHGSSN",
+              "spoken": "Moderate Showers Of Snow Pellets And Snow"
+            },
+            "SHGSSNRA": {
+              "text": "MOD SHGSSNRA",
+              "spoken": "Moderate Showers Of Snow Pellets, Snow And Rain"
+            },
+            "SHRA": {
+              "text": "MOD SHRA",
+              "spoken": "Moderate Showers Of Rain"
+            },
+            "SHRAGR": {
+              "text": "MOD SHRAGR",
+              "spoken": "Moderate Showers Of Rain And Hail"
+            },
+            "SHRAGRSN": {
+              "text": "MOD SHRAGRSN",
+              "spoken": "Moderate Showers Of Rain, Hail And Snow"
+            },
+            "SHRAGS": {
+              "text": "MOD SHRAGS",
+              "spoken": "Moderate Showers Of Rain And Snow Pellets"
+            },
+            "SHRAGSSN": {
+              "text": "MOD SHRAGSSN",
+              "spoken": "Moderate Showers Of Rain, Snow Pellets And Snow"
+            },
+            "SHRASN": {
+              "text": "MOD SHRASN",
+              "spoken": "Moderate Showers Of Rain And Snow"
+            },
+            "SHRASNGR": {
+              "text": "MOD SHRASNGR",
+              "spoken": "Moderate Showers Of Rain, Snow And Hail"
+            },
+            "SHRASNGS": {
+              "text": "MOD SHRASNGS",
+              "spoken": "Moderate Showers Of Rain, Snow And Snow Pellets"
+            },
+            "SHSN": {
+              "text": "MOD SHSN",
+              "spoken": "Moderate Showers Of Snow"
+            },
+            "SHSNGR": {
+              "text": "MOD SHSNGR",
+              "spoken": "Moderate Showers Of Snow And Hail"
+            },
+            "SHSNGRRA": {
+              "text": "MOD SHSNGRRA",
+              "spoken": "Moderate Showers Of Snow, Hail And Rain"
+            },
+            "SHSNGS": {
+              "text": "MOD SHSNGS",
+              "spoken": "Moderate Showers Of Snow And Snow Pellets"
+            },
+            "SHSNGSRA": {
+              "text": "MOD SHSNGSRA",
+              "spoken": "Moderate Showers Of Snow, Snow Pellets And Rain"
+            },
+            "SHSNRA": {
+              "text": "MOD SHSNRA",
+              "spoken": "Moderate Showers Of Snow And Rain"
+            },
+            "SHSNRAGR": {
+              "text": "MOD SHSNRAGR",
+              "spoken": "Moderate Showers Of Snow, Rain And Hail"
+            },
+            "SHSNRAGS": {
+              "text": "MOD SHSNRAGS",
+              "spoken": "Moderate Showers Of Snow, Rain And Snow Pellets"
+            },
+            "SHUP": {
+              "text": "MOD SHUP",
+              "spoken": "Moderate Unidentified Showers Of Precipitation"
+            },
+            "SN": {
+              "text": "SN",
+              "spoken": "snow"
+            },
+            "SNDZ": {
+              "text": "SNDZ",
+              "spoken": "Snow And Drizzle"
+            },
+            "SNDZRA": {
+              "text": "SNDZRA",
+              "spoken": "Snow, Drizzle And Rain"
+            },
+            "SNPL": {
+              "text": "SNPL",
+              "spoken": "Snow And Ice Pellets"
+            },
+            "SNPLRA": {
+              "text": "SNPLRA",
+              "spoken": "Snow, Ice Pellets And Rain"
+            },
+            "SNPLSG": {
+              "text": "SNPLSG",
+              "spoken": "Snow, Ice Pellets And Snow Grains"
+            },
+            "SNRA": {
+              "text": "SNRA",
+              "spoken": "Snow And Rain"
+            },
+            "SNRADZ": {
+              "text": "SNRADZ",
+              "spoken": "Snow, Rain And Drizzle"
+            },
+            "SNRAPL": {
+              "text": "SNRAPL",
+              "spoken": "Snow, Rain And Ice Pellets"
+            },
+            "SNRASG": {
+              "text": "SNRASG",
+              "spoken": "Snow, Rain And Snow Grains"
+            },
+            "SNSG": {
+              "text": "SNSG",
+              "spoken": "Snow And Snow Grains"
+            },
+            "SNSGPL": {
+              "text": "SNSGPL",
+              "spoken": "Snow, Snow Grains And Ice Pellets"
+            },
+            "SNSGRA": {
+              "text": "SNSGRA",
+              "spoken": "Snow, Snow Grains And Rain"
+            },
+            "SQ": {
+              "text": "SQ",
+              "spoken": "squalls"
+            },
+            "SS": {
+              "text": "SS",
+              "spoken": "sandstorm"
+            },
+            "TS": {
+              "text": "TS",
+              "spoken": "thunderstorm"
+            },
+            "TSGR": {
+              "text": "TSGR",
+              "spoken": "Thunderstorm With Hail"
+            },
+            "TSGRRA": {
+              "text": "TSGRRA",
+              "spoken": "Thunderstorm With Hail And Rain"
+            },
+            "TSGRRASN": {
+              "text": "TSGRRASN",
+              "spoken": "Thunderstorm With Hail, Rain And Snow"
+            },
+            "TSGRSN": {
+              "text": "TSGRSN",
+              "spoken": "Thunderstorm With Hail And Snow"
+            },
+            "TSGRSNRA": {
+              "text": "TSGRSNRA",
+              "spoken": "Thunderstorm With Hail, Snow And Rain"
+            },
+            "TSGS": {
+              "text": "TSGS",
+              "spoken": "Thunderstorm With Snow Pellets"
+            },
+            "TSGSRA": {
+              "text": "TSGSRA",
+              "spoken": "Thunderstorm With Snow Pellets And Rain"
+            },
+            "TSGSRASN": {
+              "text": "TSGSRASN",
+              "spoken": "Thunderstorm With Snow Pellets, Rain And Snow"
+            },
+            "TSGSSN": {
+              "text": "TSGSSN",
+              "spoken": "Thunderstorm With Snow Pellets And Snow"
+            },
+            "TSGSSNRA": {
+              "text": "TSGSSNRA",
+              "spoken": "Thunderstorm With Snow Pellets, Snow And Rain"
+            },
+            "TSRA": {
+              "text": "TSRA",
+              "spoken": "Thunderstorm With Rain"
+            },
+            "TSRAGR": {
+              "text": "TSRAGR",
+              "spoken": "Thunderstorm With Rain And Hail"
+            },
+            "TSRAGRSN": {
+              "text": "TSRAGRSN",
+              "spoken": "Thunderstorm With Rain, Hail And Snow"
+            },
+            "TSRAGS": {
+              "text": "TSRAGS",
+              "spoken": "Thunderstorm With Rain And Snow Pellets"
+            },
+            "TSRAGSSN": {
+              "text": "TSRAGSSN",
+              "spoken": "Thunderstorm With Rain, Snow Pellets And Snow"
+            },
+            "TSRASN": {
+              "text": "TSRASN",
+              "spoken": "Thunderstorm With Rain And Snow"
+            },
+            "TSRASNGR": {
+              "text": "TSRASNGR",
+              "spoken": "Thunderstorm With Rain, Snow And Hail"
+            },
+            "TSRASNGS": {
+              "text": "TSRASNGS",
+              "spoken": "Thunderstorm With Rain, Snow And Snow Pellets"
+            },
+            "TSSN": {
+              "text": "TSSN",
+              "spoken": "Thunderstorm With Snow"
+            },
+            "TSSNGR": {
+              "text": "TSSNGR",
+              "spoken": "Thunderstorm With Snow And Hail"
+            },
+            "TSSNGRRA": {
+              "text": "TSSNGRRA",
+              "spoken": "Thunderstorm With Snow, Hail And Rain"
+            },
+            "TSSNGS": {
+              "text": "TSSNGS",
+              "spoken": "Thunderstorm With Snow And Snow Pellets"
+            },
+            "TSSNGSRA": {
+              "text": "TSSNGSRA",
+              "spoken": "Thunderstorm With Snow, Snow Pellets And Rain"
+            },
+            "TSSNRA": {
+              "text": "TSSNRA",
+              "spoken": "Thunderstorm With Snow And Rain"
+            },
+            "TSSNRAGR": {
+              "text": "TSSNRAGR",
+              "spoken": "Thunderstorm With Snow, Rain And Hail"
+            },
+            "TSSNRAGS": {
+              "text": "TSSNRAGS",
+              "spoken": "Thunderstorm With Snow, Rain And Snow Pellets"
+            },
+            "TSUP": {
+              "text": "TSUP",
+              "spoken": "Thunderstorm With Unidentified Precipitation"
+            },
+            "UP": {
+              "text": "UP",
+              "spoken": "unknown precipitation"
+            },
+            "VA": {
+              "text": "VA",
+              "spoken": "volcanic ash"
+            },
+            "VCBLDU": {
+              "text": "VCBLDU",
+              "spoken": "Blowing Dust In The Vicinity"
+            },
+            "VCBLSA": {
+              "text": "VCBLSA",
+              "spoken": "Blowing Sand In The Vicinity"
+            },
+            "VCBLSN": {
+              "text": "VCBLSN",
+              "spoken": "Blowing Snow In The Vicinity"
+            },
+            "VCDS": {
+              "text": "VCDS",
+              "spoken": "Duststorm In The Vicinity"
+            },
+            "VCFC": {
+              "text": "VCFC",
+              "spoken": "Funnel Cloud In The Vicinity"
+            },
+            "VCFG": {
+              "text": "VCFG",
+              "spoken": "Fog In The Vicinity"
+            },
+            "VCPO": {
+              "text": "VCPO",
+              "spoken": "Dust/Sand Whirls In The Vicinity"
+            },
+            "VCSH": {
+              "text": "VCSH",
+              "spoken": "Showers In The Vicinity"
+            },
+            "VCSS": {
+              "text": "VCSS",
+              "spoken": "Sandstorm In The Vicinity"
+            },
+            "VCTS": {
+              "text": "VCTS",
+              "spoken": "Thunderstorm In The Vicinity"
+            },
+            "VCVA": {
+              "text": "VCVA",
+              "spoken": "Volcanic Ash In The Vicinity"
+            }
+          },
+          "template": {
+            "text": "WX {weather}.",
+            "voice": "WEATHER {weather}"
+          }
+        },
+        "recentWeather": {
+          "template": {
+            "text": "RE{weather}",
+            "voice": "RECENT WEATHER {weather}"
+          }
+        },
+        "clouds": {
+          "identifyCeilingLayer": false,
+          "identifyCeilingLayerTextAtis": false,
+          "textAtisCeilingPrefix": "CIG",
+          "cloudCeilingLayerTypes": [
+            "BKN",
+            "OVC"
+          ],
+          "convertToMetric": false,
+          "isAltitudeInHundreds": true,
+          "undeterminedLayerAltitude": {
+            "text": "undetermined",
+            "voice": "undetermined"
+          },
+          "undeterminedVerticalVisibility": {
+            "text": "undetermined",
+            "voice": "undetermined"
+          },
+          "automaticCbDetection": {
+            "text": "//////CB",
+            "voice": "RADAR DETECTED C-B CLOUDS"
+          },
+          "types": {
+            "FEW": {
+              "text": "CLD FEW {convective} {altitude} FT",
+              "voice": "cloud few {convective}, {altitude} {feet},"
+            },
+            "SCT": {
+              "text": "CLD SCT {convective} {altitude} FT",
+              "voice": "cloud scattered {convective}, {altitude} {feet},"
+            },
+            "BKN": {
+              "text": "CLD BKN {convective} {altitude} FT",
+              "voice": "cloud broken {convective}, {altitude} {feet},"
+            },
+            "OVC": {
+              "text": "CLD OVC {convective} {altitude} FT",
+              "voice": "cloud overcast {convective}, {altitude} {feet},"
+            },
+            "VV": {
+              "text": "VV {altitude} FT ",
+              "voice": "vertical visibility, {altitude} {feet},"
+            },
+            "NSC": {
+              "text": "NSC",
+              "voice": "no significant clouds"
+            },
+            "NCD": {
+              "text": "NCD",
+              "voice": "no clouds detected"
+            },
+            "CLR": {
+              "text": "CLR",
+              "voice": "sky clear below flight level one-two-zero"
+            },
+            "SKC": {
+              "text": "SKC",
+              "voice": "sky clear"
+            },
+            "UND": {
+              "text": "{amount}///{convective}",
+              "voice": "{amount} cloud height not available {convective}"
+            }
+          },
+          "convectiveTypes": {
+            "CB": "cumulonimbus",
+            "TCU": "towering cumulus"
+          },
+          "convectiveTypesText": {
+            "CB": "CB",
+            "TCU": "TCU"
+          },
+          "altitudeFormat": {
+            "text": {
+              "style": "Default",
+              "suffix": ""
+            },
+            "voice": {
+              "style": "Default",
+              "suffix": ""
+            }
+          },
+          "template": {
+            "text": "{clouds}.",
+            "voice": "{clouds}"
+          }
+        },
+        "temperature": {
+          "usePlusPrefix": false,
+          "speakLeadingZero": false,
+          "format": {
+            "text": {
+              "style": "Default",
+              "suffix": ""
+            },
+            "voice": {
+              "style": "Default",
+              "suffix": ""
+            }
+          },
+          "template": {
+            "text": "T {temp:#'MS '}",
+            "voice": "TEMPERATURE {temp}"
+          }
+        },
+        "dewpoint": {
+          "usePlusPrefix": false,
+          "speakLeadingZero": false,
+          "format": {
+            "text": {
+              "style": "Default",
+              "suffix": ""
+            },
+            "voice": {
+              "style": "Default",
+              "suffix": ""
+            }
+          },
+          "template": {
+            "text": "DP {dewpoint:#'MS '}.",
+            "voice": "DEWPOINT {dewpoint}"
+          }
+        },
+        "altimeter": {
+          "pronounceDecimal": false,
+          "variableFormats": {
+            "altimeter": {
+              "text": {
+                "style": "Digits",
+                "suffix": ""
+              },
+              "voice": {
+                "style": "Default",
+                "suffix": ""
+              }
+            },
+            "text": {
+              "text": {
+                "style": "Default",
+                "suffix": ""
+              },
+              "voice": {
+                "style": "Default",
+                "suffix": ""
+              }
+            },
+            "inhg": {
+              "text": {
+                "style": "Default",
+                "suffix": ""
+              },
+              "voice": {
+                "style": "Default",
+                "suffix": ""
+              }
+            },
+            "hpa": {
+              "text": {
+                "style": "Default",
+                "suffix": ""
+              },
+              "voice": {
+                "style": "Default",
+                "suffix": ""
+              }
+            },
+            "qfe": {
+              "text": {
+                "style": "Default",
+                "suffix": ""
+              },
+              "voice": {
+                "style": "Default",
+                "suffix": ""
+              }
+            }
+          },
+          "template": {
+            "text": "QNH {altimeter}.",
+            "voice": "QNH {altimeter}"
+          }
+        },
+        "trend": {
+          "nosigText": "NOSIG.",
+          "nosigVoice": "NO-SIGG.",
+          "becomingText": "BECMG",
+          "becomingVoice": "Becoming.",
+          "temporaryText": "TEMPO",
+          "temporaryVoice": "TEMPO.",
+          "notAvailableText": "",
+          "notAvailableVoice": "",
+          "templateText": "TREND {Trend}",
+          "templateVoice": "{Trend}",
+          "template": {}
+        },
+        "windShear": {
+          "runwayText": "WS R{Runway}",
+          "runwayVoice": "Wind Shear Runway {Runway}",
+          "allRunwayText": "WS ALL RWY",
+          "allRunwayVoice": "Wind Shear All Runways",
+          "template": {}
+        },
+        "runwayCondition": {
+          "textTemplate": "RWY {runway} {deposit} {depth} {friction}.",
+          "voiceTemplate": "Runway {runway} {deposit} {depth} {friction}",
+          "terms": {
+            "ClearAndDry": {
+              "text": "CLEAR AND DRY",
+              "voice": "clear and dry"
+            },
+            "Damp": {
+              "text": "DAMP",
+              "voice": "damp"
+            },
+            "Wet": {
+              "text": "WET",
+              "voice": "wet"
+            },
+            "Rime": {
+              "text": "COVERED WITH RIME",
+              "voice": "covered with rime"
+            },
+            "DrySnow": {
+              "text": "COVERED WITH DRY SNOW",
+              "voice": "covered with dry snow"
+            },
+            "WetSnow": {
+              "text": "COVERED WITH WET SNOW",
+              "voice": "covered with wet snow"
+            },
+            "Slush": {
+              "text": "COVERED WITH SLUSH",
+              "voice": "covered with slush"
+            },
+            "Ice": {
+              "text": "COVERED WITH ICE",
+              "voice": "covered with ice"
+            },
+            "CompactedSnow": {
+              "text": "COVERED WITH COMPACTED SNOW",
+              "voice": "covered with compacted snow"
+            },
+            "FrozenRuts": {
+              "text": "FROZEN RUTS",
+              "voice": "frozen ruts"
+            },
+            "NotOperational": {
+              "text": "NOT OPERATIONAL DUE TO DEPOSITS",
+              "voice": "not operational due to deposits"
+            },
+            "DepthMillimeter": {
+              "text": "{value}MM",
+              "voice": "{value} millimeter"
+            },
+            "DepthMillimeters": {
+              "text": "{value}MM",
+              "voice": "{value} millimeters"
+            },
+            "DepthCentimeters": {
+              "text": "{value}CM",
+              "voice": "{value} centimeters"
+            },
+            "FrictionGood": {
+              "text": "FRICTION GOOD",
+              "voice": "estimated surface friction good"
+            },
+            "FrictionMediumToGood": {
+              "text": "FRICTION MEDIUM TO GOOD",
+              "voice": "estimated surface friction medium to good"
+            },
+            "FrictionMedium": {
+              "text": "FRICTION MEDIUM",
+              "voice": "estimated surface friction medium"
+            },
+            "FrictionMediumToPoor": {
+              "text": "FRICTION MEDIUM TO POOR",
+              "voice": "estimated surface friction medium to poor"
+            },
+            "FrictionPoor": {
+              "text": "FRICTION POOR",
+              "voice": "estimated surface friction poor"
+            },
+            "FrictionUnreliable": {
+              "text": "FRICTION UNRELIABLE",
+              "voice": "estimated surface friction unreliable"
+            }
+          },
+          "template": {}
+        },
+        "remarkWind": {
+          "textTemplate": "WIND {height}FT {dir}/{speed}KT",
+          "voiceTemplate": "Wind {height} feet {dir} degrees {speed} knots",
+          "template": {}
+        },
+        "autoObservation": {
+          "textTemplate": "AUTO",
+          "voiceTemplate": "Automatic Observation",
+          "template": {}
+        },
+        "transitionLevel": {
+          "values": [
+            {
+              "low": 942,
+              "high": 995,
+              "altitude": 90
+            },
+            {
+              "low": 996,
+              "high": 1099,
+              "altitude": 80
+            }
+          ],
+          "template": {
+            "text": "TRANSITION LEVEL {trl}.",
+            "voice": ". TRANSITION LEVEL {trl}."
+          }
+        },
+        "notams": {
+          "template": {
+            "text": "{notams}",
+            "voice": "{notams}."
+          }
+        },
+        "closingStatement": {
+          "autoIncludeClosingStatement": true,
+          "template": {
+            "text": "END OF ATIS {letter}",
+            "voice": "END OF INFORMATION {letter|word}."
+          }
+        }
+      },
+      "notamsBeforeFreeText": false,
+      "airportConditionsBeforeFreeText": false,
+      "notamsSeparator": ". ",
+      "airportConditionsSeparator": ". ",
+      "frequency": 126130000,
+      "useDecimalTerminology": true,
+      "randomizeAtisLetterOnConnect": false,
+      "atisVoice": {
+        "useTextToSpeech": true,
+        "useWavPack": false,
+        "voice": "American Male (Nathan)",
+        "speechRate": 130
+      },
+      "presets": [
+        {
+          "id": "3aff87cf-f591-41d9-9350-ed8c8becb458",
+          "ordinal": 0,
+          "name": "07",
+          "airportConditions": "",
+          "notams": "",
+          "template": "@EPKK [ATIS_CODE]\r\n[TIME].\r\nEXP H ARR FOR RNP APCH FOR RWY 07.\r\nDEP RWY 07.\r\nRWY 07 [ARPT_COND].\r\n[TL]\r\n[WIND].\r\n[VIS]\r\n[RVR]\r\n[PRESENT_WX]\r\n[CLOUDS]\r\n[TEMP], [DEW]\r\n[PRESSURE]\r\n[RECENT_WX]\r\n[TREND]\r\n[NOTAMS]\r\n[CLOSING]",
+          "externalGenerator": {
+            "enabled": false,
+            "textUrl": "",
+            "voiceUrl": "",
+            "arrival": "",
+            "departure": "",
+            "approaches": "",
+            "remarks": ""
+          }
+        },
+        {
+          "id": "dce94670-91b5-4927-be6f-dc1b4576cfb2",
+          "ordinal": 2,
+          "name": "25",
+          "airportConditions": "",
+          "notams": "",
+          "template": "@EPKK [ATIS_CODE]\r\n[TIME].\r\nEXP G ARR FOR ILS APCH FOR RWY 25.\r\nDEP RWY 25.\r\nRWY 25 [ARPT_COND].\r\n[TL]\r\n[WIND].\r\n[VIS]\r\n[RVR]\r\n[PRESENT_WX]\r\n[CLOUDS]\r\n[TEMP], [DEW]\r\n[PRESSURE]\r\n[RECENT_WX]\r\n[TREND]\r\n[NOTAMS]\r\n[CLOSING]",
+          "externalGenerator": {
+            "enabled": false,
+            "textUrl": "",
+            "voiceUrl": "",
+            "arrival": "",
+            "departure": "",
+            "approaches": "",
+            "remarks": ""
+          }
+        }
+      ],
+      "contractions": [
+        {
+          "variableName": "EPKK",
+          "text": "EPKK ATIS",
+          "voice": "THIS IS KRAKOW INFORMATION"
+        },
+        {
+          "variableName": "LVP",
+          "text": "LOW VIS PROC IN OPS",
+          "voice": "LOW VISIBILITY PROCEDURES IN OPERATION"
+        },
+        {
+          "variableName": "VDGS",
+          "text": "AT VATS.IM/VDGS",
+          "voice": "AT VATS, DOT I M. SLASH VDGS."
+        },
+        {
+          "variableName": "TOBT",
+          "text": "TOBT",
+          "voice": "TARGET OFF-BLOCK TIME"
+        },
+        {
+          "variableName": "CLR",
+          "text": "CLR",
+          "voice": "CLEARANCE"
+        },
+        {
+          "variableName": "COND",
+          "text": "COND",
+          "voice": "CONDITION."
+        },
+        {
+          "variableName": "TDZ",
+          "text": "TDZ",
+          "voice": ".TOUCHDOWN ZONE."
+        },
+        {
+          "variableName": "MID",
+          "text": "MID",
+          "voice": ".MID POINT."
+        },
+        {
+          "variableName": "END",
+          "text": "END",
+          "voice": ".STOP END."
+        },
+        {
+          "variableName": "SLUSH",
+          "text": "SLUSH",
+          "voice": "SLUSH."
+        },
+        {
+          "variableName": "DRY SNOW",
+          "text": "DRY SNOW",
+          "voice": "DRY SNOW."
+        },
+        {
+          "variableName": "WET SNOW",
+          "text": "WET SNOW",
+          "voice": "WET SNOW."
+        },
+        {
+          "variableName": "COMPACTED SNOW",
+          "text": "COMPACTED SNOW",
+          "voice": "COMPACTED SNOW."
+        },
+        {
+          "variableName": "STANDING WATER",
+          "text": "STANDING WATER",
+          "voice": "STANDING WATER."
+        },
+        {
+          "variableName": "ICE",
+          "text": "ICE",
+          "voice": "ICE."
+        },
+        {
+          "variableName": "WET ICE",
+          "text": "WET ICE",
+          "voice": "WET ICE."
+        },
+        {
+          "variableName": "WATER ON TOP OF COMPACTED SNOW",
+          "text": "WATER ON TOP OF COMPACTED SNOW",
+          "voice": "WATER ON TOP OF COMPACTED SNOW."
+        },
+        {
+          "variableName": "DRY SNOW ON TOP OF ICE",
+          "text": "DRY SNOW ON TOP OF ICE",
+          "voice": "DRY SNOW ON TOP OF ICE."
+        },
+        {
+          "variableName": "WET SNOW ON TOP OF ICE",
+          "text": "WET SNOW ON TOP OF ICE",
+          "voice": "WET SNOW ON TOP OF ICE."
+        },
+        {
+          "variableName": "100",
+          "text": "100",
+          "voice": "ONE HUNDRED"
+        },
+        {
+          "variableName": "TREATED",
+          "text": "TREATED",
+          "voice": "TREATED."
+        },
+        {
+          "variableName": "ACT",
+          "text": "ACT",
+          "voice": "ACTIVITY"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "RCC (\\d), (\\d), (\\d)",
+          "text": "RCC $1, $2, $3",
+          "voice": "RUNWAY CONDITION CODES $digits($1), $digits($2), $digits($3)"
+        },
+        {
+          "pattern": "(ILS) ([XYZ])\\b",
+          "text": "$1 $2",
+          "voice": "$1 $phonetic($2)"
+        },
+        {
+          "pattern": "(RNAV) ([XYZ])\\b",
+          "text": "$1 $2",
+          "voice": "$1 $phonetic($2)"
+        },
+        {
+          "pattern": "(VOR) ([XYZ])\\b",
+          "text": "$1 $2",
+          "voice": "$1 $phonetic($2)"
+        },
+        {
+          "pattern": "EXP ([ABCDEFGHIJKLMNOPRSTUWXYZ]) ARR",
+          "text": "EXP $1 ARR",
+          "voice": "EXPECT $phonetic($1) ARRIVAL"
+        },
+        {
+          "pattern": "1ST",
+          "text": "1ST",
+          "voice": "FIRST"
+        },
+        {
+          "pattern": "2ND",
+          "text": "2ND",
+          "voice": "SECOND"
+        },
+        {
+          "pattern": "3RD",
+          "text": "3RD",
+          "voice": "THIRD"
+        },
+        {
+          "pattern": "RWY REPORT END",
+          "text": "RWY REPORT END",
+          "voice": "."
+        }
+      ],
+      "airportConditionDefinitions": [
+        {
+          "text": "RCC 6, 6, 6.",
+          "ordinal": 1,
+          "separatorAfter": ". ",
+          "weatherCondition": "NOT (weather INCLUDES SHRA OR weather INCLUDES RA OR weather INCLUDES DZ OR weather INCLUDES TSRA)",
+          "enabled": true
+        },
+        {
+          "text": "RCC 5, 5, 5. RWY WET.",
+          "ordinal": 2,
+          "separatorAfter": ". ",
+          "weatherCondition": "weather INCLUDES SHRA OR weather INCLUDES RA OR weather INCLUDES DZ OR weather INCLUDES TSRA",
+          "enabled": true
+        },
+        {
+          "text": "RCC 5, 5, 5. RWY DRY SNOW, ",
+          "ordinal": 3,
+          "separatorAfter": ". ",
+          "weatherCondition": "weather INCLUDES SN OR weather INCLUDES SHSN OR weather INCLUDES BLSN",
+          "enabled": true
+        },
+        {
+          "text": "RWY REPORT END",
+          "ordinal": 4,
+          "separatorAfter": ". ",
           "enabled": true
         },
         {
           "text": "",
           "ordinal": 5,
           "newLineOnly": true,
-          "enabled": false
+          "enabled": true
         },
         {
-          "text": "\r\nWHEN AIRBORNE CONTACT APPROACH ON 128.805.",
+          "text": "LVP.",
           "ordinal": 6,
-          "enabled": false
+          "separatorAfter": ".",
+          "weatherCondition": "ceiling <= 300ft OR rvr < 550m",
+          "enabled": true
+        }
+      ],
+      "notamDefinitions": [
+        {
+          "text": "ATC CLR AVAILABLE VIA DATALINK OR CONTACT DELIVERY.",
+          "ordinal": 1,
+          "onlineCondition": "EPKK_DEL",
+          "enabled": true
+        },
+        {
+          "text": "ATC CLR AVAILABLE VIA DATALINK OR CONTACT GROUND.",
+          "ordinal": 2,
+          "onlineCondition": "EPKK_GND ANT NOT EPKK_DEL",
+          "enabled": true
         },
         {
           "text": "",
-          "ordinal": 7,
+          "ordinal": 3,
           "newLineOnly": true,
-          "enabled": false
+          "enabled": true
         },
         {
-          "text": "\r\nWHEN AIRBORNE CONTACT RADAR ON 125.450.",
+          "text": "AFTER DEP CONTACT APCH 121.075.",
+          "ordinal": 4,
+          "onlineCondition": "EPKK_APP",
+          "enabled": true
+        },
+        {
+          "text": "AFTER DEP CONTACT APCH 126.975.",
+          "ordinal": 5,
+          "onlineCondition": "EPKK_E_APP",
+          "weatherCondition": "(winddir >= 340deg OR winddir <= 160deg) AND windspeed >= 8kt",
+          "enabled": true
+        },
+        {
+          "text": "\r\nAFTER DEP CONTACT RADAR 125.450.",
+          "ordinal": 6,
+          "onlineCondition": "EPWW_ALL_CTR AND NOT (EPKK_APP OR EPWW_S_CTR)",
+          "enabled": true
+        },
+        {
+          "text": "AFTER DEP CONTACT RADAR 123.625.",
+          "ordinal": 7,
+          "onlineCondition": "EPWW_S_CTR AND NOT EPKK_APP",
+          "enabled": true
+        },
+        {
+          "text": "",
           "ordinal": 8,
-          "enabled": false
+          "newLineOnly": true,
+          "enabled": true
+        },
+        {
+          "text": "CAUTION. BIRDS ACT.",
+          "ordinal": 9,
+          "separatorAfter": ".",
+          "enabled": true
         }
       ],
       "datisTextReplacements": [],
