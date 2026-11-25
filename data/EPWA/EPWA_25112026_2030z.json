@@ -1,23 +1,23 @@
 {
   "airport": "EPWA",
-  "fetch_time_utc": "2026-11-25 02:37:00 UTC",
+  "fetch_time_utc": "2026-11-25 20:43:08 UTC",
   "reports": [
     {
       "icao": "EPWA",
       "type": "ARRIVAL",
-      "info_letter": "J",
-      "issue_time": "2031Z",
+      "info_letter": "H",
+      "issue_time": "2030Z",
       "time": "2030Z",
       "runway": "33",
       "approach": "EXP U ARR ILS Z APCH FOR RWY 33",
       "transition_level": "80",
-      "wind": "300 DEG, 10 KT",
+      "wind": "290 DEG, 4 KT",
       "visibility": "TDZ 10 KM OR MORE",
-      "clouds": "BKN 1400 FT",
+      "clouds": "BKN 1800 FT",
       "weather": null,
-      "temperature": "3",
-      "dewpoint": "1",
-      "altimeter": "QNH 1020",
+      "temperature": "0",
+      "dewpoint": "-3",
+      "altimeter": "QNH 1023",
       "trend": "NOSIG",
       "remarks": "CAUTION; BIRD ACT",
       "complete": true,
@@ -25,10 +25,10 @@
         "observation_time": "2030Z",
         "transition_level": "80",
         "wind": {
-          "raw": "WIND 300 DEG, 10 KT",
-          "direction_deg": 300,
+          "raw": "WIND 290 DEG, 4 KT",
+          "direction_deg": 290,
           "variable_direction": false,
-          "speed_kt": 10
+          "speed_kt": 4
         },
         "visibility": {
           "raw": "VIS TDZ 10 KM OR MORE",
@@ -36,23 +36,23 @@
           "or_more": true
         },
         "clouds": {
-          "raw": "CLD BKN 1400 FT",
+          "raw": "CLD BKN 1800 FT",
           "layers": [
             {
               "cover": "BKN",
-              "base_ft": 1400
+              "base_ft": 1800
             }
           ]
         },
-        "temperature_c": 3,
-        "dewpoint_c": 1,
-        "qnh_hpa": 1020,
+        "temperature_c": 0,
+        "dewpoint_c": -3,
+        "qnh_hpa": 1023,
         "trend": "NOSIG"
       },
       "elements": [
         {
           "key": "ident",
-          "text": "EPWA ARR J"
+          "text": "EPWA ARR H"
         },
         {
           "key": "time",
@@ -63,32 +63,12 @@
           "text": "EXP U ARR ILS Z APCH FOR RWY 33"
         },
         {
-          "key": "runway",
-          "text": "RWY 33 RCC 5, 5, 5"
-        },
-        {
-          "key": "other",
-          "text": "1ST PART, WET"
-        },
-        {
-          "key": "other",
-          "text": "2ND PART, WET"
-        },
-        {
-          "key": "other",
-          "text": "3RD PART, WET"
-        },
-        {
-          "key": "other",
-          "text": "RWY REPORT END"
-        },
-        {
           "key": "transition_level",
           "text": "TRANSITION LEVEL 80"
         },
         {
           "key": "wind",
-          "text": "WIND 300 DEG, 10 KT"
+          "text": "WIND 290 DEG, 4 KT"
         },
         {
           "key": "visibility",
@@ -96,19 +76,19 @@
         },
         {
           "key": "clouds",
-          "text": "CLD BKN 1400 FT"
+          "text": "CLD BKN 1800 FT"
         },
         {
           "key": "temperature",
-          "text": "T 3"
+          "text": "T 0"
         },
         {
           "key": "dewpoint",
-          "text": "DP 1"
+          "text": "DP MS 3"
         },
         {
           "key": "qnh",
-          "text": "QNH 1020"
+          "text": "QNH 1023"
         },
         {
           "key": "trend",
@@ -123,35 +103,35 @@
           "text": "BIRD ACT"
         }
       ],
-      "raw_text": "EPWA ARR ATIS J 2031Z EPWA ARR J. TIME 2030. EXP U ARR ILS Z APCH FOR RWY 33. RWY 33 RCC 5, 5, 5. 1ST PART, WET. 2ND PART, WET. 3RD PART, WET. RWY REPORT END. TRANSITION LEVEL 80. WIND 300 DEG, 10 KT. VIS TDZ 10 KM OR MORE. CLD BKN 1400 FT. T 3. DP 1. QNH 1020. NOSIG. CAUTION. BIRD ACT. END OF EPWA ARR J"
+      "raw_text": "EPWA ARR ATIS H 2030Z EPWA ARR H. TIME 2030. EXP U ARR ILS Z APCH FOR RWY 33. TRANSITION LEVEL 80. WIND 290 DEG, 4 KT. VIS TDZ 10 KM OR MORE. CLD BKN 1800 FT. T 0. DP MS 3. QNH 1023. NOSIG. CAUTION. BIRD ACT. END OF EPWA ARR H"
     },
     {
       "icao": "EPWA",
       "type": "DEPARTURE",
-      "info_letter": "R",
-      "issue_time": "1956Z",
-      "time": "1954Z",
+      "info_letter": "O",
+      "issue_time": "2001Z",
+      "time": "2000Z",
       "runway": "29, 33",
       "approach": null,
       "transition_level": "80",
-      "wind": "310 DEG, 15 KT",
+      "wind": "290 DEG, 7 KT",
       "visibility": "MID 10 KM OR MORE",
-      "clouds": "BKN 1200 FT",
+      "clouds": "BKN 1900 FT",
       "weather": null,
-      "temperature": "3",
-      "dewpoint": "1",
-      "altimeter": "QNH 1020",
+      "temperature": "0",
+      "dewpoint": "-3",
+      "altimeter": "QNH 1023",
       "trend": "NOSIG",
       "remarks": "CAUTION; BIRD ACT; REPORT READY FOR START UP ON DELIVERY 1; 2; 1 DECIMAL 6; 0; 5",
       "complete": true,
       "details": {
-        "observation_time": "1954Z",
+        "observation_time": "2000Z",
         "transition_level": "80",
         "wind": {
-          "raw": "WIND 310 DEG, 15 KT",
-          "direction_deg": 310,
+          "raw": "WIND 290 DEG, 7 KT",
+          "direction_deg": 290,
           "variable_direction": false,
-          "speed_kt": 15
+          "speed_kt": 7
         },
         "visibility": {
           "raw": "VIS MID 10 KM OR MORE",
@@ -159,27 +139,27 @@
           "or_more": true
         },
         "clouds": {
-          "raw": "CLD BKN 1200 FT",
+          "raw": "CLD BKN 1900 FT",
           "layers": [
             {
               "cover": "BKN",
-              "base_ft": 1200
+              "base_ft": 1900
             }
           ]
         },
-        "temperature_c": 3,
-        "dewpoint_c": 1,
-        "qnh_hpa": 1020,
+        "temperature_c": 0,
+        "dewpoint_c": -3,
+        "qnh_hpa": 1023,
         "trend": "NOSIG"
       },
       "elements": [
         {
           "key": "ident",
-          "text": "EPWA DEP R"
+          "text": "EPWA DEP O"
         },
         {
           "key": "time",
-          "text": "TIME 1954"
+          "text": "TIME 2000"
         },
         {
           "key": "runway",
@@ -190,32 +170,12 @@
           "text": "ARR RWY 33, EXP U ARR ILS Z"
         },
         {
-          "key": "runway",
-          "text": "RWY 29 RCC 5, 5, 5"
-        },
-        {
-          "key": "other",
-          "text": "1ST PART, WET"
-        },
-        {
-          "key": "other",
-          "text": "2ND PART, WET"
-        },
-        {
-          "key": "other",
-          "text": "3RD PART, WET"
-        },
-        {
-          "key": "other",
-          "text": "RWY REPORT END"
-        },
-        {
           "key": "transition_level",
           "text": "TRANSITION LEVEL 80"
         },
         {
           "key": "wind",
-          "text": "WIND 310 DEG, 15 KT"
+          "text": "WIND 290 DEG, 7 KT"
         },
         {
           "key": "visibility",
@@ -223,19 +183,19 @@
         },
         {
           "key": "clouds",
-          "text": "CLD BKN 1200 FT"
+          "text": "CLD BKN 1900 FT"
         },
         {
           "key": "temperature",
-          "text": "T 3"
+          "text": "T 0"
         },
         {
           "key": "dewpoint",
-          "text": "DP 1"
+          "text": "DP MS 3"
         },
         {
           "key": "qnh",
-          "text": "QNH 1020"
+          "text": "QNH 1023"
         },
         {
           "key": "trend",
@@ -270,7 +230,7 @@
           "text": "5"
         }
       ],
-      "raw_text": "EPWA DEP ATIS R 1956Z EPWA DEP R. TIME 1954. DEP RWY 29. ARR RWY 33, EXP U ARR ILS Z. RWY 29 RCC 5, 5, 5. 1ST PART, WET. 2ND PART, WET. 3RD PART, WET. RWY REPORT END. TRANSITION LEVEL 80. WIND 310 DEG, 15 KT. VIS MID 10 KM OR MORE. CLD BKN 1200 FT. T 3. DP 1. QNH 1020. NOSIG. CAUTION. BIRD ACT. REPORT READY FOR START UP ON DELIVERY 1. 2. 1 DECIMAL 6. 0. 5. END OF EPWA DEP R"
+      "raw_text": "EPWA DEP ATIS O 2001Z EPWA DEP O. TIME 2000. DEP RWY 29. ARR RWY 33, EXP U ARR ILS Z. TRANSITION LEVEL 80. WIND 290 DEG, 7 KT. VIS MID 10 KM OR MORE. CLD BKN 1900 FT. T 0. DP MS 3. QNH 1023. NOSIG. CAUTION. BIRD ACT. REPORT READY FOR START UP ON DELIVERY 1. 2. 1 DECIMAL 6. 0. 5. END OF EPWA DEP O"
     }
   ]
 }
