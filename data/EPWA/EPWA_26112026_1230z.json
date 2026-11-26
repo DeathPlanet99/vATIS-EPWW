@@ -1,0 +1,248 @@
+{
+  "airport": "EPWA",
+  "fetch_time_utc": "2026-11-26 12:52:09 UTC",
+  "reports": [
+    {
+      "icao": "EPWA",
+      "type": "ARRIVAL",
+      "info_letter": "D",
+      "issue_time": "1231Z",
+      "time": "1230Z",
+      "runway": "11",
+      "approach": "EXP N ARR ILS Z APCH FOR RWY 11",
+      "transition_level": "80",
+      "wind": "110 DEG, 8 KT",
+      "visibility": "TDZ 10 KM OR MORE",
+      "clouds": "FEW 2000 FT, CLD BKN 3600 FT",
+      "weather": null,
+      "temperature": "2",
+      "dewpoint": "-3",
+      "altimeter": "QNH 1023",
+      "trend": "NOSIG",
+      "remarks": "CAUTION; BIRD ACT",
+      "complete": true,
+      "details": {
+        "observation_time": "1230Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 110 DEG, 8 KT",
+          "direction_deg": 110,
+          "variable_direction": false,
+          "speed_kt": 8
+        },
+        "visibility": {
+          "raw": "VIS TDZ 10 KM OR MORE",
+          "meters": 10000,
+          "or_more": true
+        },
+        "clouds": {
+          "raw": "CLD FEW 2000 FT, CLD BKN 3600 FT",
+          "layers": [
+            {
+              "cover": "FEW",
+              "base_ft": 2000
+            },
+            {
+              "cover": "BKN",
+              "base_ft": 3600
+            }
+          ]
+        },
+        "temperature_c": 2,
+        "dewpoint_c": -3,
+        "qnh_hpa": 1023,
+        "trend": "NOSIG"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA ARR D"
+        },
+        {
+          "key": "time",
+          "text": "TIME 1230"
+        },
+        {
+          "key": "approach",
+          "text": "EXP N ARR ILS Z APCH FOR RWY 11"
+        },
+        {
+          "key": "other",
+          "text": "MOD TURB REPORTED BTN FL 200 AND FL 250,W OF TMA"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 110 DEG, 8 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS TDZ 10 KM OR MORE"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD FEW 2000 FT, CLD BKN 3600 FT"
+        },
+        {
+          "key": "temperature",
+          "text": "T 2"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP MS 3"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1023"
+        },
+        {
+          "key": "trend",
+          "text": "NOSIG"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        }
+      ],
+      "raw_text": "EPWA ARR ATIS D 1231Z EPWA ARR D. TIME 1230. EXP N ARR ILS Z APCH FOR RWY 11. MOD TURB REPORTED BTN FL 200 AND FL 250,W OF TMA. TRANSITION LEVEL 80. WIND 110 DEG, 8 KT. VIS TDZ 10 KM OR MORE. CLD FEW 2000 FT, CLD BKN 3600 FT. T 2. DP MS 3. QNH 1023. NOSIG. CAUTION. BIRD ACT. END OF EPWA ARR D"
+    },
+    {
+      "icao": "EPWA",
+      "type": "DEPARTURE",
+      "info_letter": "U",
+      "issue_time": "1201Z",
+      "time": "1200Z",
+      "runway": "15, 11",
+      "approach": null,
+      "transition_level": "80",
+      "wind": "110 DEG, 4 KT",
+      "visibility": "MID 10 KM OR MORE",
+      "clouds": "FEW 1800 FT, CLD BKN 4100 FT",
+      "weather": null,
+      "temperature": "2",
+      "dewpoint": "-2",
+      "altimeter": "QNH 1023",
+      "trend": "NOSIG",
+      "remarks": "CAUTION; BIRD ACT; REPORT READY FOR START UP ON DELIVERY 1; 2; 1 DECIMAL 6; 0; 5",
+      "complete": true,
+      "details": {
+        "observation_time": "1200Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 110 DEG, 4 KT",
+          "direction_deg": 110,
+          "variable_direction": false,
+          "speed_kt": 4
+        },
+        "visibility": {
+          "raw": "VIS MID 10 KM OR MORE",
+          "meters": 10000,
+          "or_more": true
+        },
+        "clouds": {
+          "raw": "CLD FEW 1800 FT, CLD BKN 4100 FT",
+          "layers": [
+            {
+              "cover": "FEW",
+              "base_ft": 1800
+            },
+            {
+              "cover": "BKN",
+              "base_ft": 4100
+            }
+          ]
+        },
+        "temperature_c": 2,
+        "dewpoint_c": -2,
+        "qnh_hpa": 1023,
+        "trend": "NOSIG"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA DEP U"
+        },
+        {
+          "key": "time",
+          "text": "TIME 1200"
+        },
+        {
+          "key": "runway",
+          "text": "DEP RWY 15"
+        },
+        {
+          "key": "runway",
+          "text": "ARR RWY 11, EXP N ARR ILS Z"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 110 DEG, 4 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS MID 10 KM OR MORE"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD FEW 1800 FT, CLD BKN 4100 FT"
+        },
+        {
+          "key": "temperature",
+          "text": "T 2"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP MS 2"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1023"
+        },
+        {
+          "key": "trend",
+          "text": "NOSIG"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        },
+        {
+          "key": "remark",
+          "text": "REPORT READY FOR START UP ON DELIVERY 1"
+        },
+        {
+          "key": "remark",
+          "text": "2"
+        },
+        {
+          "key": "remark",
+          "text": "1 DECIMAL 6"
+        },
+        {
+          "key": "remark",
+          "text": "0"
+        },
+        {
+          "key": "remark",
+          "text": "5"
+        }
+      ],
+      "raw_text": "EPWA DEP ATIS U 1201Z EPWA DEP U. TIME 1200. DEP RWY 15. ARR RWY 11, EXP N ARR ILS Z. TRANSITION LEVEL 80. WIND 110 DEG, 4 KT. VIS MID 10 KM OR MORE. CLD FEW 1800 FT, CLD BKN 4100 FT. T 2. DP MS 2. QNH 1023. NOSIG. CAUTION. BIRD ACT. REPORT READY FOR START UP ON DELIVERY 1. 2. 1 DECIMAL 6. 0. 5. END OF EPWA DEP U"
+    }
+  ]
+}
