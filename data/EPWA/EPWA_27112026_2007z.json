@@ -1,0 +1,236 @@
+{
+  "airport": "EPWA",
+  "fetch_time_utc": "2026-11-27 22:39:40 UTC",
+  "reports": [
+    {
+      "icao": "EPWA",
+      "type": "ARRIVAL",
+      "info_letter": "D",
+      "issue_time": "2009Z",
+      "time": "2007Z",
+      "runway": "11",
+      "approach": "EXP N ARR ILS Z APCH FOR RWY 11",
+      "transition_level": "80",
+      "wind": "060 DEG, 10 KT",
+      "visibility": "TDZ 10 KM OR MORE",
+      "clouds": "BKN 3200 FT",
+      "weather": null,
+      "temperature": "0",
+      "dewpoint": "-4",
+      "altimeter": "QNH 1032",
+      "trend": "NOSIG",
+      "remarks": "CAUTION; BIRD ACT",
+      "complete": true,
+      "details": {
+        "observation_time": "2007Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 060 DEG, 10 KT",
+          "direction_deg": 60,
+          "variable_direction": false,
+          "speed_kt": 10
+        },
+        "visibility": {
+          "raw": "VIS TDZ 10 KM OR MORE",
+          "meters": 10000,
+          "or_more": true
+        },
+        "clouds": {
+          "raw": "CLD BKN 3200 FT",
+          "layers": [
+            {
+              "cover": "BKN",
+              "base_ft": 3200
+            }
+          ]
+        },
+        "temperature_c": 0,
+        "dewpoint_c": -4,
+        "qnh_hpa": 1032,
+        "trend": "NOSIG"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA ARR D"
+        },
+        {
+          "key": "time",
+          "text": "TIME 2007"
+        },
+        {
+          "key": "approach",
+          "text": "EXP N ARR ILS Z APCH FOR RWY 11"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 060 DEG, 10 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS TDZ 10 KM OR MORE"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD BKN 3200 FT"
+        },
+        {
+          "key": "temperature",
+          "text": "T MS 0"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP MS 4"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1032"
+        },
+        {
+          "key": "trend",
+          "text": "NOSIG"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        }
+      ],
+      "raw_text": "EPWA ARR ATIS D 2009Z EPWA ARR D. TIME 2007. EXP N ARR ILS Z APCH FOR RWY 11. TRANSITION LEVEL 80. WIND 060 DEG, 10 KT. VIS TDZ 10 KM OR MORE. CLD BKN 3200 FT. T MS 0. DP MS 4. QNH 1032. NOSIG. CAUTION. BIRD ACT. END OF EPWA ARR D"
+    },
+    {
+      "icao": "EPWA",
+      "type": "DEPARTURE",
+      "info_letter": "N",
+      "issue_time": "2009Z",
+      "time": "2007Z",
+      "runway": "15, 11",
+      "approach": null,
+      "transition_level": "80",
+      "wind": "060 DEG, 8 KT, VRB BTN 030 AND 100 DEG",
+      "visibility": "MID 10 KM OR MORE",
+      "clouds": "BKN 3200 FT",
+      "weather": null,
+      "temperature": "0",
+      "dewpoint": "-4",
+      "altimeter": "QNH 1032",
+      "trend": "NOSIG",
+      "remarks": "CAUTION; BIRD ACT; REPORT READY FOR START UP ON DELIVERY 1; 2; 1 DECIMAL 6; 0; 5 MOD ICING REPORTED BTN ALT 3000 AND 4000 FT",
+      "complete": true,
+      "details": {
+        "observation_time": "2007Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 060 DEG, 8 KT, VRB BTN 030 AND 100 DEG",
+          "direction_deg": 60,
+          "variable_direction": false,
+          "speed_kt": 8
+        },
+        "visibility": {
+          "raw": "VIS MID 10 KM OR MORE",
+          "meters": 10000,
+          "or_more": true
+        },
+        "clouds": {
+          "raw": "CLD BKN 3200 FT",
+          "layers": [
+            {
+              "cover": "BKN",
+              "base_ft": 3200
+            }
+          ]
+        },
+        "temperature_c": 0,
+        "dewpoint_c": -4,
+        "qnh_hpa": 1032,
+        "trend": "NOSIG"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA DEP N"
+        },
+        {
+          "key": "time",
+          "text": "TIME 2007"
+        },
+        {
+          "key": "runway",
+          "text": "DEP RWY 15"
+        },
+        {
+          "key": "runway",
+          "text": "ARR RWY 11, EXP N ARR ILS Z"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 060 DEG, 8 KT, VRB BTN 030 AND 100 DEG"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS MID 10 KM OR MORE"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD BKN 3200 FT"
+        },
+        {
+          "key": "temperature",
+          "text": "T MS 0"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP MS 4"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1032"
+        },
+        {
+          "key": "trend",
+          "text": "NOSIG"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        },
+        {
+          "key": "remark",
+          "text": "REPORT READY FOR START UP ON DELIVERY 1"
+        },
+        {
+          "key": "remark",
+          "text": "2"
+        },
+        {
+          "key": "remark",
+          "text": "1 DECIMAL 6"
+        },
+        {
+          "key": "remark",
+          "text": "0"
+        },
+        {
+          "key": "remark",
+          "text": "5 MOD ICING REPORTED BTN ALT 3000 AND 4000 FT"
+        }
+      ],
+      "raw_text": "EPWA DEP ATIS N 2009Z EPWA DEP N. TIME 2007. DEP RWY 15. ARR RWY 11, EXP N ARR ILS Z. TRANSITION LEVEL 80. WIND 060 DEG, 8 KT, VRB BTN 030 AND 100 DEG. VIS MID 10 KM OR MORE. CLD BKN 3200 FT. T MS 0. DP MS 4. QNH 1032. NOSIG. CAUTION. BIRD ACT. REPORT READY FOR START UP ON DELIVERY 1. 2. 1 DECIMAL 6. 0. 5 MOD ICING REPORTED BTN ALT 3000 AND 4000 FT. END OF EPWA DEP N"
+    }
+  ]
+}
