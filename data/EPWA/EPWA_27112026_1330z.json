@@ -1,0 +1,236 @@
+{
+  "airport": "EPWA",
+  "fetch_time_utc": "2026-11-27 14:00:35 UTC",
+  "reports": [
+    {
+      "icao": "EPWA",
+      "type": "ARRIVAL",
+      "info_letter": "M",
+      "issue_time": "1331Z",
+      "time": "1330Z",
+      "runway": "11",
+      "approach": "EXP N ARR ILS Z APCH FOR RWY 11",
+      "transition_level": "80",
+      "wind": "080 DEG, 14 KT",
+      "visibility": "TDZ 10 KM OR MORE",
+      "clouds": "BKN 2600 FT",
+      "weather": null,
+      "temperature": "1",
+      "dewpoint": "-5",
+      "altimeter": "QNH 1027",
+      "trend": "NOSIG",
+      "remarks": "CAUTION; BIRD ACT",
+      "complete": true,
+      "details": {
+        "observation_time": "1330Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 080 DEG, 14 KT",
+          "direction_deg": 80,
+          "variable_direction": false,
+          "speed_kt": 14
+        },
+        "visibility": {
+          "raw": "VIS TDZ 10 KM OR MORE",
+          "meters": 10000,
+          "or_more": true
+        },
+        "clouds": {
+          "raw": "CLD BKN 2600 FT",
+          "layers": [
+            {
+              "cover": "BKN",
+              "base_ft": 2600
+            }
+          ]
+        },
+        "temperature_c": 1,
+        "dewpoint_c": -5,
+        "qnh_hpa": 1027,
+        "trend": "NOSIG"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA ARR M"
+        },
+        {
+          "key": "time",
+          "text": "TIME 1330"
+        },
+        {
+          "key": "approach",
+          "text": "EXP N ARR ILS Z APCH FOR RWY 11"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 080 DEG, 14 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS TDZ 10 KM OR MORE"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD BKN 2600 FT"
+        },
+        {
+          "key": "temperature",
+          "text": "T 1"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP MS 5"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1027"
+        },
+        {
+          "key": "trend",
+          "text": "NOSIG"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        }
+      ],
+      "raw_text": "EPWA ARR ATIS M 1331Z EPWA ARR M. TIME 1330. EXP N ARR ILS Z APCH FOR RWY 11. TRANSITION LEVEL 80. WIND 080 DEG, 14 KT. VIS TDZ 10 KM OR MORE. CLD BKN 2600 FT. T 1. DP MS 5. QNH 1027. NOSIG. CAUTION. BIRD ACT. END OF EPWA ARR M"
+    },
+    {
+      "icao": "EPWA",
+      "type": "DEPARTURE",
+      "info_letter": "W",
+      "issue_time": "1331Z",
+      "time": "1330Z",
+      "runway": "15, 11",
+      "approach": null,
+      "transition_level": "80",
+      "wind": "080 DEG, 15 KT",
+      "visibility": "MID 10 KM OR MORE",
+      "clouds": "BKN 2500 FT",
+      "weather": null,
+      "temperature": "1",
+      "dewpoint": "-5",
+      "altimeter": "QNH 1027",
+      "trend": "NOSIG",
+      "remarks": "CAUTION; BIRD ACT; REPORT READY FOR START UP ON DELIVERY 1; 2; 1 DECIMAL 6; 0; 5 MOD ICING REPORTED BTN ALT 3000 AND 4000 FT",
+      "complete": true,
+      "details": {
+        "observation_time": "1330Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 080 DEG, 15 KT",
+          "direction_deg": 80,
+          "variable_direction": false,
+          "speed_kt": 15
+        },
+        "visibility": {
+          "raw": "VIS MID 10 KM OR MORE",
+          "meters": 10000,
+          "or_more": true
+        },
+        "clouds": {
+          "raw": "CLD BKN 2500 FT",
+          "layers": [
+            {
+              "cover": "BKN",
+              "base_ft": 2500
+            }
+          ]
+        },
+        "temperature_c": 1,
+        "dewpoint_c": -5,
+        "qnh_hpa": 1027,
+        "trend": "NOSIG"
+      },
+      "elements": [
+        {
+          "key": "ident",
+          "text": "EPWA DEP W"
+        },
+        {
+          "key": "time",
+          "text": "TIME 1330"
+        },
+        {
+          "key": "runway",
+          "text": "DEP RWY 15"
+        },
+        {
+          "key": "runway",
+          "text": "ARR RWY 11, EXP N ARR ILS Z"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 080 DEG, 15 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS MID 10 KM OR MORE"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD BKN 2500 FT"
+        },
+        {
+          "key": "temperature",
+          "text": "T 1"
+        },
+        {
+          "key": "dewpoint",
+          "text": "DP MS 5"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1027"
+        },
+        {
+          "key": "trend",
+          "text": "NOSIG"
+        },
+        {
+          "key": "remark",
+          "text": "CAUTION"
+        },
+        {
+          "key": "remark",
+          "text": "BIRD ACT"
+        },
+        {
+          "key": "remark",
+          "text": "REPORT READY FOR START UP ON DELIVERY 1"
+        },
+        {
+          "key": "remark",
+          "text": "2"
+        },
+        {
+          "key": "remark",
+          "text": "1 DECIMAL 6"
+        },
+        {
+          "key": "remark",
+          "text": "0"
+        },
+        {
+          "key": "remark",
+          "text": "5 MOD ICING REPORTED BTN ALT 3000 AND 4000 FT"
+        }
+      ],
+      "raw_text": "EPWA DEP ATIS W 1331Z EPWA DEP W. TIME 1330. DEP RWY 15. ARR RWY 11, EXP N ARR ILS Z. TRANSITION LEVEL 80. WIND 080 DEG, 15 KT. VIS MID 10 KM OR MORE. CLD BKN 2500 FT. T 1. DP MS 5. QNH 1027. NOSIG. CAUTION. BIRD ACT. REPORT READY FOR START UP ON DELIVERY 1. 2. 1 DECIMAL 6. 0. 5 MOD ICING REPORTED BTN ALT 3000 AND 4000 FT. END OF EPWA DEP W"
+    }
+  ]
+}
