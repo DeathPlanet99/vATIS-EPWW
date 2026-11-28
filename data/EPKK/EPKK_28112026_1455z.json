@@ -1,0 +1,263 @@
+{
+  "airport": "EPKK",
+  "fetch_time_utc": "2026-11-28 21:05:30 UTC",
+  "reports": [
+    {
+      "icao": "EPKK",
+      "type": "ARRIVAL",
+      "info_letter": "Y",
+      "issue_time": "1456Z",
+      "time": "1455Z",
+      "runway": "07",
+      "approach": "EXP H ARR FOR RNP APCH FOR RWY 07; AFTER DEP CONTACT APCH 121 DECIMAL 075",
+      "transition_level": "80",
+      "wind": "070 DEG, 15 KT",
+      "visibility": "TDZ 10 KM OR MORE",
+      "clouds": "OVC 2400 FT",
+      "weather": null,
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": "QNH 1037",
+      "trend": null,
+      "remarks": null,
+      "complete": false,
+      "details": {
+        "observation_time": "1455Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 070 DEG, 15 KT",
+          "direction_deg": 70,
+          "variable_direction": false,
+          "speed_kt": 15
+        },
+        "visibility": {
+          "raw": "VIS TDZ 10 KM OR MORE",
+          "meters": 10000,
+          "or_more": true
+        },
+        "clouds": {
+          "raw": "CLD OVC 2400 FT",
+          "layers": [
+            {
+              "cover": "OVC",
+              "base_ft": 2400
+            }
+          ]
+        },
+        "qnh_hpa": 1037
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPKK ATIS Y"
+        },
+        {
+          "key": "time",
+          "text": "TIME 1455"
+        },
+        {
+          "key": "approach",
+          "text": "EXP H ARR FOR RNP APCH FOR RWY 07"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 07 RCC 5, 5, 5"
+        },
+        {
+          "key": "other",
+          "text": "RUNWAY WIDTH 50 M"
+        },
+        {
+          "key": "other",
+          "text": "RWY WET"
+        },
+        {
+          "key": "other",
+          "text": "RWY CHEMICALLY TREATED"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "other",
+          "text": "ATC CLR VIA DATALINK OR CONTACT DELIVERY"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 070 DEG, 15 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS TDZ 10 KM OR MORE"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD OVC 2400 FT"
+        },
+        {
+          "key": "other",
+          "text": "T MS 3, DP MS 7"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1037"
+        },
+        {
+          "key": "approach",
+          "text": "AFTER DEP CONTACT APCH 121 DECIMAL 075"
+        },
+        {
+          "key": "other",
+          "text": "MOD ICING REPORTED BLW ALT 4000 FT"
+        },
+        {
+          "key": "other",
+          "text": "END OF ATIS Y Departure ATIS 2026-11-27 05:21 UTC"
+        }
+      ],
+      "raw_text": "EPKK ARR ATIS Y 1456Z EPKK ATIS Y. TIME 1455. EXP H ARR FOR RNP APCH FOR RWY 07. RWY 07 RCC 5, 5, 5. RUNWAY WIDTH 50 M. RWY WET. RWY CHEMICALLY TREATED. RWY REPORT END. TRANSITION LEVEL 80. ATC CLR VIA DATALINK OR CONTACT DELIVERY. WIND 070 DEG, 15 KT. VIS TDZ 10 KM OR MORE. CLD OVC 2400 FT. T MS 3, DP MS 7. QNH 1037. AFTER DEP CONTACT APCH 121 DECIMAL 075. MOD ICING REPORTED BLW ALT 4000 FT. END OF ATIS Y Departure ATIS 2026-11-27 05:21 UTC"
+    },
+    {
+      "icao": "EPKK",
+      "type": "DEPARTURE",
+      "info_letter": "T",
+      "issue_time": "0514Z",
+      "time": "0514Z",
+      "runway": "07",
+      "approach": "EXP H ARR FOR RNP APCH FOR RWY 07; AFTER DEP CONTACT APCH 121 DECIMAL 075",
+      "transition_level": "80",
+      "wind": "060 DEG, 13 KT",
+      "visibility": "TDZ 1600 M",
+      "clouds": "SCT 700 FT, CLD BKN 1200 FT",
+      "weather": "WX MOD SN, BR",
+      "temperature": null,
+      "dewpoint": null,
+      "altimeter": "QNH 1018",
+      "trend": null,
+      "remarks": null,
+      "complete": false,
+      "details": {
+        "observation_time": "0514Z",
+        "transition_level": "80",
+        "wind": {
+          "raw": "WIND 060 DEG, 13 KT",
+          "direction_deg": 60,
+          "variable_direction": false,
+          "speed_kt": 13
+        },
+        "visibility": {
+          "raw": "VIS TDZ 1600 M",
+          "meters": 1600,
+          "or_more": false
+        },
+        "weather": "WX MOD SN, BR",
+        "clouds": {
+          "raw": "CLD SCT 700 FT, CLD BKN 1200 FT",
+          "layers": [
+            {
+              "cover": "SCT",
+              "base_ft": 700
+            },
+            {
+              "cover": "BKN",
+              "base_ft": 1200
+            }
+          ]
+        },
+        "qnh_hpa": 1018
+      },
+      "elements": [
+        {
+          "key": "other",
+          "text": "EPKK ATIS T"
+        },
+        {
+          "key": "time",
+          "text": "TIME 0514"
+        },
+        {
+          "key": "approach",
+          "text": "EXP H ARR FOR RNP APCH FOR RWY 07"
+        },
+        {
+          "key": "runway",
+          "text": "RWY 07 RCC 3, 3, 3"
+        },
+        {
+          "key": "other",
+          "text": "RUNWAY WIDTH 45 M"
+        },
+        {
+          "key": "other",
+          "text": "WET SNOW"
+        },
+        {
+          "key": "other",
+          "text": "RWY REPORT END"
+        },
+        {
+          "key": "transition_level",
+          "text": "TRANSITION LEVEL 80"
+        },
+        {
+          "key": "other",
+          "text": "ATC CLR VIA DATALINK OR CONTACT TOWER"
+        },
+        {
+          "key": "other",
+          "text": "TWY C"
+        },
+        {
+          "key": "other",
+          "text": "D"
+        },
+        {
+          "key": "other",
+          "text": "B 6"
+        },
+        {
+          "key": "other",
+          "text": "CLSD"
+        },
+        {
+          "key": "wind",
+          "text": "WIND 060 DEG, 13 KT"
+        },
+        {
+          "key": "visibility",
+          "text": "VIS TDZ 1600 M"
+        },
+        {
+          "key": "weather",
+          "text": "WX MOD SN, BR"
+        },
+        {
+          "key": "clouds",
+          "text": "CLD SCT 700 FT, CLD BKN 1200 FT"
+        },
+        {
+          "key": "other",
+          "text": "T MS 2, DP MS 3"
+        },
+        {
+          "key": "qnh",
+          "text": "QNH 1018"
+        },
+        {
+          "key": "approach",
+          "text": "AFTER DEP CONTACT APCH 121 DECIMAL 075"
+        },
+        {
+          "key": "other",
+          "text": "END OF ATIS T METAR METAR EPKK 281430Z 07015KT 9999 OVC025 M03/M07 Q1036 TAF TAF EPKK 281430Z 2815/2915 07014KT 9999 OVC025 BECMG 2821/2824 BKN012 BECMG 2904/2907 SCT009"
+        }
+      ],
+      "raw_text": "EPKK DEP ATIS T 0514Z EPKK ATIS T. TIME 0514. EXP H ARR FOR RNP APCH FOR RWY 07. RWY 07 RCC 3, 3, 3. RUNWAY WIDTH 45 M. WET SNOW. RWY REPORT END. TRANSITION LEVEL 80. ATC CLR VIA DATALINK OR CONTACT TOWER. TWY C. D. B 6. CLSD. WIND 060 DEG, 13 KT. VIS TDZ 1600 M. WX MOD SN, BR. CLD SCT 700 FT, CLD BKN 1200 FT. T MS 2, DP MS 3. QNH 1018. AFTER DEP CONTACT APCH 121 DECIMAL 075. END OF ATIS T METAR METAR EPKK 281430Z 07015KT 9999 OVC025 M03/M07 Q1036 TAF TAF EPKK 281430Z 2815/2915 07014KT 9999 OVC025 BECMG 2821/2824 BKN012 BECMG 2904/2907 SCT009"
+    }
+  ]
+}
